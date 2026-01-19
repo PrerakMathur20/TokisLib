@@ -1,0 +1,17 @@
+# Source (included via `files` in package.json for source maps)
+# Exclude everything not needed by consumers
+
+# Build config
+tsconfig*.json
+*.config.js
+*.config.ts
+
+# Dev files
+*.tsbuildinfo
+.turbo/
+
+# Tests
+**/__tests__/
+**/*.test.ts
+**/*.spec.ts
+

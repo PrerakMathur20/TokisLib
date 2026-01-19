@@ -1,0 +1,28 @@
+/* ============================================================
+   Synu — Layout utilities: Box, Stack, Grid, Container
+   ============================================================ */
+
+.synu-container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--synu-spacing-4);
+  padding-right: var(--synu-spacing-4);
+}
+@media (min-width: 640px)  { .synu-container { max-width: 640px;  padding-left: var(--synu-spacing-6); padding-right: var(--synu-spacing-6); } }
+@media (min-width: 768px)  { .synu-container { max-width: 768px; } }
+@media (min-width: 1024px) { .synu-container { max-width: 1024px; } }
+@media (min-width: 1280px) { .synu-container { max-width: 1280px; } }
+@media (min-width: 1536px) { .synu-container { max-width: 1536px; } }
+.synu-container--fluid { max-width: none; }
+
+.synu-stack { display: flex; }
+.synu-stack--v { flex-direction: column; }
+.synu-stack--h { flex-direction: row; }
+.synu-stack--wrap { flex-wrap: wrap; }
+/* Gap scale via data-gap attribute handled in JS */
+
+.synu-grid { display: grid; width: 100%; }
+
+.synu-box { display: block; }
+
