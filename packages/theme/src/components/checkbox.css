@@ -1,0 +1,158 @@
+/* ============================================================
+   Synu — Checkbox & Radio
+   ============================================================ */
+
+.synu-checkbox-root,
+.synu-radio-root {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: var(--synu-spacing-2);
+  cursor: pointer;
+  user-select: none;
+}
+
+/* ── Native input (visually hidden, accessible) ─────────────── */
+
+.synu-checkbox-native,
+.synu-radio-native {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.synu-checkbox-root[data-disabled="true"],
+.synu-radio-root[data-disabled="true"] {
+  opacity: 0.45;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* ── Control ────────────────────────────────────────────────── */
+
+.synu-checkbox-control,
+.synu-radio-control {
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  border: 1.5px solid var(--synu-color-border-strong);
+  background: var(--synu-color-surface-raised);
+  border-radius: var(--synu-radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    background var(--synu-duration-fast) var(--synu-ease-out),
+    border-color var(--synu-duration-fast) var(--synu-ease-out),
+    box-shadow var(--synu-duration-fast) var(--synu-ease-out);
+  position: relative;
+  margin-top: 2px;
+  outline: none;
+}
+
+.synu-radio-control {
+  border-radius: var(--synu-radius-full);
+}
+
+/* Hover — root is now a label element */
+.synu-checkbox-root:hover:not([data-disabled]) .synu-checkbox-control:not([data-checked="true"]),
+.synu-radio-root:hover:not([data-disabled]) .synu-radio-control:not([data-checked="true"]) {
+  border-color: var(--synu-color-primary);
+  background: var(--synu-color-primary-subtle);
+}
+
+/* Checked states */
+.synu-checkbox-control[data-checked="true"],
+.synu-checkbox-control[data-indeterminate="true"] {
+  background: var(--synu-color-primary);
+  border-color: var(--synu-color-primary);
+}
+
+.synu-radio-control[data-checked="true"] {
+  border-color: var(--synu-color-primary);
+}
+
+/* Focus — triggered by native input focus-visible */
+.synu-checkbox-native:focus-visible + .synu-checkbox-control,
+.synu-radio-native:focus-visible + .synu-radio-control {
+  box-shadow: 0 0 0 3px var(--synu-color-focus-ring);
+  border-color: var(--synu-color-primary);
+}
+
+/* ── Indicators ─────────────────────────────────────────────── */
+
+/* Checkmark */
+.synu-checkbox-control[data-checked="true"]::after {
+  content: '';
+  display: block;
+  width: 5px;
+  height: 9px;
+  border: 2px solid var(--synu-text-inverse);
+  border-top: none;
+  border-left: none;
+  transform: rotate(45deg) translateY(-1px);
+}
+
+/* Indeterminate */
+.synu-checkbox-control[data-indeterminate="true"]::after {
+  content: '';
+  display: block;
+  width: 8px;
+  height: 2px;
+  background: var(--synu-text-inverse);
+  border-radius: var(--synu-radius-full);
+}
+
+/* Radio dot */
+.synu-radio-control[data-checked="true"]::after {
+  content: '';
+  display: block;
+  width: 8px;
+  height: 8px;
+  border-radius: var(--synu-radius-full);
+  background: var(--synu-color-primary);
+}
+
+/* ── Labels ─────────────────────────────────────────────────── */
+
+.synu-checkbox-label,
+.synu-radio-label {
+  font-size: var(--synu-font-size-sm);
+  color: var(--synu-text-primary);
+  line-height: 1.5;
+}
+
+.synu-checkbox-description,
+.synu-radio-description {
+  font-size: var(--synu-font-size-xs);
+  color: var(--synu-text-secondary);
+  margin-top: 2px;
+  line-height: 1.4;
+}
+
+/* ── Radio Group ────────────────────────────────────────────── */
+
+.synu-radio-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--synu-spacing-3);
+}
+.synu-radio-group--horizontal {
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: var(--synu-spacing-4);
+}
+
+/* ── Reduced motion ─────────────────────────────────────────── */
+
+@media (prefers-reduced-motion: reduce) {
+  .synu-checkbox-control,
+  .synu-radio-control {
+    transition: none;
+  }
+}
