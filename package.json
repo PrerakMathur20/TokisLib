@@ -1,0 +1,14 @@
+{
+  "name": "synu",
+  "private": true,
+  "version": "0.0.0",
+  "description": "Performance-first, token-native UI design system",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "npm run build --workspace=packages/tokens && npm run build --workspace=packages/core && npm run build --workspace=packages/react",
+    "typecheck": "npm run typecheck --workspace=packages/tokens && npm run typecheck --workspace=packages/core && npm run typecheck --workspace=packages/react",
+    "clean": "rm -rf packages/tokens/dist packages/core/dist packages/react/dist"
+  }
+}
