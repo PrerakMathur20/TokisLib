@@ -12,6 +12,12 @@
   border-left: 3px solid transparent;
   font-size: var(--synu-font-size-sm);
   line-height: var(--synu-line-height-normal);
+  animation: synu-alert-in 250ms var(--synu-ease-spring) both;
+}
+
+@keyframes synu-alert-in {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
 .synu-alert--info {
@@ -184,6 +190,7 @@
 /* ── Reduced motion ─────────────────────────────────────────── */
 
 @media (prefers-reduced-motion: reduce) {
+  .synu-alert     { animation: none; }
   .synu-snackbar  { animation: none; }
   .synu-alert__close, .synu-snackbar__close { transition: none; }
 }

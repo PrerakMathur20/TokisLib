@@ -158,6 +158,20 @@
 .synu-btn--full { width: 100%; }
 .synu-btn--loading { pointer-events: none; }
 
+.synu-btn--loading::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.12), transparent);
+  animation: synu-btn-shimmer 1.2s ease-in-out infinite;
+}
+
+@keyframes synu-btn-shimmer {
+  from { transform: translateX(-100%); }
+  to   { transform: translateX(200%); }
+}
+
 /* ── Parts ─────────────────────────────────────────────────── */
 
 .synu-btn__icon {
@@ -195,4 +209,5 @@
   .synu-btn:active:not([disabled]):not([aria-disabled="true"]) {
     transform: none;
   }
+  .synu-btn--loading::after { animation: none; }
 }

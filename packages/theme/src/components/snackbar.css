@@ -144,28 +144,34 @@
 .synu-snackbar__action {
   display: inline-flex;
   align-items: center;
-  background: transparent;
-  border: 1px solid currentColor;
-  border-radius: var(--synu-radius-full);
-  padding: 2px var(--synu-spacing-3);
+  background: rgb(255 255 255 / 0.1);
+  border: 1px solid rgb(255 255 255 / 0.2);
+  border-radius: var(--synu-radius-md);
+  padding: var(--synu-spacing-1) var(--synu-spacing-3);
   margin-top: var(--synu-spacing-2);
   font-size: var(--synu-font-size-xs);
   font-weight: var(--synu-font-weight-semibold);
   font-family: var(--synu-font-family);
   cursor: pointer;
   color: currentColor;
-  opacity: 0.85;
-  transition: opacity var(--synu-duration-fast) var(--synu-ease-out),
-              background var(--synu-duration-fast) var(--synu-ease-out);
+  white-space: nowrap;
+  transition: background var(--synu-duration-fast) var(--synu-ease-out),
+              border-color var(--synu-duration-fast) var(--synu-ease-out);
+}
+
+[data-theme='dark'] .synu-snackbar__action {
+  background: rgb(0 0 0 / 0.1);
+  border-color: rgb(0 0 0 / 0.15);
 }
 
 .synu-snackbar__action:hover {
-  opacity: 1;
-  background: rgb(255 255 255 / 0.12);
+  background: rgb(255 255 255 / 0.18);
+  border-color: rgb(255 255 255 / 0.35);
 }
 
 [data-theme='dark'] .synu-snackbar__action:hover {
-  background: rgb(0 0 0 / 0.08);
+  background: rgb(0 0 0 / 0.15);
+  border-color: rgb(0 0 0 / 0.25);
 }
 
 .synu-snackbar__action:focus-visible {

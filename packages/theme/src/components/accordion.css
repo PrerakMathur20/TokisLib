@@ -101,7 +101,7 @@
   font-size: var(--synu-font-size-sm);
   color: var(--synu-text-secondary);
   line-height: var(--synu-line-height-relaxed);
-  padding: 0 var(--synu-spacing-5) var(--synu-spacing-4);
+  padding: 0 var(--synu-spacing-5) var(--synu-spacing-3);
 }
 
 /* ── Flush variant ──────────────────────────────────────────── */

@@ -29,7 +29,7 @@
   outline: none;
 }
 .synu-card--clickable:hover {
-  box-shadow: var(--synu-shadow-lg);
+  box-shadow: 0 0 0 2px var(--synu-color-primary-subtle), var(--synu-shadow-lg);
   transform: translateY(-2px);
   border-color: var(--synu-color-border-strong);
 }

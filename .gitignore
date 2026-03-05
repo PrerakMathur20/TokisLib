@@ -25,6 +25,7 @@ build/
 
 # Optional npm cache directory
 .npm
+.npm-cache
 
 # Environment variables
 .env

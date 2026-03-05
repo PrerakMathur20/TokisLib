@@ -30,5 +30,9 @@
   "files": ["src"],
   "sideEffects": ["**/*.css"],
   "license": "MIT",
-  "keywords": ["design-system", "css", "theme", "synu"]
+  "keywords": ["design-system", "css", "theme", "synu"],
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  }
 }

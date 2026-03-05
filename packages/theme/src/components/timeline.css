@@ -99,9 +99,25 @@
   line-height: var(--synu-line-height-normal);
 }
 
-[data-theme='dark'] .synu-timeline__dot {
+[data-theme='dark'] .synu-timeline__dot:not(.synu-timeline__dot--success):not(.synu-timeline__dot--error):not(.synu-timeline__dot--warning):not(.synu-timeline__dot--info) {
   background: var(--synu-color-surface-raised);
   border-color: var(--synu-color-border);
+}
+
+[data-theme='dark'] .synu-timeline__dot--success {
+  background: color-mix(in srgb, var(--synu-color-success) 20%, transparent);
+}
+
+[data-theme='dark'] .synu-timeline__dot--error {
+  background: color-mix(in srgb, var(--synu-color-error) 20%, transparent);
+}
+
+[data-theme='dark'] .synu-timeline__dot--warning {
+  background: color-mix(in srgb, var(--synu-color-warning) 20%, transparent);
+}
+
+[data-theme='dark'] .synu-timeline__dot--info {
+  background: color-mix(in srgb, var(--synu-color-info) 20%, transparent);
 }
 
 [data-theme='dark'] .synu-timeline__connector {

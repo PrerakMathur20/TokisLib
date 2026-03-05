@@ -33,6 +33,7 @@ export function HoverCard({
   className,
 }: HoverCardProps): JSX.Element {
   const [visible, setVisible] = useState(false);
+  const [positioned, setPositioned] = useState(false);
   const [pos, setPos] = useState({ top: 0, left: 0 });
   const anchorRef = useRef<HTMLElement>(null);
   const openTimer = useRef<ReturnType<typeof setTimeout>>();
@@ -45,11 +46,13 @@ export function HoverCard({
       const rect = anchorRef.current.getBoundingClientRect();
       setPos(computePosition(rect, placement));
       setVisible(true);
+      requestAnimationFrame(() => setPositioned(true));
     }, openDelay);
   }, [openDelay, placement]);
 
   const hide = useCallback(() => {
     clearTimeout(openTimer.current);
+    setPositioned(false);
     closeTimer.current = setTimeout(() => setVisible(false), closeDelay);
   }, [closeDelay]);
 
@@ -87,7 +90,14 @@ export function HoverCard({
         <Portal>
           <div
             className={cn('synu-hover-card', `synu-hover-card--${placement}`, className)}
-            style={{ position: 'fixed', top: pos.top, left: pos.left, transform: transformMap[placement] }}
+            style={{
+              position: 'fixed',
+              top: pos.top,
+              left: pos.left,
+              transform: transformMap[placement],
+              opacity: positioned ? undefined : 0,
+              pointerEvents: positioned ? undefined : 'none',
+            }}
             onMouseEnter={() => clearTimeout(closeTimer.current)}
             onMouseLeave={hide}
           >

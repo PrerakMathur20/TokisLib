@@ -55,6 +55,8 @@ export function BarChart({
   const [mounted, setMounted] = useState(false);
   useEffect(() => { if (animated) setTimeout(() => setMounted(true), 50); }, [animated]);
 
+  const [hoveredBar, setHoveredBar] = useState<number | null>(null);
+
   const maxVal = Math.max(...data.map((d) => d.value), 1);
   const padding = { top: 8, right: 8, bottom: 32, left: 40 };
   const w = containerWidth;
@@ -67,7 +69,17 @@ export function BarChart({
   if (!horizontal) {
     return (
       <div ref={containerRef} className={cn('synu-chart synu-chart--bar', className)}>
-        <svg width={w} height={h} aria-label="Bar chart">
+        <svg
+          width={w} height={h} aria-label="Bar chart"
+          onMouseMove={(e) => {
+            const svgRect = e.currentTarget.getBoundingClientRect();
+            const mouseX = e.clientX - svgRect.left - padding.left;
+            const colW = chartW / data.length;
+            const idx = Math.floor(mouseX / colW);
+            setHoveredBar(idx >= 0 && idx < data.length ? idx : null);
+          }}
+          onMouseLeave={() => setHoveredBar(null)}
+        >
           <g transform={`translate(${padding.left},${padding.top})`}>
             {/* Y axis ticks */}
             {[0, 0.25, 0.5, 0.75, 1].map((t) => (
@@ -90,6 +102,7 @@ export function BarChart({
                     x={x} y={y} width={barWidth}
                     height={mounted || !animated ? barH : 0}
                     fill={color} rx={3}
+                    opacity={hoveredBar !== null && hoveredBar !== i ? 0.5 : 1}
                     style={{ transition: animated ? 'y 0.6s ease, height 0.6s ease' : undefined }}
                   />
                   <text x={x + barWidth / 2} y={chartH + 18} fontSize="10" fill="var(--synu-text-secondary)" textAnchor="middle">
@@ -98,6 +111,21 @@ export function BarChart({
                 </g>
               );
             })}
+            {/* Hover tooltip */}
+            {hoveredBar !== null && (() => {
+              const d = data[hoveredBar];
+              const x = hoveredBar * (chartW / data.length) + barGap / 2 + barWidth / 2;
+              const barH = (d.value / maxVal) * chartH;
+              const tipY = Math.max(4, chartH - (mounted || !animated ? barH : 0) - 28);
+              const txt = String(d.value);
+              const tw = Math.max(36, txt.length * 7 + 16);
+              return (
+                <g style={{ pointerEvents: 'none' }}>
+                  <rect x={x - tw / 2} y={tipY} width={tw} height={20} rx={4} fill="rgba(17,24,39,0.92)" />
+                  <text x={x} y={tipY + 13} fontSize="10" textAnchor="middle" fill="#fff" fontWeight="600">{txt}</text>
+                </g>
+              );
+            })()}
           </g>
         </svg>
       </div>
@@ -182,6 +210,7 @@ export function LineChart({
   const containerRef = useRef<HTMLDivElement>(null);
   const containerWidth = useContainerWidth(containerRef);
   const [mounted, setMounted] = useState(false);
+  const [hoveredCol, setHoveredCol] = useState<number | null>(null);
   useEffect(() => { if (animated) setTimeout(() => setMounted(true), 50); }, [animated]);
 
   const padding = { top: 12, right: 12, bottom: 32, left: 44 };
@@ -202,7 +231,17 @@ export function LineChart({
 
   return (
     <div ref={containerRef} className={cn('synu-chart synu-chart--line', className)}>
-      <svg width={w} height={h} aria-label="Line chart">
+      <svg
+        width={w} height={h} aria-label="Line chart"
+        onMouseMove={(e) => {
+          const svgRect = e.currentTarget.getBoundingClientRect();
+          const mouseX = e.clientX - svgRect.left - padding.left;
+          const colW = chartW / (labels.length - 1 || 1);
+          const idx = Math.round(mouseX / colW);
+          setHoveredCol(idx >= 0 && idx < labels.length ? idx : null);
+        }}
+        onMouseLeave={() => setHoveredCol(null)}
+      >
         <g transform={`translate(${padding.left},${padding.top})`}>
           {/* Grid */}
           {[0, 0.25, 0.5, 0.75, 1].map((t) => (
@@ -238,6 +277,59 @@ export function LineChart({
               </g>
             );
           })}
+          {/* Hover crosshair + tooltip */}
+          {hoveredCol !== null && (() => {
+            const x = toPoint(0, hoveredCol).x;
+            const vals = datasets.map((ds) => ({ val: ds.data[hoveredCol], color: ds.color ?? DEFAULT_COLORS[datasets.indexOf(ds) % DEFAULT_COLORS.length], label: ds.label }));
+            const firstVal = vals[0];
+            if (!firstVal || firstVal.val === undefined) return null;
+            const y = toPoint(firstVal.val, hoveredCol).y;
+            const isMulti = vals.length > 1;
+            return (
+              <g style={{ pointerEvents: 'none' }}>
+                <line x1={x} x2={x} y1={0} y2={chartH} stroke="var(--synu-color-border)" strokeWidth="1" strokeDasharray="3,3" />
+                {vals.map(({ val, color }, vi) => {
+                  if (val === undefined) return null;
+                  const py = toPoint(val, hoveredCol).y;
+                  return <circle key={vi} cx={x} cy={py} r={4} fill={color} stroke="#fff" strokeWidth="1.5" />;
+                })}
+                {!isMulti && (
+                  (() => {
+                    const txt = String(firstVal.val);
+                    const tw = Math.max(36, txt.length * 7 + 16);
+                    const tipX = Math.min(Math.max(x, tw / 2 + 2), chartW - tw / 2 - 2);
+                    const tipY = Math.max(4, y - 30);
+                    return (
+                      <g>
+                        <rect x={tipX - tw / 2} y={tipY} width={tw} height={20} rx={4} fill="rgba(17,24,39,0.92)" />
+                        <text x={tipX} y={tipY + 13} fontSize="10" textAnchor="middle" fill="#fff" fontWeight="600">{txt}</text>
+                      </g>
+                    );
+                  })()
+                )}
+                {isMulti && (
+                  (() => {
+                    const lines = vals.filter(v => v.val !== undefined);
+                    const tw = 90;
+                    const th = lines.length * 16 + 8;
+                    const tipX = Math.min(Math.max(x + 8, tw / 2 + 2), chartW - tw / 2 - 2);
+                    const tipY = Math.max(4, Math.min(y - th / 2, chartH - th - 4));
+                    return (
+                      <g>
+                        <rect x={tipX - tw / 2} y={tipY} width={tw} height={th} rx={4} fill="rgba(17,24,39,0.92)" />
+                        {lines.map(({ val, color, label }, li) => (
+                          <g key={li}>
+                            <circle cx={tipX - tw / 2 + 10} cy={tipY + 12 + li * 16} r={3} fill={color} />
+                            <text x={tipX - tw / 2 + 18} y={tipY + 16 + li * 16} fontSize="10" fill="#fff">{label}: {val}</text>
+                          </g>
+                        ))}
+                      </g>
+                    );
+                  })()
+                )}
+              </g>
+            );
+          })()}
         </g>
       </svg>
       {datasets.length > 1 && (

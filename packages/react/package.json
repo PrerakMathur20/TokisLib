@@ -20,7 +20,8 @@
   "sideEffects": false,
   "scripts": {
     "build": "tsc && tsc -p tsconfig.cjs.json && node ../../scripts/stamp-cjs.js",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "prepack": "npm run build"
   },
   "keywords": [
     "design-system",
@@ -36,16 +37,20 @@
   "peerDependencies": {
     "react": ">=18.0.0",
     "react-dom": ">=18.0.0",
-    "@synu/theme": "*"
+    "@synu/theme": "^0.1.0"
   },
   "dependencies": {
-    "@synu/core": "*",
-    "@synu/tokens": "*"
+    "@synu/core": "^0.1.0",
+    "@synu/tokens": "^0.1.0"
   },
   "devDependencies": {
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
   }
 }

@@ -88,6 +88,12 @@
   border-radius: var(--synu-radius-full);
   white-space: nowrap;
   letter-spacing: 0.01em;
+  animation: synu-badge-pop 200ms var(--synu-ease-spring) both;
+}
+
+@keyframes synu-badge-pop {
+  from { transform: scale(0.5); opacity: 0; }
+  to   { transform: scale(1);   opacity: 1; }
 }
 
 .synu-badge--default { background: var(--synu-color-neutral-100); color: var(--synu-text-secondary); }
@@ -133,6 +139,7 @@
   cursor: default;
   user-select: none;
   transition:
+    transform 150ms var(--synu-ease-spring),
     background var(--synu-duration-fast) var(--synu-ease-out),
     border-color var(--synu-duration-fast) var(--synu-ease-out);
   line-height: 1.5;
@@ -154,6 +161,7 @@
   background: var(--synu-color-primary-subtle);
   color: var(--synu-color-primary);
   border-color: var(--synu-color-primary);
+  transform: scale(1.04);
 }
 .synu-chip--selected:hover {
   background: var(--synu-color-primary-subtle);
@@ -185,6 +193,7 @@
 /* ── Reduced motion ─────────────────────────────────────────── */
 
 @media (prefers-reduced-motion: reduce) {
-  .synu-chip { transition: none; }
+  .synu-badge { animation: none; }
+  .synu-chip { transition: none; transform: none !important; }
   .synu-chip__delete { transition: none; }
 }

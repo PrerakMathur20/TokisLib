@@ -13,6 +13,7 @@ A **performance-first, token-native, zero-runtime** UI design system.
 | `@synu/tokens` | Design token engine — primitives, semantics, themes, CSS variable generation |
 | `@synu/core` | Framework-agnostic headless primitives — state machines, a11y, focus management |
 | `@synu/react` | React adapter layer — composable components, hooks, context |
+| `@synu/theme` | Default CSS theme package — base variables, reset, utilities, and component styles |
 
 ---
 
@@ -32,9 +33,28 @@ core   → react
 ## Getting Started
 
 ```bash
-pnpm install
-pnpm build
+npm install
+npm run build
 ```
+
+## Publish To npm Org
+
+From the repo root:
+
+```bash
+# one-time auth for scoped org packages
+npm login --scope=@synu --registry=https://registry.npmjs.org/
+
+# optional full validation (typecheck + build + pack dry-run)
+npm run release:check
+
+# publish in dependency-safe order
+npm run publish:all
+```
+
+Notes:
+- All workspace packages are configured with `publishConfig.access=public`.
+- `@synu/tokens` now ships `dist/css/index.css` for the `@synu/tokens/css` export.
 
 ---
 
@@ -78,4 +98,3 @@ Themes are applied via `data-theme` attribute — zero JS overhead at render tim
   <App />
 </ThemeProvider>
 ```
-

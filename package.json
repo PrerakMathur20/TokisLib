@@ -9,6 +9,16 @@
   "scripts": {
     "build": "npm run build --workspace=packages/tokens && npm run build --workspace=packages/core && npm run build --workspace=packages/react",
     "typecheck": "npm run typecheck --workspace=packages/tokens && npm run typecheck --workspace=packages/core && npm run typecheck --workspace=packages/react",
-    "clean": "rm -rf packages/tokens/dist packages/core/dist packages/react/dist"
+    "clean": "rm -rf packages/tokens/dist packages/core/dist packages/react/dist .npm-cache",
+    "pack:dry-run": "npm --cache .npm-cache pack --dry-run --workspace=packages/tokens && npm --cache .npm-cache pack --dry-run --workspace=packages/core && npm --cache .npm-cache pack --dry-run --workspace=packages/theme && npm --cache .npm-cache pack --dry-run --workspace=packages/react",
+    "release:check": "npm run typecheck && npm run build && npm run pack:dry-run",
+    "publish:tokens": "npm publish --workspace=packages/tokens",
+    "publish:core": "npm publish --workspace=packages/core",
+    "publish:theme": "npm publish --workspace=packages/theme",
+    "publish:react": "npm publish --workspace=packages/react",
+    "publish:all": "npm run release:check && npm run publish:tokens && npm run publish:core && npm run publish:theme && npm run publish:react"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.3"
   }
 }

@@ -22,8 +22,9 @@
     "**/*.css"
   ],
   "scripts": {
-    "build": "tsc && tsc -p tsconfig.cjs.json && node ../../scripts/stamp-cjs.js",
-    "typecheck": "tsc --noEmit"
+    "build": "tsc && tsc -p tsconfig.cjs.json && node ../../scripts/stamp-cjs.js && node ../../scripts/copy-tokens-css.js",
+    "typecheck": "tsc --noEmit",
+    "prepack": "npm run build"
   },
   "keywords": [
     "design-system",
@@ -41,5 +42,9 @@
     "typescript": {
       "optional": true
     }
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
   }
 }

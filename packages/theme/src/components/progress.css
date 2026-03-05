@@ -49,11 +49,26 @@
 .synu-progress-fill--indeterminate {
   width: 40% !important;
   animation: synu-progress-indeterminate 1.6s var(--synu-ease-in-out) infinite;
+  position: relative;
+  overflow: hidden;
+}
+
+.synu-progress-fill--indeterminate::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.35) 50%, transparent 100%);
+  animation: synu-progress-shimmer 1.5s ease-in-out infinite;
 }
 
 @keyframes synu-progress-indeterminate {
   0%   { transform: translateX(-150%); }
   100% { transform: translateX(400%); }
+}
+
+@keyframes synu-progress-shimmer {
+  from { transform: translateX(-100%); }
+  to   { transform: translateX(300%); }
 }
 
 /* ── Circular Progress ──────────────────────────────────────── */
@@ -171,6 +186,7 @@
   .synu-progress-fill { transition: none; }
   .synu-progress-circular__fill { transition: none; }
   .synu-progress-fill--indeterminate { animation: none; width: 100% !important; }
+  .synu-progress-fill--indeterminate::after { animation: none; }
   .synu-skeleton::after { animation: none; }
   .synu-spinner { animation-duration: 1.5s; }
 }
