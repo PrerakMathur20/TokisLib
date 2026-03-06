@@ -1,24 +1,34 @@
 {
-  "name": "synu",
+  "name": "tokis-monorepo",
   "private": true,
-  "version": "0.0.0",
-  "description": "Performance-first, token-native UI design system",
+  "version": "0.1.0",
+  "description": "Tokis — Performance-first, token-native UI design system monorepo",
   "workspaces": [
-    "packages/*"
+    "packages/tokens",
+    "packages/core",
+    "packages/theme",
+    "packages/react",
+    "packages/tokis"
   ],
   "scripts": {
     "build": "npm run build --workspace=packages/tokens && npm run build --workspace=packages/core && npm run build --workspace=packages/react",
     "typecheck": "npm run typecheck --workspace=packages/tokens && npm run typecheck --workspace=packages/core && npm run typecheck --workspace=packages/react",
     "clean": "rm -rf packages/tokens/dist packages/core/dist packages/react/dist .npm-cache",
-    "pack:dry-run": "npm --cache .npm-cache pack --dry-run --workspace=packages/tokens && npm --cache .npm-cache pack --dry-run --workspace=packages/core && npm --cache .npm-cache pack --dry-run --workspace=packages/theme && npm --cache .npm-cache pack --dry-run --workspace=packages/react",
+    "pack:dry-run": "npm --cache .npm-cache pack --dry-run --workspace=packages/tokens && npm --cache .npm-cache pack --dry-run --workspace=packages/core && npm --cache .npm-cache pack --dry-run --workspace=packages/theme && npm --cache .npm-cache pack --dry-run --workspace=packages/react && npm --cache .npm-cache pack --dry-run --workspace=packages/tokis",
     "release:check": "npm run typecheck && npm run build && npm run pack:dry-run",
     "publish:tokens": "npm publish --workspace=packages/tokens",
     "publish:core": "npm publish --workspace=packages/core",
     "publish:theme": "npm publish --workspace=packages/theme",
     "publish:react": "npm publish --workspace=packages/react",
-    "publish:all": "npm run release:check && npm run publish:tokens && npm run publish:core && npm run publish:theme && npm run publish:react"
+    "publish:tokis": "npm publish --workspace=packages/tokis",
+    "publish:all": "npm run release:check && npm run publish:tokens && npm run publish:core && npm run publish:theme && npm run publish:react && npm run publish:tokis",
+    "version:set": "node scripts/set-version.js"
   },
   "devDependencies": {
     "typescript": "^5.9.3"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
   }
 }

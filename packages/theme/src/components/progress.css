@@ -1,117 +1,117 @@
 /* ============================================================
-   Synu — Progress, Skeleton, Spinner
+   Tokis — Progress, Skeleton, Spinner
    ============================================================ */
 
 /* ── Progress Bar ───────────────────────────────────────────── */
 
-.synu-progress-root { width: 100%; }
+.tokis-progress-root { width: 100%; }
 
-.synu-progress-label {
+.tokis-progress-label {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: var(--synu-spacing-2);
-  gap: var(--synu-spacing-2);
+  margin-bottom: var(--tokis-spacing-2);
+  gap: var(--tokis-spacing-2);
 }
-.synu-progress-label-text {
-  font-size: var(--synu-font-size-sm);
-  font-weight: var(--synu-font-weight-medium);
-  color: var(--synu-text-primary);
+.tokis-progress-label-text {
+  font-size: var(--tokis-font-size-sm);
+  font-weight: var(--tokis-font-weight-medium);
+  color: var(--tokis-text-primary);
 }
-.synu-progress-label-value {
-  font-size: var(--synu-font-size-xs);
-  color: var(--synu-text-secondary);
-  font-weight: var(--synu-font-weight-medium);
+.tokis-progress-label-value {
+  font-size: var(--tokis-font-size-xs);
+  color: var(--tokis-text-secondary);
+  font-weight: var(--tokis-font-weight-medium);
   font-variant-numeric: tabular-nums;
 }
 
-.synu-progress-track {
+.tokis-progress-track {
   width: 100%;
-  background: var(--synu-color-neutral-200);
-  border-radius: var(--synu-radius-full);
+  background: var(--tokis-color-neutral-200);
+  border-radius: var(--tokis-radius-full);
   overflow: hidden;
   height: 8px;
 }
-.synu-progress-track--sm { height: 4px; }
-.synu-progress-track--lg { height: 12px; }
+.tokis-progress-track--sm { height: 4px; }
+.tokis-progress-track--lg { height: 12px; }
 
-.synu-progress-fill {
+.tokis-progress-fill {
   height: 100%;
-  background: var(--synu-color-primary);
-  border-radius: var(--synu-radius-full);
-  transition: width var(--synu-duration-slow) var(--synu-ease-out);
+  background: var(--tokis-color-primary);
+  border-radius: var(--tokis-radius-full);
+  transition: width var(--tokis-duration-slow) var(--tokis-ease-out);
   transform-origin: left;
 }
-.synu-progress-fill--success { background: var(--synu-color-success); }
-.synu-progress-fill--warning { background: var(--synu-color-warning); }
-.synu-progress-fill--error   { background: var(--synu-color-error); }
+.tokis-progress-fill--success { background: var(--tokis-color-success); }
+.tokis-progress-fill--warning { background: var(--tokis-color-warning); }
+.tokis-progress-fill--error   { background: var(--tokis-color-error); }
 
-.synu-progress-fill--indeterminate {
+.tokis-progress-fill--indeterminate {
   width: 40% !important;
-  animation: synu-progress-indeterminate 1.6s var(--synu-ease-in-out) infinite;
+  animation: tokis-progress-indeterminate 1.6s var(--tokis-ease-in-out) infinite;
   position: relative;
   overflow: hidden;
 }
 
-.synu-progress-fill--indeterminate::after {
+.tokis-progress-fill--indeterminate::after {
   content: '';
   position: absolute;
   inset: 0;
   background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.35) 50%, transparent 100%);
-  animation: synu-progress-shimmer 1.5s ease-in-out infinite;
+  animation: tokis-progress-shimmer 1.5s ease-in-out infinite;
 }
 
-@keyframes synu-progress-indeterminate {
+@keyframes tokis-progress-indeterminate {
   0%   { transform: translateX(-150%); }
   100% { transform: translateX(400%); }
 }
 
-@keyframes synu-progress-shimmer {
+@keyframes tokis-progress-shimmer {
   from { transform: translateX(-100%); }
   to   { transform: translateX(300%); }
 }
 
 /* ── Circular Progress ──────────────────────────────────────── */
 
-.synu-progress-circular {
+.tokis-progress-circular {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   position: relative;
 }
-.synu-progress-circular svg {
+.tokis-progress-circular svg {
   transform: rotate(-90deg);
 }
-.synu-progress-circular__track {
+.tokis-progress-circular__track {
   fill: none;
-  stroke: var(--synu-color-neutral-200);
+  stroke: var(--tokis-color-neutral-200);
   stroke-linecap: round;
 }
-.synu-progress-circular__fill {
+.tokis-progress-circular__fill {
   fill: none;
-  stroke: var(--synu-color-primary);
+  stroke: var(--tokis-color-primary);
   stroke-linecap: round;
-  transition: stroke-dashoffset var(--synu-duration-slow) var(--synu-ease-out);
+  transition: stroke-dashoffset var(--tokis-duration-slow) var(--tokis-ease-out);
 }
-.synu-progress-circular__label {
+.tokis-progress-circular__label {
   position: absolute;
-  font-size: var(--synu-font-size-xs);
-  font-weight: var(--synu-font-weight-semibold);
-  color: var(--synu-text-primary);
+  font-size: var(--tokis-font-size-xs);
+  font-weight: var(--tokis-font-weight-semibold);
+  color: var(--tokis-text-primary);
   font-variant-numeric: tabular-nums;
 }
 
 /* ── Skeleton ───────────────────────────────────────────────── */
 
-.synu-skeleton {
+.tokis-skeleton {
   display: block;
-  background: var(--synu-color-neutral-200);
-  border-radius: var(--synu-radius-md);
+  background: var(--tokis-color-neutral-200);
+  border-radius: var(--tokis-radius-md);
   overflow: hidden;
   position: relative;
 }
 
-.synu-skeleton::after {
+.tokis-skeleton::after {
   content: '';
   position: absolute;
   inset: 0;
@@ -122,10 +122,10 @@
     transparent 100%
   );
   background-size: 200% 100%;
-  animation: synu-skeleton-wave 1.8s linear infinite;
+  animation: tokis-skeleton-wave 1.8s linear infinite;
 }
 
-[data-theme="dark"] .synu-skeleton::after {
+[data-theme="dark"] .tokis-skeleton::after {
   background: linear-gradient(
     90deg,
     transparent 0%,
@@ -135,58 +135,58 @@
   background-size: 200% 100%;
 }
 
-.synu-skeleton--text {
+.tokis-skeleton--text {
   height: 1em;
-  border-radius: var(--synu-radius-sm);
+  border-radius: var(--tokis-radius-sm);
 }
-.synu-skeleton--circle {
-  border-radius: var(--synu-radius-full);
+.tokis-skeleton--circle {
+  border-radius: var(--tokis-radius-full);
 }
-.synu-skeleton--rect {
-  border-radius: var(--synu-radius-md);
+.tokis-skeleton--rect {
+  border-radius: var(--tokis-radius-md);
 }
 
-@keyframes synu-skeleton-wave {
+@keyframes tokis-skeleton-wave {
   0%   { background-position: 200% 0; }
   100% { background-position: -200% 0; }
 }
 
 /* ── Spinner ────────────────────────────────────────────────── */
 
-.synu-spinner {
+.tokis-spinner {
   display: inline-block;
   width: 20px;
   height: 20px;
-  border: 2px solid var(--synu-color-neutral-200);
-  border-top-color: var(--synu-color-primary);
-  border-radius: var(--synu-radius-full);
-  animation: synu-spin var(--synu-duration-slow) linear infinite;
+  border: 2px solid var(--tokis-color-neutral-200);
+  border-top-color: var(--tokis-color-primary);
+  border-radius: var(--tokis-radius-full);
+  animation: tokis-spin var(--tokis-duration-slow) linear infinite;
   flex-shrink: 0;
 }
-.synu-spinner--sm { width: 14px; height: 14px; border-width: 2px; }
-.synu-spinner--lg { width: 32px; height: 32px; border-width: 3px; }
-.synu-spinner--xl { width: 48px; height: 48px; border-width: 4px; }
+.tokis-spinner--sm { width: 14px; height: 14px; border-width: 2px; }
+.tokis-spinner--lg { width: 32px; height: 32px; border-width: 3px; }
+.tokis-spinner--xl { width: 48px; height: 48px; border-width: 4px; }
 
-.synu-spinner--white {
+.tokis-spinner--white {
   border-color: rgb(255 255 255 / 0.3);
-  border-top-color: var(--synu-text-inverse);
+  border-top-color: var(--tokis-text-inverse);
 }
-.synu-spinner--muted {
-  border-color: var(--synu-color-neutral-200);
-  border-top-color: var(--synu-text-secondary);
+.tokis-spinner--muted {
+  border-color: var(--tokis-color-neutral-200);
+  border-top-color: var(--tokis-text-secondary);
 }
 
-@keyframes synu-spin {
+@keyframes tokis-spin {
   to { transform: rotate(360deg); }
 }
 
 /* ── Reduced motion ─────────────────────────────────────────── */
 
 @media (prefers-reduced-motion: reduce) {
-  .synu-progress-fill { transition: none; }
-  .synu-progress-circular__fill { transition: none; }
-  .synu-progress-fill--indeterminate { animation: none; width: 100% !important; }
-  .synu-progress-fill--indeterminate::after { animation: none; }
-  .synu-skeleton::after { animation: none; }
-  .synu-spinner { animation-duration: 1.5s; }
+  .tokis-progress-fill { transition: none; }
+  .tokis-progress-circular__fill { transition: none; }
+  .tokis-progress-fill--indeterminate { animation: none; width: 100% !important; }
+  .tokis-progress-fill--indeterminate::after { animation: none; }
+  .tokis-skeleton::after { animation: none; }
+  .tokis-spinner { animation-duration: 1.5s; }
 }

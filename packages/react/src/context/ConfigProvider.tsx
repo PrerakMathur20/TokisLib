@@ -1,5 +1,5 @@
 import React, { createContext, useContext, ReactNode } from 'react';
-import { lightTheme } from '@synu/tokens';
+import { lightTheme } from '/tokens';
 
 export type Config = {
   tokens: typeof lightTheme;

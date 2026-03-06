@@ -46,7 +46,7 @@ const StatusIcon = ({ status }: { status: ResultStatus }) => {
   }
   // loading
   return (
-    <svg width="48" height="48" viewBox="0 0 48 48" fill="none" aria-hidden="true" className="synu-result__spin">
+    <svg width="48" height="48" viewBox="0 0 48 48" fill="none" aria-hidden="true" className="tokis-result__spin">
       <circle cx="24" cy="24" r="20" stroke="currentColor" strokeWidth="3" strokeDasharray="31.4 94.2" strokeLinecap="round" />
     </svg>
   );
@@ -54,13 +54,13 @@ const StatusIcon = ({ status }: { status: ResultStatus }) => {
 
 export function Result({ status, title, description, extra, className }: ResultProps): JSX.Element {
   return (
-    <div className={cn('synu-result', `synu-result--${status}`, className)}>
-      <div className={cn('synu-result__icon', `synu-result__icon--${status}`)}>
+    <div className={cn('tokis-result', `tokis-result--${status}`, className)}>
+      <div className={cn('tokis-result__icon', `tokis-result__icon--${status}`)}>
         <StatusIcon status={status} />
       </div>
-      <h3 className="synu-result__title">{title}</h3>
-      {description && <p className="synu-result__description">{description}</p>}
-      {extra && <div className="synu-result__extra">{extra}</div>}
+      <h3 className="tokis-result__title">{title}</h3>
+      {description && <p className="tokis-result__description">{description}</p>}
+      {extra && <div className="tokis-result__extra">{extra}</div>}
     </div>
   );
 }

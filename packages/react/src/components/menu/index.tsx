@@ -84,13 +84,13 @@ export function Menu({ trigger, items, placement = 'bottom-start', className }: 
             id={menuId}
             role="menu"
             tabIndex={-1}
-            className={cn('synu-menu-content', className)}
+            className={cn('tokis-menu-content', className)}
             style={{ position: 'absolute', top: pos.top, left: pos.left, ...(placement.endsWith('end') && { transform: 'translateX(-100%)' }) }}
             onKeyDown={handleMenuKeyDown}
           >
             {items.map((item, i) => {
-              if (item.type === 'separator') return <div key={i} className="synu-menu-separator" role="separator" />;
-              if (item.type === 'label') return <div key={i} className="synu-menu-group-label">{item.label}</div>;
+              if (item.type === 'separator') return <div key={i} className="tokis-menu-separator" role="separator" />;
+              if (item.type === 'label') return <div key={i} className="tokis-menu-group-label">{item.label}</div>;
               clickableIdx++;
               const isFocused = clickableIdx === focusedIndex;
               const idx = clickableIdx;
@@ -98,7 +98,7 @@ export function Menu({ trigger, items, placement = 'bottom-start', className }: 
                 <button
                   key={i}
                   role="menuitem"
-                  className={cn('synu-menu-item', item.destructive && 'synu-menu-item--destructive')}
+                  className={cn('tokis-menu-item', item.destructive && 'tokis-menu-item--destructive')}
                   data-focused={isFocused ? 'true' : undefined}
                   data-disabled={item.disabled ? 'true' : undefined}
                   aria-disabled={item.disabled}
@@ -107,9 +107,9 @@ export function Menu({ trigger, items, placement = 'bottom-start', className }: 
                   onClick={() => { if (!item.disabled) { item.onClick?.(); setOpen(false); } }}
                   onMouseEnter={() => setFocusedIndex(idx)}
                 >
-                  {item.icon && <span className="synu-menu-item__icon" aria-hidden="true">{item.icon}</span>}
-                  <span className="synu-menu-item__label">{item.label}</span>
-                  {item.shortcut && <span className="synu-menu-item__shortcut" aria-label={`keyboard shortcut: ${item.shortcut}`}>{item.shortcut}</span>}
+                  {item.icon && <span className="tokis-menu-item__icon" aria-hidden="true">{item.icon}</span>}
+                  <span className="tokis-menu-item__label">{item.label}</span>
+                  {item.shortcut && <span className="tokis-menu-item__shortcut" aria-label={`keyboard shortcut: ${item.shortcut}`}>{item.shortcut}</span>}
                 </button>
               );
             })}

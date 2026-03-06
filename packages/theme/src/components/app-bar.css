@@ -1,69 +1,69 @@
 /* ── AppBar ──────────────────────────────────────────────── */
 
-.synu-app-bar {
+.tokis-app-bar {
   display: flex;
   align-items: center;
-  gap: var(--synu-spacing-3);
-  padding: 0 var(--synu-spacing-4);
+  gap: var(--tokis-spacing-3);
+  padding: 0 var(--tokis-spacing-4);
   height: 56px;
-  background: var(--synu-color-background);
-  border-bottom: 1px solid var(--synu-color-border);
+  background: var(--tokis-color-background);
+  border-bottom: 1px solid var(--tokis-color-border);
   width: 100%;
   box-sizing: border-box;
 }
 
 /* Variants */
-.synu-app-bar--primary {
-  background: var(--synu-color-primary);
+.tokis-app-bar--primary {
+  background: var(--tokis-color-primary);
   border-bottom-color: transparent;
-  color: var(--synu-text-on-primary);
+  color: var(--tokis-text-on-primary);
 }
 
-.synu-app-bar--transparent {
+.tokis-app-bar--transparent {
   background: transparent;
   border-bottom-color: transparent;
 }
 
 /* Elevation */
-.synu-app-bar--elevation-sm {
-  box-shadow: var(--synu-shadow-sm);
+.tokis-app-bar--elevation-sm {
+  box-shadow: var(--tokis-shadow-sm);
   border-bottom: none;
 }
 
-.synu-app-bar--elevation-md {
-  box-shadow: var(--synu-shadow-md);
+.tokis-app-bar--elevation-md {
+  box-shadow: var(--tokis-shadow-md);
   border-bottom: none;
 }
 
 /* Sticky */
-.synu-app-bar--sticky {
+.tokis-app-bar--sticky {
   position: sticky;
   top: 0;
-  z-index: var(--synu-z-dropdown);
+  z-index: var(--tokis-z-dropdown);
 }
 
 /* Slots */
-.synu-app-bar__leading {
+.tokis-app-bar__leading {
   flex-shrink: 0;
   display: flex;
   align-items: center;
 }
 
-.synu-app-bar__title {
+.tokis-app-bar__title {
   flex: 1;
   min-width: 0;
-  font-size: var(--synu-font-size-base);
-  font-weight: var(--synu-font-weight-semibold);
+  font-size: var(--tokis-font-size-base);
+  font-weight: var(--tokis-font-weight-semibold);
   color: inherit;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
-.synu-app-bar__trailing {
+.tokis-app-bar__trailing {
   flex-shrink: 0;
   display: flex;
   align-items: center;
-  gap: var(--synu-spacing-2);
+  gap: var(--tokis-spacing-2);
   margin-left: auto;
 }

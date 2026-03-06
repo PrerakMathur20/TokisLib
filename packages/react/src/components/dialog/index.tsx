@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useId } from 'react';
 import { cn } from '../../utils/cn.js';
 import { Portal } from '../portal/index.js';
-import { trapFocus } from '@synu/core';
+import { trapFocus } from '/core';
 
 export interface DialogProps {
   open: boolean;
@@ -58,7 +58,7 @@ export function Dialog({
   return (
     <Portal>
       <div
-        className="synu-dialog-backdrop"
+        className="tokis-dialog-backdrop"
         aria-hidden="true"
         onClick={closeOnBackdrop ? onClose : undefined}
       >
@@ -70,24 +70,24 @@ export function Dialog({
           aria-describedby={descId}
           aria-label={!title ? ariaLabel : undefined}
           tabIndex={-1}
-          className={cn('synu-dialog-content', size !== 'md' && `synu-dialog-content--${size}`, className)}
+          className={cn('tokis-dialog-content', size !== 'md' && `tokis-dialog-content--${size}`, className)}
           onClick={(e) => e.stopPropagation()}
         >
           {(title || description) && (
-            <div className="synu-dialog-header">
+            <div className="tokis-dialog-header">
               <div>
-                {title && <h2 id={titleId} className="synu-dialog-title">{title}</h2>}
-                {description && <p id={descId} className="synu-dialog-description">{description}</p>}
+                {title && <h2 id={titleId} className="tokis-dialog-title">{title}</h2>}
+                {description && <p id={descId} className="tokis-dialog-description">{description}</p>}
               </div>
-              <button className="synu-dialog-close" onClick={onClose} aria-label="Close dialog">
+              <button className="tokis-dialog-close" onClick={onClose} aria-label="Close dialog">
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
                   <path d="M3 3l10 10M13 3L3 13" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
                 </svg>
               </button>
             </div>
           )}
-          {children && <div className="synu-dialog-body">{children}</div>}
-          {footer && <div className="synu-dialog-footer">{footer}</div>}
+          {children && <div className="tokis-dialog-body">{children}</div>}
+          {footer && <div className="tokis-dialog-footer">{footer}</div>}
         </div>
       </div>
     </Portal>

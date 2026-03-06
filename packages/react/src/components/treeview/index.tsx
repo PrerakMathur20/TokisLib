@@ -98,11 +98,11 @@ function TreeItem({
         aria-level={level}
         tabIndex={node.disabled ? -1 : 0}
         className={cn(
-          'synu-treeview__item',
-          isSelected && 'synu-treeview__item--selected',
-          node.disabled && 'synu-treeview__item--disabled'
+          'tokis-treeview__item',
+          isSelected && 'tokis-treeview__item--selected',
+          node.disabled && 'tokis-treeview__item--disabled'
         )}
-        style={{ paddingLeft: `calc(${(level - 1) * 20}px + var(--synu-spacing-2))` }}
+        style={{ paddingLeft: `calc(${(level - 1) * 20}px + var(--tokis-spacing-2))` }}
         onClick={() => {
           if (node.disabled) return;
           if (hasChildren) onExpand(node.id);
@@ -113,7 +113,7 @@ function TreeItem({
       >
         {hasChildren ? (
           <span
-            className={cn('synu-treeview__chevron', isExpanded && 'synu-treeview__chevron--open')}
+            className={cn('tokis-treeview__chevron', isExpanded && 'tokis-treeview__chevron--open')}
             aria-hidden="true"
           >
             <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
@@ -121,18 +121,18 @@ function TreeItem({
             </svg>
           </span>
         ) : (
-          <span className="synu-treeview__leaf-spacer" aria-hidden="true" />
+          <span className="tokis-treeview__leaf-spacer" aria-hidden="true" />
         )}
         {node.icon && (
-          <span className="synu-treeview__icon" aria-hidden="true">{node.icon}</span>
+          <span className="tokis-treeview__icon" aria-hidden="true">{node.icon}</span>
         )}
-        <span className="synu-treeview__label">{node.label}</span>
+        <span className="tokis-treeview__label">{node.label}</span>
       </div>
 
       {hasChildren && isExpanded && (
         <ul
           role="group"
-          className="synu-treeview__group"
+          className="tokis-treeview__group"
           aria-label={node.label}
         >
           {node.children!.map((child) => (
@@ -195,7 +195,7 @@ export function TreeView({
       ref={treeRef}
       role="tree"
       aria-multiselectable={multiSelect}
-      className={cn('synu-treeview', className)}
+      className={cn('tokis-treeview', className)}
     >
       {data.map((node) => (
         <TreeItem

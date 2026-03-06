@@ -25,17 +25,17 @@ export const Alert = forwardRef<HTMLDivElement, AlertProps>(({
     ref={ref}
     role="alert"
     aria-live="polite"
-    className={cn('synu-alert', `synu-alert--${variant}`, className)}
+    className={cn('tokis-alert', `tokis-alert--${variant}`, className)}
     {...props}
   >
-    <span className="synu-alert__icon">{icon ?? AlertIcons[variant]}</span>
-    <div className="synu-alert__body">
-      {title && <div className="synu-alert__title">{title}</div>}
-      {children && <div className="synu-alert__message">{children}</div>}
-      {action && <div style={{ marginTop: 'var(--synu-spacing-2)' }}>{action}</div>}
+    <span className="tokis-alert__icon">{icon ?? AlertIcons[variant]}</span>
+    <div className="tokis-alert__body">
+      {title && <div className="tokis-alert__title">{title}</div>}
+      {children && <div className="tokis-alert__message">{children}</div>}
+      {action && <div style={{ marginTop: 'var(--tokis-spacing-2)' }}>{action}</div>}
     </div>
     {onClose && (
-      <button className="synu-alert__close" onClick={onClose} aria-label="Dismiss">
+      <button className="tokis-alert__close" onClick={onClose} aria-label="Dismiss">
         <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
           <path d="M2 2l10 10M12 2L2 12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
         </svg>

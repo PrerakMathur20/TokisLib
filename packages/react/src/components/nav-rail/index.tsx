@@ -19,33 +19,33 @@ export interface NavigationRailProps {
 
 export function NavigationRail({ items, value, onChange, header, footer, className }: NavigationRailProps): JSX.Element {
   return (
-    <nav className={cn('synu-nav-rail', className)} aria-label="Navigation rail">
-      {header && <div className="synu-nav-rail__header">{header}</div>}
-      <div className="synu-nav-rail__items">
+    <nav className={cn('tokis-nav-rail', className)} aria-label="Navigation rail">
+      {header && <div className="tokis-nav-rail__header">{header}</div>}
+      <div className="tokis-nav-rail__items">
         {items.map((item) => {
           const isActive = item.value === value;
           return (
             <button
               key={item.value}
-              className={cn('synu-nav-rail__item', isActive && 'synu-nav-rail__item--active')}
+              className={cn('tokis-nav-rail__item', isActive && 'tokis-nav-rail__item--active')}
               onClick={() => onChange(item.value)}
               aria-current={isActive ? 'page' : undefined}
               aria-label={item.label}
             >
-              <span className="synu-nav-rail__icon">
+              <span className="tokis-nav-rail__icon">
                 {item.badge !== undefined && (
-                  <span className="synu-nav-rail__badge" aria-label={`${item.badge} notifications`}>
+                  <span className="tokis-nav-rail__badge" aria-label={`${item.badge} notifications`}>
                     {item.badge}
                   </span>
                 )}
                 {item.icon}
               </span>
-              <span className="synu-nav-rail__label">{item.label}</span>
+              <span className="tokis-nav-rail__label">{item.label}</span>
             </button>
           );
         })}
       </div>
-      {footer && <div className="synu-nav-rail__footer">{footer}</div>}
+      {footer && <div className="tokis-nav-rail__footer">{footer}</div>}
     </nav>
   );
 }

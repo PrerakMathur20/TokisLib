@@ -1,95 +1,95 @@
 /* ── ConfirmDialog ───────────────────────────────────────── */
 
-.synu-confirm-dialog__actions {
+.tokis-confirm-dialog__actions {
   display: flex;
   justify-content: flex-end;
-  gap: var(--synu-spacing-3);
+  gap: var(--tokis-spacing-3);
   flex-wrap: wrap;
 }
 
-.synu-confirm-dialog__cancel {
-  padding: var(--synu-spacing-2) var(--synu-spacing-4);
-  border: 1px solid var(--synu-color-border);
-  border-radius: var(--synu-radius-md);
-  background: var(--synu-color-surface);
-  color: var(--synu-text-secondary);
-  font-size: var(--synu-font-size-sm);
-  font-weight: var(--synu-font-weight-medium);
-  font-family: var(--synu-font-family);
+.tokis-confirm-dialog__cancel {
+  padding: var(--tokis-spacing-2) var(--tokis-spacing-4);
+  border: 1px solid var(--tokis-color-border);
+  border-radius: var(--tokis-radius-md);
+  background: var(--tokis-color-surface);
+  color: var(--tokis-text-secondary);
+  font-size: var(--tokis-font-size-sm);
+  font-weight: var(--tokis-font-weight-medium);
+  font-family: var(--tokis-font-family);
   cursor: pointer;
-  transition: background var(--synu-duration-fast) var(--synu-ease-out),
-              color var(--synu-duration-fast) var(--synu-ease-out);
+  transition: background var(--tokis-duration-fast) var(--tokis-ease-out),
+              color var(--tokis-duration-fast) var(--tokis-ease-out);
 }
 
-.synu-confirm-dialog__cancel:hover {
-  background: var(--synu-color-surface-hover);
-  color: var(--synu-text-primary);
+.tokis-confirm-dialog__cancel:hover {
+  background: var(--tokis-color-surface-hover);
+  color: var(--tokis-text-primary);
 }
 
-.synu-confirm-dialog__cancel:focus-visible {
+.tokis-confirm-dialog__cancel:focus-visible {
   outline: none;
-  box-shadow: 0 0 0 3px var(--synu-color-focus-ring);
+  box-shadow: 0 0 0 3px var(--tokis-color-focus-ring);
 }
 
-.synu-confirm-dialog__cancel:disabled {
+.tokis-confirm-dialog__cancel:disabled {
   opacity: 0.5;
   cursor: not-allowed;
 }
 
-.synu-confirm-dialog__confirm {
+.tokis-confirm-dialog__confirm {
   display: inline-flex;
   align-items: center;
-  gap: var(--synu-spacing-2);
-  padding: var(--synu-spacing-2) var(--synu-spacing-4);
+  gap: var(--tokis-spacing-2);
+  padding: var(--tokis-spacing-2) var(--tokis-spacing-4);
   border: none;
-  border-radius: var(--synu-radius-md);
-  background: var(--synu-color-primary);
-  color: var(--synu-text-on-primary);
-  font-size: var(--synu-font-size-sm);
-  font-weight: var(--synu-font-weight-semibold);
-  font-family: var(--synu-font-family);
+  border-radius: var(--tokis-radius-md);
+  background: var(--tokis-color-primary);
+  color: var(--tokis-text-on-primary);
+  font-size: var(--tokis-font-size-sm);
+  font-weight: var(--tokis-font-weight-semibold);
+  font-family: var(--tokis-font-family);
   cursor: pointer;
-  transition: background var(--synu-duration-fast) var(--synu-ease-out);
+  transition: background var(--tokis-duration-fast) var(--tokis-ease-out);
 }
 
-.synu-confirm-dialog__confirm:hover {
-  background: var(--synu-color-primary-hover, color-mix(in srgb, var(--synu-color-primary) 85%, #000));
+.tokis-confirm-dialog__confirm:hover {
+  background: var(--tokis-color-primary-hover, color-mix(in srgb, var(--tokis-color-primary) 85%, #000));
 }
 
-.synu-confirm-dialog__confirm:focus-visible {
+.tokis-confirm-dialog__confirm:focus-visible {
   outline: none;
-  box-shadow: 0 0 0 3px var(--synu-color-focus-ring);
+  box-shadow: 0 0 0 3px var(--tokis-color-focus-ring);
 }
 
-.synu-confirm-dialog__confirm:disabled {
+.tokis-confirm-dialog__confirm:disabled {
   opacity: 0.6;
   cursor: not-allowed;
 }
 
-.synu-confirm-dialog__confirm--destructive {
-  background: var(--synu-color-error);
+.tokis-confirm-dialog__confirm--destructive {
+  background: var(--tokis-color-error);
 }
 
-.synu-confirm-dialog__confirm--destructive:hover {
-  background: color-mix(in srgb, var(--synu-color-error) 85%, #000);
+.tokis-confirm-dialog__confirm--destructive:hover {
+  background: color-mix(in srgb, var(--tokis-color-error) 85%, #000);
 }
 
-.synu-confirm-dialog__spinner {
+.tokis-confirm-dialog__spinner {
   display: inline-block;
   width: 14px;
   height: 14px;
   border: 2px solid rgba(255, 255, 255, 0.4);
   border-top-color: #fff;
   border-radius: 50%;
-  animation: synu-confirm-spin 0.6s linear infinite;
+  animation: tokis-confirm-spin 0.6s linear infinite;
 }
 
-@keyframes synu-confirm-spin {
+@keyframes tokis-confirm-spin {
   to { transform: rotate(360deg); }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .synu-confirm-dialog__spinner { animation: none; }
-  .synu-confirm-dialog__cancel,
-  .synu-confirm-dialog__confirm { transition: none; }
+  .tokis-confirm-dialog__spinner { animation: none; }
+  .tokis-confirm-dialog__cancel,
+  .tokis-confirm-dialog__confirm { transition: none; }
 }

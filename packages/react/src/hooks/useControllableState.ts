@@ -1,5 +1,5 @@
 import { useState, useCallback, useRef } from 'react';
-import { isControlled } from '@synu/core';
+import { isControlled } from '/core';
 
 /**
  * A React hook for managing controllable state — supporting both

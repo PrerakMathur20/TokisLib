@@ -1,4 +1,4 @@
-# Synu
+# Tokis
 
 A **performance-first, token-native, zero-runtime** UI design system.
 
@@ -10,10 +10,10 @@ A **performance-first, token-native, zero-runtime** UI design system.
 
 | Package | Description |
 |---|---|
-| `@synu/tokens` | Design token engine — primitives, semantics, themes, CSS variable generation |
-| `@synu/core` | Framework-agnostic headless primitives — state machines, a11y, focus management |
-| `@synu/react` | React adapter layer — composable components, hooks, context |
-| `@synu/theme` | Default CSS theme package — base variables, reset, utilities, and component styles |
+| `/tokens` | Design token engine — primitives, semantics, themes, CSS variable generation |
+| `/core` | Framework-agnostic headless primitives — state machines, a11y, focus management |
+| `/react` | React adapter layer — composable components, hooks, context |
+| `/theme` | Default CSS theme package — base variables, reset, utilities, and component styles |
 
 ---
 
@@ -43,7 +43,7 @@ From the repo root:
 
 ```bash
 # one-time auth for scoped org packages
-npm login --scope=@synu --registry=https://registry.npmjs.org/
+npm login --scope=@tokis --registry=https://registry.npmjs.org/
 
 # optional full validation (typecheck + build + pack dry-run)
 npm run release:check
@@ -54,7 +54,7 @@ npm run publish:all
 
 Notes:
 - All workspace packages are configured with `publishConfig.access=public`.
-- `@synu/tokens` now ships `dist/css/index.css` for the `@synu/tokens/css` export.
+- `/tokens` now ships `dist/css/index.css` for the `/tokens/css` export.
 
 ---
 

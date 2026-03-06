@@ -1,0 +1,89 @@
+{
+  "name": "/tokis",
+  "version": "0.1.0",
+  "description": "Performance-first, token-native UI design system for React. Install this package to get all Tokis libraries: /react, /theme, /core, and /tokens.",
+  "main": "./index.js",
+  "module": "./index.mjs",
+  "types": "./index.d.ts",
+  "exports": {
+    ".": {
+      "require": "./index.js",
+      "import": "./index.mjs",
+      "types": "./index.d.ts"
+    },
+    "./react": {
+      "require": "/react",
+      "import": "/react",
+      "types": "/react"
+    },
+    "./theme": "/theme",
+    "./core": {
+      "require": "/core",
+      "import": "/core",
+      "types": "/core"
+    },
+    "./tokens": {
+      "require": "/tokens",
+      "import": "/tokens",
+      "types": "/tokens"
+    }
+  },
+  "files": [
+    "index.js",
+    "index.mjs",
+    "index.d.ts",
+    "README.md",
+    "LICENSE"
+  ],
+  "sideEffects": false,
+  "keywords": [
+    "tokis",
+    "design-system",
+    "react",
+    "ui",
+    "components",
+    "headless",
+    "accessible",
+    "accessibility",
+    "a11y",
+    "css-variables",
+    "design-tokens",
+    "theming",
+    "dark-mode",
+    "typescript",
+    "ui-kit",
+    "component-library",
+    "react-components",
+    "enterprise",
+    "saas",
+    "wcag",
+    "aria",
+    "zero-runtime",
+    "token-native"
+  ],
+  "author": "Tokis Contributors",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tokis-design/tokis.git",
+    "directory": "packages/tokis"
+  },
+  "homepage": "https://tokis.dev",
+  "bugs": {
+    "url": "https://github.com/tokis-design/tokis/issues"
+  },
+  "dependencies": {
+    "/react": "^0.1.0",
+    "/theme": "^0.1.0",
+    "/core": "^0.1.0",
+    "/tokens": "^0.1.0"
+  },
+  "peerDependencies": {
+    "react": ">=18.0.0",
+    "react-dom": ">=18.0.0"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  }
+}

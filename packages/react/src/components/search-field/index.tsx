@@ -53,10 +53,10 @@ export function SearchField({
   useEffect(() => () => clearTimeout(debounceRef.current), []);
 
   return (
-    <div className={cn('synu-search-field', className)}>
-      {label && <label className="synu-search-field__label">{label}</label>}
-      <div className="synu-search-field__wrap">
-        <span className="synu-search-field__icon" aria-hidden="true">
+    <div className={cn('tokis-search-field', className)}>
+      {label && <label className="tokis-search-field__label">{label}</label>}
+      <div className="tokis-search-field__wrap">
+        <span className="tokis-search-field__icon" aria-hidden="true">
           <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
             <circle cx="6" cy="6" r="4" stroke="currentColor" strokeWidth="1.4" />
             <path d="M9.5 9.5L12 12" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" />
@@ -64,7 +64,7 @@ export function SearchField({
         </span>
         <input
           type="search"
-          className="synu-search-field__input"
+          className="tokis-search-field__input"
           value={value}
           onChange={handleChange}
           onKeyDown={handleKeyDown}
@@ -72,12 +72,12 @@ export function SearchField({
           aria-label={label ?? placeholder}
         />
         {loading && (
-          <span className="synu-search-field__spinner" aria-label="Searching…" />
+          <span className="tokis-search-field__spinner" aria-label="Searching…" />
         )}
         {!loading && value && (
           <button
             type="button"
-            className="synu-search-field__clear"
+            className="tokis-search-field__clear"
             onClick={() => { onChange(''); onSearch?.(''); }}
             aria-label="Clear search"
           >

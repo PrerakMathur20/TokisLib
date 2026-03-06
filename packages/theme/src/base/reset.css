@@ -1,5 +1,5 @@
 /* ============================================================
-   Synu — CSS Reset & Base
+   Tokis — CSS Reset & Base
    Inspired by modern-normalize, scoped for design system use
    ============================================================ */
 
@@ -16,11 +16,11 @@ html {
 }
 
 body {
-  font-family: var(--synu-font-family);
-  font-size: var(--synu-font-size-md);
+  font-family: var(--tokis-font-family);
+  font-size: var(--tokis-font-size-md);
   line-height: 1.5;
-  color: var(--synu-text-primary);
-  background-color: var(--synu-color-background);
+  color: var(--tokis-text-primary);
+  background-color: var(--tokis-color-background);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -55,9 +55,9 @@ button {
 
 /* Focus visible — only show ring on keyboard navigation */
 :focus-visible {
-  outline: 2px solid var(--synu-color-primary);
+  outline: 2px solid var(--tokis-color-primary);
   outline-offset: 2px;
-  border-radius: var(--synu-radius-sm);
+  border-radius: var(--tokis-radius-sm);
 }
 
 :focus:not(:focus-visible) {

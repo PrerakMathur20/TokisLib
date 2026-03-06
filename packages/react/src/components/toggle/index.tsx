@@ -25,7 +25,7 @@ export function ToggleButton({
   return (
     <button
       type="button"
-      className={cn('synu-toggle', `synu-toggle--${size}`, pressed && 'synu-toggle--pressed', className)}
+      className={cn('tokis-toggle', `tokis-toggle--${size}`, pressed && 'tokis-toggle--pressed', className)}
       aria-pressed={pressed}
       aria-label={ariaLabel}
       disabled={disabled}
@@ -81,7 +81,7 @@ export function ToggleGroup({
 
   return (
     <div
-      className={cn('synu-toggle-group', className)}
+      className={cn('tokis-toggle-group', className)}
       role={multiple ? 'group' : 'radiogroup'}
       aria-label="Toggle group"
     >
@@ -91,7 +91,7 @@ export function ToggleGroup({
           <button
             key={opt.value}
             type="button"
-            className={cn('synu-toggle-group__item', `synu-toggle-group__item--${size}`, selected && 'synu-toggle-group__item--active')}
+            className={cn('tokis-toggle-group__item', `tokis-toggle-group__item--${size}`, selected && 'tokis-toggle-group__item--active')}
             role={multiple ? 'checkbox' : 'radio'}
             aria-checked={selected}
             disabled={opt.disabled}

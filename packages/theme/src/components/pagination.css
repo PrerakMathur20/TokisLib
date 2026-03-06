@@ -1,91 +1,91 @@
-.synu-pagination {
+.tokis-pagination {
   display: flex;
   align-items: center;
-  gap: var(--synu-spacing-1);
+  gap: var(--tokis-spacing-1);
   flex-wrap: wrap;
 }
 
-.synu-pagination__item {
+.tokis-pagination__item {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   min-width: 36px;
   height: 36px;
-  padding: 0 var(--synu-spacing-2);
-  border: 1px solid var(--synu-color-border);
-  border-radius: var(--synu-radius-md);
-  background: var(--synu-color-surface);
-  color: var(--synu-text-primary);
-  font-size: var(--synu-font-size-sm);
-  font-weight: var(--synu-font-weight-medium);
+  padding: 0 var(--tokis-spacing-2);
+  border: 1px solid var(--tokis-color-border);
+  border-radius: var(--tokis-radius-md);
+  background: var(--tokis-color-surface);
+  color: var(--tokis-text-primary);
+  font-size: var(--tokis-font-size-sm);
+  font-weight: var(--tokis-font-weight-medium);
   cursor: pointer;
   transition:
-    background-color var(--synu-duration-fast) var(--synu-ease-out),
-    border-color var(--synu-duration-fast) var(--synu-ease-out),
-    color var(--synu-duration-fast) var(--synu-ease-out);
+    background-color var(--tokis-duration-fast) var(--tokis-ease-out),
+    border-color var(--tokis-duration-fast) var(--tokis-ease-out),
+    color var(--tokis-duration-fast) var(--tokis-ease-out);
   user-select: none;
   text-decoration: none;
 }
 
-.synu-pagination__item:hover:not(:disabled):not(.synu-pagination__item--disabled) {
-  background: var(--synu-color-surface-hover);
-  border-color: var(--synu-color-border-strong);
+.tokis-pagination__item:hover:not(:disabled):not(.tokis-pagination__item--disabled) {
+  background: var(--tokis-color-surface-hover);
+  border-color: var(--tokis-color-border-strong);
 }
 
-.synu-pagination__item:focus-visible {
-  outline: 2px solid var(--synu-color-focus-ring);
+.tokis-pagination__item:focus-visible {
+  outline: 2px solid var(--tokis-color-focus-ring);
   outline-offset: 2px;
 }
 
-.synu-pagination__item--active {
-  background: var(--synu-color-primary);
-  border-color: var(--synu-color-primary);
-  color: var(--synu-text-on-primary);
+.tokis-pagination__item--active {
+  background: var(--tokis-color-primary);
+  border-color: var(--tokis-color-primary);
+  color: var(--tokis-text-on-primary);
   cursor: default;
 }
 
-.synu-pagination__item--active:hover {
-  background: var(--synu-color-primary);
-  border-color: var(--synu-color-primary);
+.tokis-pagination__item--active:hover {
+  background: var(--tokis-color-primary);
+  border-color: var(--tokis-color-primary);
 }
 
-.synu-pagination__item--disabled,
-.synu-pagination__item:disabled {
+.tokis-pagination__item--disabled,
+.tokis-pagination__item:disabled {
   opacity: 0.4;
   cursor: not-allowed;
   pointer-events: none;
 }
 
-.synu-pagination__ellipsis {
+.tokis-pagination__ellipsis {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   min-width: 36px;
   height: 36px;
-  color: var(--synu-text-tertiary);
-  font-size: var(--synu-font-size-sm);
+  color: var(--tokis-text-tertiary);
+  font-size: var(--tokis-font-size-sm);
   user-select: none;
 }
 
-.synu-pagination__prev,
-.synu-pagination__next {
-  color: var(--synu-text-secondary);
+.tokis-pagination__prev,
+.tokis-pagination__next {
+  color: var(--tokis-text-secondary);
 }
 
-[data-theme='dark'] .synu-pagination__item {
-  background: var(--synu-color-surface);
-  border-color: var(--synu-color-border);
-  color: var(--synu-text-primary);
+[data-theme='dark'] .tokis-pagination__item {
+  background: var(--tokis-color-surface);
+  border-color: var(--tokis-color-border);
+  color: var(--tokis-text-primary);
 }
 
-[data-theme='dark'] .synu-pagination__item--active {
-  background: var(--synu-color-primary);
-  border-color: var(--synu-color-primary);
-  color: var(--synu-text-on-primary);
+[data-theme='dark'] .tokis-pagination__item--active {
+  background: var(--tokis-color-primary);
+  border-color: var(--tokis-color-primary);
+  color: var(--tokis-text-on-primary);
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .synu-pagination__item {
+  .tokis-pagination__item {
     transition: none;
   }
 }

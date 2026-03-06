@@ -1,5 +1,5 @@
 const {spawnSync} = require('child_process');
-const root = '/Users/p0m08f9/Prerak/Dev/Synu';
+const root = '/Users/p0m08f9/Prerak/Dev/Tokis';
 const fs = require('fs');
 
 // Check portal exists

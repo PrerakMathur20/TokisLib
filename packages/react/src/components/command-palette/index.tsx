@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef, useMemo, useCallback } from 'react';
 import { cn } from '../../utils/cn.js';
 import { Portal } from '../portal/index.js';
-import { trapFocus } from '@synu/core';
+import { trapFocus } from '/core';
 
 export interface CommandItem {
   id: string;
@@ -101,26 +101,26 @@ export function CommandPalette({
   return (
     <Portal>
       <div
-        className="synu-command-palette-backdrop"
+        className="tokis-command-palette-backdrop"
         aria-hidden="true"
         onClick={onClose}
       />
       <div
         ref={containerRef}
-        className={cn('synu-command-palette', className)}
+        className={cn('tokis-command-palette', className)}
         role="dialog"
         aria-label="Command palette"
         aria-modal="true"
       >
-        <div className="synu-command-palette__search">
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" className="synu-command-palette__search-icon">
+        <div className="tokis-command-palette__search">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" className="tokis-command-palette__search-icon">
             <circle cx="7" cy="7" r="4.5" stroke="currentColor" strokeWidth="1.5" />
             <path d="M11 11l3 3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
           </svg>
           <input
             ref={inputRef}
             type="text"
-            className="synu-command-palette__input"
+            className="tokis-command-palette__input"
             placeholder={placeholder}
             value={query}
             onChange={(e) => setQuery(e.target.value)}
@@ -130,14 +130,14 @@ export function CommandPalette({
           />
         </div>
 
-        <div className="synu-command-palette__list" role="listbox">
+        <div className="tokis-command-palette__list" role="listbox">
           {filtered.length === 0 ? (
-            <div className="synu-command-palette__empty">No commands found</div>
+            <div className="tokis-command-palette__empty">No commands found</div>
           ) : (
             Array.from(grouped.entries()).map(([category, categoryItems]) => (
-              <div key={category} className="synu-command-palette__group">
+              <div key={category} className="tokis-command-palette__group">
                 {category && (
-                  <div className="synu-command-palette__group-label">{category}</div>
+                  <div className="tokis-command-palette__group-label">{category}</div>
                 )}
                 {categoryItems.map((item) => {
                   const idx = globalIndex++;
@@ -147,23 +147,23 @@ export function CommandPalette({
                       key={item.id}
                       role="option"
                       aria-selected={isActive}
-                      className={cn('synu-command-palette__item', isActive && 'synu-command-palette__item--active')}
+                      className={cn('tokis-command-palette__item', isActive && 'tokis-command-palette__item--active')}
                       onClick={() => handleSelect(item)}
                       onMouseEnter={() => setActiveIndex(idx)}
                     >
                       {item.icon && (
-                        <span className="synu-command-palette__item-icon" aria-hidden="true">{item.icon}</span>
+                        <span className="tokis-command-palette__item-icon" aria-hidden="true">{item.icon}</span>
                       )}
-                      <span className="synu-command-palette__item-content">
-                        <span className="synu-command-palette__item-label">{item.label}</span>
+                      <span className="tokis-command-palette__item-content">
+                        <span className="tokis-command-palette__item-label">{item.label}</span>
                         {item.description && (
-                          <span className="synu-command-palette__item-desc">{item.description}</span>
+                          <span className="tokis-command-palette__item-desc">{item.description}</span>
                         )}
                       </span>
                       {item.shortcut && (
-                        <span className="synu-command-palette__shortcut" aria-label={`Shortcut: ${item.shortcut.join('+')}`}>
+                        <span className="tokis-command-palette__shortcut" aria-label={`Shortcut: ${item.shortcut.join('+')}`}>
                           {item.shortcut.map((k, ki) => (
-                            <kbd key={ki} className="synu-command-palette__kbd">{k}</kbd>
+                            <kbd key={ki} className="tokis-command-palette__kbd">{k}</kbd>
                           ))}
                         </span>
                       )}

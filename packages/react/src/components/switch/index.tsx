@@ -25,7 +25,7 @@ export function Switch({ checked, defaultChecked, onChange, label, description, 
   }, [checked, disabled, onChange]);
 
   return (
-    <div className={cn('synu-switch-root', size === 'sm' && 'synu-switch-root--sm', className)} data-disabled={disabled || undefined}>
+    <div className={cn('tokis-switch-root', size === 'sm' && 'tokis-switch-root--sm', className)} data-disabled={disabled || undefined}>
       <div
         role="switch"
         tabIndex={disabled ? -1 : 0}
@@ -34,17 +34,17 @@ export function Switch({ checked, defaultChecked, onChange, label, description, 
         aria-labelledby={label ? switchId : undefined}
         aria-describedby={descId}
         aria-disabled={disabled}
-        className="synu-switch-track"
+        className="tokis-switch-track"
         data-checked={checked ? 'true' : undefined}
         onClick={toggle}
         onKeyDown={(e) => { if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); toggle(); } }}
       >
-        <span className="synu-switch-thumb" />
+        <span className="tokis-switch-thumb" />
       </div>
       {(label || description) && (
-        <div className="synu-switch-content" onClick={toggle} style={{ cursor: disabled ? 'not-allowed' : 'pointer' }}>
-          {label && <label id={switchId} className="synu-switch-label">{label}</label>}
-          {description && <p id={descId} className="synu-switch-description">{description}</p>}
+        <div className="tokis-switch-content" onClick={toggle} style={{ cursor: disabled ? 'not-allowed' : 'pointer' }}>
+          {label && <label id={switchId} className="tokis-switch-label">{label}</label>}
+          {description && <p id={descId} className="tokis-switch-description">{description}</p>}
         </div>
       )}
       <input type="checkbox" role="none" name={name} checked={checked} defaultChecked={defaultChecked} disabled={disabled}

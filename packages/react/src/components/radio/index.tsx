@@ -31,7 +31,7 @@ export function Radio({ value, label, description, disabled = false, checked = f
 
   return (
     <label
-      className={cn('synu-radio-root', className)}
+      className={cn('tokis-radio-root', className)}
       data-disabled={disabled || undefined}
       htmlFor={radioId}
     >
@@ -43,18 +43,18 @@ export function Radio({ value, label, description, disabled = false, checked = f
         checked={checked}
         disabled={disabled}
         onChange={(e) => e.target.checked && onChange?.(value)}
-        className="synu-radio-native"
+        className="tokis-radio-native"
         aria-describedby={descId}
       />
       <span
         aria-hidden="true"
-        className="synu-radio-control"
+        className="tokis-radio-control"
         data-checked={checked ? 'true' : undefined}
       />
       {(label || description) && (
         <div>
-          {label && <span className="synu-radio-label">{label}</span>}
-          {description && <p id={descId} className="synu-radio-description">{description}</p>}
+          {label && <span className="tokis-radio-label">{label}</span>}
+          {description && <p id={descId} className="tokis-radio-description">{description}</p>}
         </div>
       )}
     </label>
@@ -68,9 +68,9 @@ export function RadioGroup({ value, onChange, name, orientation = 'vertical', di
       role="radiogroup"
       aria-labelledby={label ? groupId : undefined}
       aria-disabled={disabled}
-      className={cn('synu-radio-group', orientation === 'horizontal' && 'synu-radio-group--horizontal', className)}
+      className={cn('tokis-radio-group', orientation === 'horizontal' && 'tokis-radio-group--horizontal', className)}
     >
-      {label && <span id={groupId} className="synu-label" style={{ marginBottom: 'var(--synu-spacing-1)' }}>{label}</span>}
+      {label && <span id={groupId} className="tokis-label" style={{ marginBottom: 'var(--tokis-spacing-1)' }}>{label}</span>}
       {React.Children.map(children, (child) => {
         if (!React.isValidElement(child)) return child;
         const item = child as React.ReactElement<RadioProps>;

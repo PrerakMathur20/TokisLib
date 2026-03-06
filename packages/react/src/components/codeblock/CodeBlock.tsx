@@ -61,16 +61,16 @@ export const CodeBlock: React.FC<CodeBlockProps> = ({
 
   return (
     <div
-      className={cn('synu-codeblock', className)}
+      className={cn('tokis-codeblock', className)}
       data-codeblock-theme={theme !== 'auto' ? theme : undefined}
     >
-      <div className="synu-codeblock__header">
-        <span className="synu-codeblock__lang">
+      <div className="tokis-codeblock__header">
+        <span className="tokis-codeblock__lang">
           {filename ?? language ?? 'code'}
         </span>
         <button
           type="button"
-          className={cn('synu-codeblock__copy', copied && 'synu-codeblock__copy--copied')}
+          className={cn('tokis-codeblock__copy', copied && 'tokis-codeblock__copy--copied')}
           onClick={handleCopy}
           aria-label={copied ? 'Copied!' : 'Copy code'}
         >
@@ -78,22 +78,22 @@ export const CodeBlock: React.FC<CodeBlockProps> = ({
           <span>{copied ? 'Copied!' : 'Copy'}</span>
         </button>
       </div>
-      <div className="synu-codeblock__body">
+      <div className="tokis-codeblock__body">
         {showLineNumbers && (
-          <div className="synu-codeblock__lines" aria-hidden="true">
+          <div className="tokis-codeblock__lines" aria-hidden="true">
             {lines.map((_, i) => (
-              <span key={i} className="synu-codeblock__line-num">{i + 1}</span>
+              <span key={i} className="tokis-codeblock__line-num">{i + 1}</span>
             ))}
           </div>
         )}
-        <pre className="synu-codeblock__pre">
+        <pre className="tokis-codeblock__pre">
           {highlightedHtml ? (
             <code
-              className={cn('synu-codeblock__code', language && `language-${language}`)}
+              className={cn('tokis-codeblock__code', language && `language-${language}`)}
               dangerouslySetInnerHTML={{ __html: highlightedHtml }}
             />
           ) : (
-            <code className={cn('synu-codeblock__code', language && `language-${language}`)}>
+            <code className={cn('tokis-codeblock__code', language && `language-${language}`)}>
               {code}
             </code>
           )}

@@ -1,45 +1,45 @@
 /* ── InfiniteScroll ──────────────────────────────────────── */
 
-.synu-infinite-scroll {
+.tokis-infinite-scroll {
   display: flex;
   flex-direction: column;
 }
 
-.synu-infinite-scroll__loading {
+.tokis-infinite-scroll__loading {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: var(--synu-spacing-6);
+  padding: var(--tokis-spacing-6);
 }
 
-.synu-infinite-scroll__spinner {
+.tokis-infinite-scroll__spinner {
   display: inline-block;
   width: 24px;
   height: 24px;
-  border: 2px solid var(--synu-color-border);
-  border-top-color: var(--synu-color-primary);
+  border: 2px solid var(--tokis-color-border);
+  border-top-color: var(--tokis-color-primary);
   border-radius: 50%;
-  animation: synu-inf-spin 0.6s linear infinite;
+  animation: tokis-inf-spin 0.6s linear infinite;
 }
 
-@keyframes synu-inf-spin {
+@keyframes tokis-inf-spin {
   to { transform: rotate(360deg); }
 }
 
-.synu-infinite-scroll__end {
+.tokis-infinite-scroll__end {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: var(--synu-spacing-4);
-  color: var(--synu-text-tertiary);
-  font-size: var(--synu-font-size-sm);
+  padding: var(--tokis-spacing-4);
+  color: var(--tokis-text-tertiary);
+  font-size: var(--tokis-font-size-sm);
 }
 
-.synu-infinite-scroll__sentinel {
+.tokis-infinite-scroll__sentinel {
   height: 1px;
   pointer-events: none;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .synu-infinite-scroll__spinner { animation: none; }
+  .tokis-infinite-scroll__spinner { animation: none; }
 }

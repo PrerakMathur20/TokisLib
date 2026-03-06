@@ -1,42 +1,42 @@
 /* ── EmptyState ──────────────────────────────────────────── */
 
-.synu-empty-state {
+.tokis-empty-state {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: var(--synu-spacing-12) var(--synu-spacing-6);
-  gap: var(--synu-spacing-4);
+  padding: var(--tokis-spacing-12) var(--tokis-spacing-6);
+  gap: var(--tokis-spacing-4);
 }
 
-.synu-empty-state__icon {
+.tokis-empty-state__icon {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 64px;
   height: 64px;
-  border-radius: var(--synu-radius-xl);
-  background: var(--synu-color-surface);
-  color: var(--synu-text-tertiary);
-  border: 1px solid var(--synu-color-border);
+  border-radius: var(--tokis-radius-xl);
+  background: var(--tokis-color-surface);
+  color: var(--tokis-text-tertiary);
+  border: 1px solid var(--tokis-color-border);
 }
 
-.synu-empty-state__title {
-  font-size: var(--synu-font-size-lg);
-  font-weight: var(--synu-font-weight-semibold);
-  color: var(--synu-text-primary);
+.tokis-empty-state__title {
+  font-size: var(--tokis-font-size-lg);
+  font-weight: var(--tokis-font-weight-semibold);
+  color: var(--tokis-text-primary);
   margin: 0;
 }
 
-.synu-empty-state__description {
-  font-size: var(--synu-font-size-sm);
-  color: var(--synu-text-secondary);
-  line-height: var(--synu-line-height-normal);
+.tokis-empty-state__description {
+  font-size: var(--tokis-font-size-sm);
+  color: var(--tokis-text-secondary);
+  line-height: var(--tokis-line-height-normal);
   max-width: 360px;
   margin: 0;
 }
 
-.synu-empty-state__action {
-  margin-top: var(--synu-spacing-2);
+.tokis-empty-state__action {
+  margin-top: var(--tokis-spacing-2);
 }

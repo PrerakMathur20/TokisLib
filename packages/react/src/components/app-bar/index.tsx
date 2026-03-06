@@ -26,16 +26,16 @@ export function AppBar({
   return (
     <header
       className={cn(
-        'synu-app-bar',
-        variant !== 'default' && `synu-app-bar--${variant}`,
-        elevation !== 'none' && `synu-app-bar--elevation-${elevation}`,
-        sticky && 'synu-app-bar--sticky',
+        'tokis-app-bar',
+        variant !== 'default' && `tokis-app-bar--${variant}`,
+        elevation !== 'none' && `tokis-app-bar--elevation-${elevation}`,
+        sticky && 'tokis-app-bar--sticky',
         className,
       )}
     >
-      {leading && <div className="synu-app-bar__leading">{leading}</div>}
-      {title && <div className="synu-app-bar__title">{title}</div>}
-      {trailing && <div className="synu-app-bar__trailing">{trailing}</div>}
+      {leading && <div className="tokis-app-bar__leading">{leading}</div>}
+      {title && <div className="tokis-app-bar__title">{title}</div>}
+      {trailing && <div className="tokis-app-bar__trailing">{trailing}</div>}
     </header>
   );
 }

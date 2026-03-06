@@ -38,7 +38,7 @@ function getStepStatus(step: Step, index: number, current: number): StepStatus {
 export function Stepper({ steps, current, orientation = 'horizontal', className }: StepperProps): JSX.Element {
   return (
     <ol
-      className={cn('synu-stepper', `synu-stepper--${orientation}`, className)}
+      className={cn('tokis-stepper', `tokis-stepper--${orientation}`, className)}
       aria-label="Progress steps"
     >
       {steps.map((step, index) => {
@@ -47,19 +47,19 @@ export function Stepper({ steps, current, orientation = 'horizontal', className 
         return (
           <li
             key={index}
-            className={cn('synu-stepper__step', `synu-stepper__step--${status}`)}
+            className={cn('tokis-stepper__step', `tokis-stepper__step--${status}`)}
             aria-current={status === 'active' ? 'step' : undefined}
           >
-            <div className="synu-stepper__step-inner">
-              <div className={cn('synu-stepper__circle', `synu-stepper__circle--${status}`)}>
+            <div className="tokis-stepper__step-inner">
+              <div className={cn('tokis-stepper__circle', `tokis-stepper__circle--${status}`)}>
                 {status === 'completed' ? <CheckIcon /> : status === 'error' ? <ErrorIcon /> : <span>{index + 1}</span>}
               </div>
-              <div className="synu-stepper__text">
-                <div className="synu-stepper__label">{step.label}</div>
-                {step.description && <div className="synu-stepper__desc">{step.description}</div>}
+              <div className="tokis-stepper__text">
+                <div className="tokis-stepper__label">{step.label}</div>
+                {step.description && <div className="tokis-stepper__desc">{step.description}</div>}
               </div>
             </div>
-            {!isLast && <div className={cn('synu-stepper__connector', status === 'completed' && 'synu-stepper__connector--completed')} aria-hidden="true" />}
+            {!isLast && <div className={cn('tokis-stepper__connector', status === 'completed' && 'tokis-stepper__connector--completed')} aria-hidden="true" />}
           </li>
         );
       })}

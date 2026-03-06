@@ -90,9 +90,9 @@ export function Select({
   const hasGroups = groups.some(Boolean);
 
   return (
-    <div className={cn('synu-field', className)}>
+    <div className={cn('tokis-field', className)}>
       {label && (
-        <label htmlFor={selectId} className={cn('synu-label', required && 'synu-label--required')}>{label}</label>
+        <label htmlFor={selectId} className={cn('tokis-label', required && 'tokis-label--required')}>{label}</label>
       )}
       <button
         ref={triggerRef}
@@ -105,17 +105,17 @@ export function Select({
         aria-invalid={error || undefined}
         aria-required={required}
         aria-disabled={disabled}
-        className={cn('synu-select-trigger', size !== 'md' && `synu-select-trigger--${size}`)}
+        className={cn('tokis-select-trigger', size !== 'md' && `tokis-select-trigger--${size}`)}
         data-open={open || undefined}
         data-disabled={disabled || undefined}
         disabled={disabled}
         onKeyDown={handleKeyDown}
         onClick={() => { if (!disabled) { updatePosition(); setOpen((v) => !v); } }}
       >
-        <span className={cn(!selectedOption && 'synu-select-trigger__placeholder')}>
+        <span className={cn(!selectedOption && 'tokis-select-trigger__placeholder')}>
           {selectedOption ? selectedOption.label : placeholder}
         </span>
-        <svg className="synu-select-trigger__icon" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+        <svg className="tokis-select-trigger__icon" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
           <path d="M4 6l4 4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
         </svg>
       </button>
@@ -125,13 +125,13 @@ export function Select({
             ref={contentRef}
             role="listbox"
             aria-label={label}
-            className="synu-select-content"
+            className="tokis-select-content"
             style={{ position: 'absolute', top: position.top, left: position.left, width: position.width }}
           >
             {hasGroups
               ? groups.map((group) => (
                   <div key={group ?? '__default__'}>
-                    {group && <div className="synu-select-group-label">{group}</div>}
+                    {group && <div className="tokis-select-group-label">{group}</div>}
                     {options.filter((o) => o.group === group).map((opt) => (
                       <SelectItem key={opt.value} opt={opt} currentValue={currentValue} onSelect={handleSelect} />
                     ))}
@@ -145,7 +145,7 @@ export function Select({
         </Portal>
       )}
       {helperText && (
-        <span id={helperId} className={cn('synu-helper-text', error && 'synu-helper-text--error')}>{helperText}</span>
+        <span id={helperId} className={cn('tokis-helper-text', error && 'tokis-helper-text--error')}>{helperText}</span>
       )}
     </div>
   );
@@ -157,7 +157,7 @@ function SelectItem({ opt, currentValue, onSelect }: { opt: SelectOption; curren
       role="option"
       aria-selected={opt.value === currentValue}
       aria-disabled={opt.disabled}
-      className="synu-select-item"
+      className="tokis-select-item"
       data-selected={opt.value === currentValue ? 'true' : undefined}
       data-disabled={opt.disabled ? 'true' : undefined}
       onClick={() => { if (!opt.disabled) onSelect(opt.value); }}

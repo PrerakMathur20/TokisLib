@@ -1,7 +1,7 @@
 {
-  "name": "@synu/theme",
+  "name": "/theme",
   "version": "0.1.0",
-  "description": "Default visual theme for Synu — CSS variables, component styles, reset, typography",
+  "description": "Default visual theme for Tokis — CSS variables, component styles, reset, and typography. Zero-runtime, precompiled CSS.",
   "exports": {
     ".": "./src/index.css",
     "./base": "./src/base/index.css",
@@ -27,10 +27,41 @@
     "./utilities": "./src/utilities/index.css"
   },
   "main": "./src/index.css",
-  "files": ["src"],
-  "sideEffects": ["**/*.css"],
+  "files": [
+    "src",
+    "README.md",
+    "LICENSE"
+  ],
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "keywords": [
+    "tokis",
+    "design-system",
+    "css",
+    "theme",
+    "css-variables",
+    "custom-properties",
+    "dark-mode",
+    "light-mode",
+    "theming",
+    "design-tokens",
+    "reset",
+    "typography",
+    "component-styles",
+    "zero-runtime"
+  ],
+  "author": "Tokis Contributors",
   "license": "MIT",
-  "keywords": ["design-system", "css", "theme", "synu"],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tokis-design/tokis.git",
+    "directory": "packages/theme"
+  },
+  "homepage": "https://tokis.dev/docs/theming",
+  "bugs": {
+    "url": "https://github.com/tokis-design/tokis/issues"
+  },
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/"

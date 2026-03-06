@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { cn } from '../../utils/cn.js';
 import { Portal } from '../portal/index.js';
-import { trapFocus } from '@synu/core';
+import { trapFocus } from '/core';
 
 export type DrawerSide = 'left' | 'right' | 'top' | 'bottom';
 
@@ -48,28 +48,28 @@ export function Drawer({ open, onClose, side = 'right', title, description, chil
 
   return (
     <Portal>
-      <div className="synu-drawer-backdrop" aria-hidden="true" onClick={closeOnBackdrop ? onClose : undefined} />
+      <div className="tokis-drawer-backdrop" aria-hidden="true" onClick={closeOnBackdrop ? onClose : undefined} />
       <div
         ref={contentRef}
         role="dialog"
         aria-modal="true"
         tabIndex={-1}
-        className={cn(`synu-drawer-content synu-drawer-content--${side}`, className)}
+        className={cn(`tokis-drawer-content tokis-drawer-content--${side}`, className)}
         onClick={(e) => e.stopPropagation()}
       >
         {(title || description) && (
-          <div className="synu-drawer-header">
-            {title && <h2 className="synu-drawer-title">{title}</h2>}
-            {description && <p className="synu-drawer-description">{description}</p>}
-            <button className="synu-drawer-close" onClick={onClose} aria-label="Close drawer">
+          <div className="tokis-drawer-header">
+            {title && <h2 className="tokis-drawer-title">{title}</h2>}
+            {description && <p className="tokis-drawer-description">{description}</p>}
+            <button className="tokis-drawer-close" onClick={onClose} aria-label="Close drawer">
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
                 <path d="M3 3l10 10M13 3L3 13" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
               </svg>
             </button>
           </div>
         )}
-        <div className="synu-drawer-body">{children}</div>
-        {footer && <div className="synu-drawer-footer">{footer}</div>}
+        <div className="tokis-drawer-body">{children}</div>
+        {footer && <div className="tokis-drawer-footer">{footer}</div>}
       </div>
     </Portal>
   );

@@ -1,4 +1,4 @@
-.synu-timeline {
+.tokis-timeline {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -6,120 +6,120 @@
   flex-direction: column;
 }
 
-.synu-timeline__item {
+.tokis-timeline__item {
   display: flex;
-  gap: var(--synu-spacing-4);
+  gap: var(--tokis-spacing-4);
   position: relative;
 }
 
-.synu-timeline__track {
+.tokis-timeline__track {
   display: flex;
   flex-direction: column;
   align-items: center;
   flex-shrink: 0;
 }
 
-.synu-timeline__dot {
+.tokis-timeline__dot {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 32px;
   height: 32px;
-  border-radius: var(--synu-radius-full);
-  background: var(--synu-color-surface-raised);
-  border: 2px solid var(--synu-color-border);
-  color: var(--synu-text-secondary);
+  border-radius: var(--tokis-radius-full);
+  background: var(--tokis-color-surface-raised);
+  border: 2px solid var(--tokis-color-border);
+  color: var(--tokis-text-secondary);
   flex-shrink: 0;
   z-index: 1;
 }
 
-.synu-timeline__dot--success {
-  background: color-mix(in srgb, var(--synu-color-success) 15%, transparent);
-  border-color: var(--synu-color-success);
-  color: var(--synu-color-success);
+.tokis-timeline__dot--success {
+  background: color-mix(in srgb, var(--tokis-color-success) 15%, transparent);
+  border-color: var(--tokis-color-success);
+  color: var(--tokis-color-success);
 }
 
-.synu-timeline__dot--error {
-  background: color-mix(in srgb, var(--synu-color-error) 15%, transparent);
-  border-color: var(--synu-color-error);
-  color: var(--synu-color-error);
+.tokis-timeline__dot--error {
+  background: color-mix(in srgb, var(--tokis-color-error) 15%, transparent);
+  border-color: var(--tokis-color-error);
+  color: var(--tokis-color-error);
 }
 
-.synu-timeline__dot--warning {
-  background: color-mix(in srgb, var(--synu-color-warning) 15%, transparent);
-  border-color: var(--synu-color-warning);
-  color: var(--synu-color-warning);
+.tokis-timeline__dot--warning {
+  background: color-mix(in srgb, var(--tokis-color-warning) 15%, transparent);
+  border-color: var(--tokis-color-warning);
+  color: var(--tokis-color-warning);
 }
 
-.synu-timeline__dot--info {
-  background: color-mix(in srgb, var(--synu-color-info) 15%, transparent);
-  border-color: var(--synu-color-info);
-  color: var(--synu-color-info);
+.tokis-timeline__dot--info {
+  background: color-mix(in srgb, var(--tokis-color-info) 15%, transparent);
+  border-color: var(--tokis-color-info);
+  color: var(--tokis-color-info);
 }
 
-.synu-timeline__connector {
+.tokis-timeline__connector {
   width: 2px;
   flex: 1;
-  min-height: var(--synu-spacing-4);
-  background: var(--synu-color-border);
-  margin-top: var(--synu-spacing-1);
-  margin-bottom: var(--synu-spacing-1);
+  min-height: var(--tokis-spacing-4);
+  background: var(--tokis-color-border);
+  margin-top: var(--tokis-spacing-1);
+  margin-bottom: var(--tokis-spacing-1);
 }
 
-.synu-timeline__content {
+.tokis-timeline__content {
   flex: 1;
-  padding-bottom: var(--synu-spacing-6);
-  padding-top: var(--synu-spacing-1);
+  padding-bottom: var(--tokis-spacing-6);
+  padding-top: var(--tokis-spacing-1);
 }
 
-.synu-timeline__header {
+.tokis-timeline__header {
   display: flex;
   align-items: baseline;
-  gap: var(--synu-spacing-3);
+  gap: var(--tokis-spacing-3);
   flex-wrap: wrap;
-  margin-bottom: var(--synu-spacing-1);
+  margin-bottom: var(--tokis-spacing-1);
 }
 
-.synu-timeline__title {
-  font-size: var(--synu-font-size-sm);
-  font-weight: var(--synu-font-weight-semibold);
-  color: var(--synu-text-primary);
-  line-height: var(--synu-line-height-normal);
+.tokis-timeline__title {
+  font-size: var(--tokis-font-size-sm);
+  font-weight: var(--tokis-font-weight-semibold);
+  color: var(--tokis-text-primary);
+  line-height: var(--tokis-line-height-normal);
 }
 
-.synu-timeline__date {
-  font-size: var(--synu-font-size-xs);
-  color: var(--synu-text-tertiary);
+.tokis-timeline__date {
+  font-size: var(--tokis-font-size-xs);
+  color: var(--tokis-text-tertiary);
   white-space: nowrap;
 }
 
-.synu-timeline__desc {
-  font-size: var(--synu-font-size-sm);
-  color: var(--synu-text-secondary);
-  line-height: var(--synu-line-height-normal);
+.tokis-timeline__desc {
+  font-size: var(--tokis-font-size-sm);
+  color: var(--tokis-text-secondary);
+  line-height: var(--tokis-line-height-normal);
 }
 
-[data-theme='dark'] .synu-timeline__dot:not(.synu-timeline__dot--success):not(.synu-timeline__dot--error):not(.synu-timeline__dot--warning):not(.synu-timeline__dot--info) {
-  background: var(--synu-color-surface-raised);
-  border-color: var(--synu-color-border);
+[data-theme='dark'] .tokis-timeline__dot:not(.tokis-timeline__dot--success):not(.tokis-timeline__dot--error):not(.tokis-timeline__dot--warning):not(.tokis-timeline__dot--info) {
+  background: var(--tokis-color-surface-raised);
+  border-color: var(--tokis-color-border);
 }
 
-[data-theme='dark'] .synu-timeline__dot--success {
-  background: color-mix(in srgb, var(--synu-color-success) 20%, transparent);
+[data-theme='dark'] .tokis-timeline__dot--success {
+  background: color-mix(in srgb, var(--tokis-color-success) 20%, transparent);
 }
 
-[data-theme='dark'] .synu-timeline__dot--error {
-  background: color-mix(in srgb, var(--synu-color-error) 20%, transparent);
+[data-theme='dark'] .tokis-timeline__dot--error {
+  background: color-mix(in srgb, var(--tokis-color-error) 20%, transparent);
 }
 
-[data-theme='dark'] .synu-timeline__dot--warning {
-  background: color-mix(in srgb, var(--synu-color-warning) 20%, transparent);
+[data-theme='dark'] .tokis-timeline__dot--warning {
+  background: color-mix(in srgb, var(--tokis-color-warning) 20%, transparent);
 }
 
-[data-theme='dark'] .synu-timeline__dot--info {
-  background: color-mix(in srgb, var(--synu-color-info) 20%, transparent);
+[data-theme='dark'] .tokis-timeline__dot--info {
+  background: color-mix(in srgb, var(--tokis-color-info) 20%, transparent);
 }
 
-[data-theme='dark'] .synu-timeline__connector {
-  background: var(--synu-color-border);
+[data-theme='dark'] .tokis-timeline__connector {
+  background: var(--tokis-color-border);
 }

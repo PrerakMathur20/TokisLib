@@ -47,15 +47,15 @@ export function Statistic({
   className,
 }: StatisticProps): JSX.Element {
   return (
-    <div className={cn('synu-statistic', className)}>
-      <div className="synu-statistic__label">{label}</div>
-      <div className="synu-statistic__value-row">
-        {prefix && <span className="synu-statistic__prefix">{prefix}</span>}
-        <span className="synu-statistic__value">{value}</span>
-        {suffix && <span className="synu-statistic__suffix">{suffix}</span>}
+    <div className={cn('tokis-statistic', className)}>
+      <div className="tokis-statistic__label">{label}</div>
+      <div className="tokis-statistic__value-row">
+        {prefix && <span className="tokis-statistic__prefix">{prefix}</span>}
+        <span className="tokis-statistic__value">{value}</span>
+        {suffix && <span className="tokis-statistic__suffix">{suffix}</span>}
         {trend && trendValue && (
           <span
-            className={cn('synu-statistic__trend', `synu-statistic__trend--${trend}`)}
+            className={cn('tokis-statistic__trend', `tokis-statistic__trend--${trend}`)}
             aria-label={`Trend: ${trend === 'up' ? 'up' : trend === 'down' ? 'down' : 'neutral'} ${trendValue}`}
           >
             <TrendIcon trend={trend} />
@@ -64,7 +64,7 @@ export function Statistic({
         )}
       </div>
       {description && (
-        <div className="synu-statistic__desc">{description}</div>
+        <div className="tokis-statistic__desc">{description}</div>
       )}
     </div>
   );

@@ -44,7 +44,7 @@ export function CircularProgress({
 
   return (
     <div
-      className={cn('synu-circular-progress', `synu-circular-progress--${size}`, `synu-circular-progress--${variant}`, isIndeterminate && 'synu-circular-progress--indeterminate', className)}
+      className={cn('tokis-circular-progress', `tokis-circular-progress--${size}`, `tokis-circular-progress--${variant}`, isIndeterminate && 'tokis-circular-progress--indeterminate', className)}
       role="progressbar"
       aria-valuenow={isIndeterminate ? undefined : clampedValue}
       aria-valuemin={0}
@@ -54,7 +54,7 @@ export function CircularProgress({
       <svg width={svgSize} height={svgSize} viewBox={`0 0 ${svgSize} ${svgSize}`} fill="none">
         {/* Track */}
         <circle
-          className="synu-circular-progress__track"
+          className="tokis-circular-progress__track"
           cx={svgSize / 2}
           cy={svgSize / 2}
           r={radius}
@@ -62,7 +62,7 @@ export function CircularProgress({
         />
         {/* Fill */}
         <circle
-          className="synu-circular-progress__fill"
+          className="tokis-circular-progress__fill"
           cx={svgSize / 2}
           cy={svgSize / 2}
           r={radius}
@@ -73,7 +73,7 @@ export function CircularProgress({
           transform={`rotate(-90 ${svgSize / 2} ${svgSize / 2})`}
         />
       </svg>
-      {label && <div className="synu-circular-progress__label">{label}</div>}
+      {label && <div className="tokis-circular-progress__label">{label}</div>}
     </div>
   );
 }

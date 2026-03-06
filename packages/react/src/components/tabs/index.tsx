@@ -54,12 +54,12 @@ export function Tabs({ tabs, defaultValue, value, onChange, variant = 'line', or
   };
 
   return (
-    <div className={cn('synu-tabs-root', orientation === 'vertical' && 'synu-tabs-root--vertical', className)}>
+    <div className={cn('tokis-tabs-root', orientation === 'vertical' && 'tokis-tabs-root--vertical', className)}>
       <div
         ref={tablistRef}
         role="tablist"
         aria-orientation={orientation}
-        className={cn('synu-tabs-list', variant === 'pills' && 'synu-tabs-list--pills')}
+        className={cn('tokis-tabs-list', variant === 'pills' && 'tokis-tabs-list--pills')}
       >
         {tabs.map((tab, i) => (
           <button
@@ -72,11 +72,11 @@ export function Tabs({ tabs, defaultValue, value, onChange, variant = 'line', or
             disabled={tab.disabled}
             tabIndex={tab.value === activeValue ? 0 : -1}
             data-active={tab.value === activeValue ? 'true' : undefined}
-            className="synu-tabs-trigger"
+            className="tokis-tabs-trigger"
             onClick={() => { if (!tab.disabled) handleChange(tab.value); }}
             onKeyDown={(e) => handleKeyDown(e, i)}
           >
-            {tab.icon && <span className="synu-btn__icon" aria-hidden="true">{tab.icon}</span>}
+            {tab.icon && <span className="tokis-btn__icon" aria-hidden="true">{tab.icon}</span>}
             {tab.label}
           </button>
         ))}
@@ -88,7 +88,7 @@ export function Tabs({ tabs, defaultValue, value, onChange, variant = 'line', or
           id={`${groupId}-panel-${tab.value}`}
           aria-labelledby={`${groupId}-tab-${tab.value}`}
           tabIndex={0}
-          className="synu-tabs-panel"
+          className="tokis-tabs-panel"
           hidden={tab.value !== activeValue}
         >
           {tab.value === activeValue ? tab.content : null}

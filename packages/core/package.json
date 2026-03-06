@@ -1,7 +1,7 @@
 {
-  "name": "@synu/core",
+  "name": "/core",
   "version": "0.1.0",
-  "description": "Framework-agnostic headless primitives for Synu — state machines, accessibility, focus management",
+  "description": "Framework-agnostic headless primitives for Tokis — state machines, accessibility helpers, and focus management. Zero dependencies.",
   "type": "module",
   "main": "./dist/cjs/index.js",
   "module": "./dist/index.js",
@@ -15,7 +15,8 @@
   },
   "files": [
     "dist",
-    "src"
+    "README.md",
+    "LICENSE"
   ],
   "sideEffects": false,
   "scripts": {
@@ -24,17 +25,33 @@
     "prepack": "npm run build"
   },
   "keywords": [
+    "tokis",
     "design-system",
     "headless",
+    "headless-ui",
     "accessibility",
     "a11y",
+    "aria",
+    "wcag",
     "state-machine",
-    "synu",
-    "framework-agnostic"
+    "focus-management",
+    "focus-trap",
+    "roving-tabindex",
+    "framework-agnostic",
+    "typescript",
+    "zero-dependencies"
   ],
+  "author": "Tokis Contributors",
   "license": "MIT",
-  "dependencies": {},
-  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tokis-design/tokis.git",
+    "directory": "packages/core"
+  },
+  "homepage": "https://tokis.dev",
+  "bugs": {
+    "url": "https://github.com/tokis-design/tokis/issues"
+  },
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/"

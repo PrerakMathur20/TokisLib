@@ -55,18 +55,18 @@ export const ButtonRoot = forwardRef<HTMLButtonElement, ButtonRootProps>(
         aria-busy={loading || undefined}
         data-state={state.value}
         className={cn(
-          'synu-btn',
-          `synu-btn--${variant}`,
-          size !== 'md' && `synu-btn--${size}`,
-          fullWidth && 'synu-btn--full',
-          loading && 'synu-btn--loading',
-          iconOnly && 'synu-btn--icon-only',
+          'tokis-btn',
+          `tokis-btn--${variant}`,
+          size !== 'md' && `tokis-btn--${size}`,
+          fullWidth && 'tokis-btn--full',
+          loading && 'tokis-btn--loading',
+          iconOnly && 'tokis-btn--icon-only',
           className
         )}
         onClick={handleClick}
         {...props}
       >
-        {loading && <span className="synu-spinner synu-spinner--sm synu-spinner--white" aria-hidden="true" />}
+        {loading && <span className="tokis-spinner tokis-spinner--sm tokis-spinner--white" aria-hidden="true" />}
         {children}
       </Component>
     );

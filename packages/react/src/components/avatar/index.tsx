@@ -21,7 +21,7 @@ function getInitials(name: string) {
 export const Avatar = forwardRef<HTMLDivElement, AvatarProps>(({ src, alt, name, size = 'md', shape = 'circle', className }, ref) => (
   <div
     ref={ref}
-    className={cn('synu-avatar', `synu-avatar--${size}`, shape === 'square' && 'synu-avatar--square', className)}
+    className={cn('tokis-avatar', `tokis-avatar--${size}`, shape === 'square' && 'tokis-avatar--square', className)}
     aria-label={name ?? alt}
     role={name ? 'img' : undefined}
   >
@@ -43,10 +43,10 @@ export function AvatarGroup({ children, max, size = 'md', className }: AvatarGro
   const overflow = max && items.length > max ? items.length - max : 0;
 
   return (
-    <div className={cn('synu-avatar-group', className)}>
+    <div className={cn('tokis-avatar-group', className)}>
       {visible}
       {overflow > 0 && (
-        <div className={cn('synu-avatar', `synu-avatar--${size}`)} aria-label={`${overflow} more`}>
+        <div className={cn('tokis-avatar', `tokis-avatar--${size}`)} aria-label={`${overflow} more`}>
           +{overflow}
         </div>
       )}
@@ -65,7 +65,7 @@ export interface BadgeProps extends React.HTMLAttributes<HTMLSpanElement> {
 export const Badge = forwardRef<HTMLSpanElement, BadgeProps>(({ variant = 'default', dot = false, className, children, ...props }, ref) => (
   <span
     ref={ref}
-    className={cn('synu-badge', `synu-badge--${variant}`, dot && 'synu-badge--dot', className)}
+    className={cn('tokis-badge', `tokis-badge--${variant}`, dot && 'tokis-badge--dot', className)}
     {...props}
   >
     {children}
@@ -88,7 +88,7 @@ export const Chip = forwardRef<HTMLDivElement, ChipProps>(({ selected = false, o
     tabIndex={onClick && !disabled ? 0 : undefined}
     aria-pressed={onClick ? selected : undefined}
     aria-disabled={disabled || undefined}
-    className={cn('synu-chip', onClick && 'synu-chip--clickable', selected && 'synu-chip--selected', className)}
+    className={cn('tokis-chip', onClick && 'tokis-chip--clickable', selected && 'tokis-chip--selected', className)}
     onClick={!disabled ? onClick : undefined}
     onKeyDown={onClick && !disabled ? (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); onClick(e as unknown as React.MouseEvent<HTMLDivElement>); } } : undefined}
     {...props}
@@ -99,7 +99,7 @@ export const Chip = forwardRef<HTMLDivElement, ChipProps>(({ selected = false, o
       <span
         role="button"
         tabIndex={0}
-        className="synu-chip__delete"
+        className="tokis-chip__delete"
         aria-label="Remove"
         onClick={(e) => { e.stopPropagation(); if (!disabled) onDelete(); }}
         onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); e.stopPropagation(); if (!disabled) onDelete(); } }}

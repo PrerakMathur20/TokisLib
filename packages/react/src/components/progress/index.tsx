@@ -20,11 +20,11 @@ export const Progress = forwardRef<HTMLDivElement, ProgressProps>(({
   const isIndeterminate = pct === undefined;
 
   return (
-    <div ref={ref} className={cn('synu-progress-root', className)} {...props}>
+    <div ref={ref} className={cn('tokis-progress-root', className)} {...props}>
       {(label || showValue) && (
-        <div className="synu-progress-label">
-          {label && <span className="synu-progress-label-text">{label}</span>}
-          {showValue && !isIndeterminate && <span className="synu-progress-label-value">{Math.round(pct!)}%</span>}
+        <div className="tokis-progress-label">
+          {label && <span className="tokis-progress-label-text">{label}</span>}
+          {showValue && !isIndeterminate && <span className="tokis-progress-label-value">{Math.round(pct!)}%</span>}
         </div>
       )}
       <div
@@ -33,13 +33,13 @@ export const Progress = forwardRef<HTMLDivElement, ProgressProps>(({
         aria-valuemin={0}
         aria-valuemax={100}
         aria-label={label}
-        className={cn('synu-progress-track', size !== 'md' && `synu-progress-track--${size}`)}
+        className={cn('tokis-progress-track', size !== 'md' && `tokis-progress-track--${size}`)}
       >
         <div
           className={cn(
-            'synu-progress-fill',
-            variant !== 'default' && `synu-progress-fill--${variant}`,
-            isIndeterminate && 'synu-progress-fill--indeterminate'
+            'tokis-progress-fill',
+            variant !== 'default' && `tokis-progress-fill--${variant}`,
+            isIndeterminate && 'tokis-progress-fill--indeterminate'
           )}
           style={!isIndeterminate ? { width: `${pct}%` } : undefined}
         />
@@ -66,7 +66,7 @@ export const Skeleton = forwardRef<HTMLSpanElement, SkeletonProps>(({
         {Array.from({ length: lines }).map((_, i) => (
           <span
             key={i}
-            className={cn('synu-skeleton synu-skeleton--text')}
+            className={cn('tokis-skeleton tokis-skeleton--text')}
             style={{ width: i === lines - 1 ? '70%' : '100%', marginBottom: i < lines - 1 ? '8px' : 0 }}
           />
         ))}
@@ -78,10 +78,10 @@ export const Skeleton = forwardRef<HTMLSpanElement, SkeletonProps>(({
     <span
       ref={ref}
       className={cn(
-        'synu-skeleton',
-        variant === 'text' && 'synu-skeleton--text',
-        variant === 'circular' && 'synu-skeleton--circle',
-        variant === 'wave' && 'synu-skeleton--wave',
+        'tokis-skeleton',
+        variant === 'text' && 'tokis-skeleton--text',
+        variant === 'circular' && 'tokis-skeleton--circle',
+        variant === 'wave' && 'tokis-skeleton--wave',
         className
       )}
       style={{ display: 'block', width, height, ...style }}
@@ -105,9 +105,9 @@ export const Spinner = forwardRef<HTMLSpanElement, SpinnerProps>(({ size = 'md',
     role="status"
     aria-label={label}
     className={cn(
-      'synu-spinner',
-      size !== 'md' && `synu-spinner--${size}`,
-      variant === 'white' && 'synu-spinner--white',
+      'tokis-spinner',
+      size !== 'md' && `tokis-spinner--${size}`,
+      variant === 'white' && 'tokis-spinner--white',
       className
     )}
     {...props}

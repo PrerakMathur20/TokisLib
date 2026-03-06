@@ -1,103 +1,103 @@
 /* ── ToggleButton ────────────────────────────────────────── */
 
-.synu-toggle {
+.tokis-toggle {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: var(--synu-spacing-2);
-  border: 1px solid var(--synu-color-border);
-  border-radius: var(--synu-radius-md);
-  background: var(--synu-color-surface);
-  color: var(--synu-text-secondary);
-  font-size: var(--synu-font-size-sm);
-  font-weight: var(--synu-font-weight-medium);
-  font-family: var(--synu-font-family);
+  gap: var(--tokis-spacing-2);
+  border: 1px solid var(--tokis-color-border);
+  border-radius: var(--tokis-radius-md);
+  background: var(--tokis-color-surface);
+  color: var(--tokis-text-secondary);
+  font-size: var(--tokis-font-size-sm);
+  font-weight: var(--tokis-font-weight-medium);
+  font-family: var(--tokis-font-family);
   cursor: pointer;
-  transition: all var(--synu-duration-fast) var(--synu-ease-out);
+  transition: all var(--tokis-duration-fast) var(--tokis-ease-out);
 }
 
-.synu-toggle--sm { padding: 4px var(--synu-spacing-2); font-size: var(--synu-font-size-xs); }
-.synu-toggle--md { padding: var(--synu-spacing-2) var(--synu-spacing-3); }
-.synu-toggle--lg { padding: var(--synu-spacing-3) var(--synu-spacing-4); font-size: var(--synu-font-size-base); }
+.tokis-toggle--sm { padding: 4px var(--tokis-spacing-2); font-size: var(--tokis-font-size-xs); }
+.tokis-toggle--md { padding: var(--tokis-spacing-2) var(--tokis-spacing-3); }
+.tokis-toggle--lg { padding: var(--tokis-spacing-3) var(--tokis-spacing-4); font-size: var(--tokis-font-size-base); }
 
-.synu-toggle:hover {
-  background: var(--synu-color-surface-hover);
-  border-color: var(--synu-color-border-strong);
-  color: var(--synu-text-primary);
+.tokis-toggle:hover {
+  background: var(--tokis-color-surface-hover);
+  border-color: var(--tokis-color-border-strong);
+  color: var(--tokis-text-primary);
 }
 
-.synu-toggle--pressed {
-  background: var(--synu-color-primary-subtle);
-  border-color: var(--synu-color-primary);
-  color: var(--synu-color-primary);
+.tokis-toggle--pressed {
+  background: var(--tokis-color-primary-subtle);
+  border-color: var(--tokis-color-primary);
+  color: var(--tokis-color-primary);
 }
 
-.synu-toggle--pressed:hover {
-  background: var(--synu-color-primary-subtle);
+.tokis-toggle--pressed:hover {
+  background: var(--tokis-color-primary-subtle);
 }
 
-.synu-toggle:disabled {
+.tokis-toggle:disabled {
   opacity: 0.5;
   cursor: not-allowed;
 }
 
-.synu-toggle:focus-visible {
+.tokis-toggle:focus-visible {
   outline: none;
-  box-shadow: 0 0 0 3px var(--synu-color-focus-ring);
+  box-shadow: 0 0 0 3px var(--tokis-color-focus-ring);
 }
 
 /* ── ToggleGroup ─────────────────────────────────────────── */
 
-.synu-toggle-group {
+.tokis-toggle-group {
   display: inline-flex;
-  border: 1px solid var(--synu-color-border);
-  border-radius: var(--synu-radius-md);
+  border: 1px solid var(--tokis-color-border);
+  border-radius: var(--tokis-radius-md);
   overflow: hidden;
 }
 
-.synu-toggle-group__item {
+.tokis-toggle-group__item {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: var(--synu-spacing-2);
-  background: var(--synu-color-surface);
+  gap: var(--tokis-spacing-2);
+  background: var(--tokis-color-surface);
   border: none;
-  border-right: 1px solid var(--synu-color-border);
-  color: var(--synu-text-secondary);
-  font-size: var(--synu-font-size-sm);
-  font-weight: var(--synu-font-weight-medium);
-  font-family: var(--synu-font-family);
+  border-right: 1px solid var(--tokis-color-border);
+  color: var(--tokis-text-secondary);
+  font-size: var(--tokis-font-size-sm);
+  font-weight: var(--tokis-font-weight-medium);
+  font-family: var(--tokis-font-family);
   cursor: pointer;
-  transition: all var(--synu-duration-fast) var(--synu-ease-out);
+  transition: all var(--tokis-duration-fast) var(--tokis-ease-out);
 }
 
-.synu-toggle-group__item:last-child { border-right: none; }
+.tokis-toggle-group__item:last-child { border-right: none; }
 
-.synu-toggle-group__item--sm { padding: 4px var(--synu-spacing-2); font-size: var(--synu-font-size-xs); }
-.synu-toggle-group__item--md { padding: var(--synu-spacing-2) var(--synu-spacing-3); }
-.synu-toggle-group__item--lg { padding: var(--synu-spacing-3) var(--synu-spacing-4); }
+.tokis-toggle-group__item--sm { padding: 4px var(--tokis-spacing-2); font-size: var(--tokis-font-size-xs); }
+.tokis-toggle-group__item--md { padding: var(--tokis-spacing-2) var(--tokis-spacing-3); }
+.tokis-toggle-group__item--lg { padding: var(--tokis-spacing-3) var(--tokis-spacing-4); }
 
-.synu-toggle-group__item:hover {
-  background: var(--synu-color-surface-hover);
-  color: var(--synu-text-primary);
+.tokis-toggle-group__item:hover {
+  background: var(--tokis-color-surface-hover);
+  color: var(--tokis-text-primary);
 }
 
-.synu-toggle-group__item--active {
-  background: var(--synu-color-primary-subtle);
-  color: var(--synu-color-primary);
+.tokis-toggle-group__item--active {
+  background: var(--tokis-color-primary-subtle);
+  color: var(--tokis-color-primary);
 }
 
-.synu-toggle-group__item:disabled {
+.tokis-toggle-group__item:disabled {
   opacity: 0.5;
   cursor: not-allowed;
 }
 
-.synu-toggle-group__item:focus-visible {
+.tokis-toggle-group__item:focus-visible {
   outline: none;
-  box-shadow: inset 0 0 0 2px var(--synu-color-focus-ring);
+  box-shadow: inset 0 0 0 2px var(--tokis-color-focus-ring);
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .synu-toggle,
-  .synu-toggle-group__item { transition: none; }
+  .tokis-toggle,
+  .tokis-toggle-group__item { transition: none; }
 }

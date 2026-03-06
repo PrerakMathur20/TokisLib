@@ -33,7 +33,7 @@ export function Checkbox({
 
   return (
     <label
-      className={cn('synu-checkbox-root', className)}
+      className={cn('tokis-checkbox-root', className)}
       data-disabled={disabled || undefined}
       htmlFor={inputId}
     >
@@ -47,20 +47,20 @@ export function Checkbox({
         defaultChecked={defaultChecked}
         disabled={disabled}
         onChange={(e) => onChange?.(e.target.checked)}
-        className="synu-checkbox-native"
+        className="tokis-checkbox-native"
         aria-label={!label ? ariaLabel : undefined}
         aria-describedby={descId}
       />
       <span
         aria-hidden="true"
-        className="synu-checkbox-control"
+        className="tokis-checkbox-control"
         data-checked={checked && !indeterminate ? 'true' : undefined}
         data-indeterminate={indeterminate ? 'true' : undefined}
       />
       {(label || description) && (
         <div>
-          {label && <span className="synu-checkbox-label">{label}</span>}
-          {description && <p id={descId} className="synu-checkbox-description">{description}</p>}
+          {label && <span className="tokis-checkbox-label">{label}</span>}
+          {description && <p id={descId} className="tokis-checkbox-description">{description}</p>}
         </div>
       )}
     </label>

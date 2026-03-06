@@ -56,31 +56,31 @@ export function ContextMenu({ items, children, className }: ContextMenuProps): J
         <Portal>
           <div
             ref={menuRef}
-            className={cn('synu-context-menu', className)}
+            className={cn('tokis-context-menu', className)}
             role="menu"
             tabIndex={-1}
             style={{ position: 'fixed', top: pos.y, left: pos.x }}
           >
             {items.map((item, i) => {
               if (item.type === 'separator') {
-                return <div key={i} className="synu-context-menu__separator" role="separator" />;
+                return <div key={i} className="tokis-context-menu__separator" role="separator" />;
               }
               if (item.type === 'label') {
-                return <div key={i} className="synu-context-menu__label">{item.label}</div>;
+                return <div key={i} className="tokis-context-menu__label">{item.label}</div>;
               }
               return (
                 <button
                   key={i}
                   role="menuitem"
                   className={cn(
-                    'synu-context-menu__item',
-                    item.destructive && 'synu-context-menu__item--destructive',
-                    item.disabled && 'synu-context-menu__item--disabled',
+                    'tokis-context-menu__item',
+                    item.destructive && 'tokis-context-menu__item--destructive',
+                    item.disabled && 'tokis-context-menu__item--disabled',
                   )}
                   disabled={item.disabled}
                   onClick={() => { item.onClick?.(); close(); }}
                 >
-                  {item.icon && <span className="synu-context-menu__icon" aria-hidden="true">{item.icon}</span>}
+                  {item.icon && <span className="tokis-context-menu__icon" aria-hidden="true">{item.icon}</span>}
                   {item.label}
                 </button>
               );

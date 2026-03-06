@@ -1,7 +1,7 @@
 {
-  "name": "@synu/react",
+  "name": "/react",
   "version": "0.1.0",
-  "description": "React adapter for Synu — composable headless components, hooks, and theming context",
+  "description": "React adapter for Tokis — composable, accessible components, hooks, and theming context. Zero runtime CSS.",
   "type": "module",
   "main": "./dist/cjs/index.js",
   "module": "./dist/index.js",
@@ -15,7 +15,8 @@
   },
   "files": [
     "dist",
-    "src"
+    "README.md",
+    "LICENSE"
   ],
   "sideEffects": false,
   "scripts": {
@@ -24,24 +25,46 @@
     "prepack": "npm run build"
   },
   "keywords": [
+    "tokis",
     "design-system",
     "react",
+    "react-components",
     "headless",
+    "accessible",
     "accessibility",
     "a11y",
-    "synu",
+    "aria",
+    "wcag",
     "components",
-    "ui"
+    "ui",
+    "ui-kit",
+    "component-library",
+    "dark-mode",
+    "theming",
+    "typescript",
+    "zero-runtime",
+    "enterprise",
+    "saas"
   ],
+  "author": "Tokis Contributors",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tokis-design/tokis.git",
+    "directory": "packages/react"
+  },
+  "homepage": "https://tokis.dev/docs/introduction",
+  "bugs": {
+    "url": "https://github.com/tokis-design/tokis/issues"
+  },
   "peerDependencies": {
     "react": ">=18.0.0",
     "react-dom": ">=18.0.0",
-    "@synu/theme": "^0.1.0"
+    "/theme": "^0.1.0"
   },
   "dependencies": {
-    "@synu/core": "^0.1.0",
-    "@synu/tokens": "^0.1.0"
+    "/core": "^0.1.0",
+    "/tokens": "^0.1.0"
   },
   "devDependencies": {
     "@types/react": "^18.0.0",

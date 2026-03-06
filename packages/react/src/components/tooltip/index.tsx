@@ -86,7 +86,7 @@ export function Tooltip({ content, children, placement = 'top', delay = 300, dis
           <div
             id={tooltipId}
             role="tooltip"
-            className={cn('synu-tooltip-content', `synu-tooltip-content--${state.placement}`)}
+            className={cn('tokis-tooltip-content', `tokis-tooltip-content--${state.placement}`)}
             style={{
               position: 'fixed',
               top: state.top,

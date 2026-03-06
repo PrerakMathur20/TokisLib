@@ -5,7 +5,7 @@ let globalCounter = 0;
  * SSR Note: IDs generated server-side and client-side may differ.
  * Prefer `createIdScope` for component-level ID generation.
  */
-export function generateId(prefix = 'synu'): string {
+export function generateId(prefix = 'tokis'): string {
   globalCounter += 1;
   return `${prefix}-${globalCounter}`;
 }

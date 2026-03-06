@@ -1,88 +1,88 @@
 /* ============================================================
-   Synu — Dialog / Modal
+   Tokis — Dialog / Modal
    ============================================================ */
 
 /* ── Backdrop ───────────────────────────────────────────────── */
 
-.synu-dialog-backdrop {
+.tokis-dialog-backdrop {
   position: fixed;
   inset: 0;
   background: rgb(0 0 0 / 0.45);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
-  z-index: var(--synu-z-modal);
+  z-index: var(--tokis-z-modal);
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: var(--synu-spacing-4);
-  animation: synu-backdrop-in var(--synu-duration-normal) var(--synu-ease-out);
+  padding: var(--tokis-spacing-4);
+  animation: tokis-backdrop-in var(--tokis-duration-normal) var(--tokis-ease-out);
   overscroll-behavior: contain;
 }
 
 /* ── Content ────────────────────────────────────────────────── */
 
-.synu-dialog-content {
+.tokis-dialog-content {
   position: relative;
-  background: var(--synu-color-surface-overlay);
-  border: 1px solid var(--synu-color-border);
-  border-radius: var(--synu-radius-xl);
-  box-shadow: var(--synu-shadow-2xl);
+  background: var(--tokis-color-surface-overlay);
+  border: 1px solid var(--tokis-color-border);
+  border-radius: var(--tokis-radius-xl);
+  box-shadow: var(--tokis-shadow-2xl);
   width: 100%;
   max-width: 520px;
   max-height: calc(100dvh - 64px);
   overflow-y: auto;
   overflow-x: hidden;
-  animation: synu-dialog-in var(--synu-duration-normal) var(--synu-ease-spring);
+  animation: tokis-dialog-in var(--tokis-duration-normal) var(--tokis-ease-spring);
   outline: none;
   scrollbar-width: thin;
-  scrollbar-color: var(--synu-color-border) transparent;
+  scrollbar-color: var(--tokis-color-border) transparent;
 }
-.synu-dialog-content::-webkit-scrollbar { width: 6px; }
-.synu-dialog-content::-webkit-scrollbar-track { background: transparent; }
-.synu-dialog-content::-webkit-scrollbar-thumb {
-  background: var(--synu-color-border);
-  border-radius: var(--synu-radius-full);
+.tokis-dialog-content::-webkit-scrollbar { width: 6px; }
+.tokis-dialog-content::-webkit-scrollbar-track { background: transparent; }
+.tokis-dialog-content::-webkit-scrollbar-thumb {
+  background: var(--tokis-color-border);
+  border-radius: var(--tokis-radius-full);
 }
 
 /* ── Header ─────────────────────────────────────────────────── */
 
-.synu-dialog-header {
+.tokis-dialog-header {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  gap: var(--synu-spacing-4);
-  padding: var(--synu-spacing-6) var(--synu-spacing-6) var(--synu-spacing-4);
+  gap: var(--tokis-spacing-4);
+  padding: var(--tokis-spacing-6) var(--tokis-spacing-6) var(--tokis-spacing-4);
 }
 
-.synu-dialog-title {
-  font-size: var(--synu-font-size-lg);
-  font-weight: var(--synu-font-weight-semibold);
-  color: var(--synu-text-primary);
-  line-height: var(--synu-line-height-tight);
-  letter-spacing: var(--synu-letter-spacing-tight);
+.tokis-dialog-title {
+  font-size: var(--tokis-font-size-lg);
+  font-weight: var(--tokis-font-weight-semibold);
+  color: var(--tokis-text-primary);
+  line-height: var(--tokis-line-height-tight);
+  letter-spacing: var(--tokis-letter-spacing-tight);
 }
 
-.synu-dialog-description {
-  font-size: var(--synu-font-size-sm);
-  color: var(--synu-text-secondary);
-  margin-top: var(--synu-spacing-1);
-  line-height: var(--synu-line-height-normal);
+.tokis-dialog-description {
+  font-size: var(--tokis-font-size-sm);
+  color: var(--tokis-text-secondary);
+  margin-top: var(--tokis-spacing-1);
+  line-height: var(--tokis-line-height-normal);
 }
 
 /* ── Close button ───────────────────────────────────────────── */
 
-.synu-dialog-close {
+.tokis-dialog-close {
   flex-shrink: 0;
   display: flex;
   align-items: center;
   justify-content: center;
   width: 32px;
   height: 32px;
-  border-radius: var(--synu-radius-md);
-  color: var(--synu-text-tertiary);
+  border-radius: var(--tokis-radius-md);
+  color: var(--tokis-text-tertiary);
   transition:
-    background var(--synu-duration-fast) var(--synu-ease-out),
-    color var(--synu-duration-fast) var(--synu-ease-out);
+    background var(--tokis-duration-fast) var(--tokis-ease-out),
+    color var(--tokis-duration-fast) var(--tokis-ease-out);
   cursor: pointer;
   background: none;
   border: none;
@@ -90,40 +90,40 @@
   margin: -4px -4px 0 0;
   -webkit-tap-highlight-color: transparent;
 }
-.synu-dialog-close:hover {
-  background: var(--synu-color-surface-hover);
-  color: var(--synu-text-primary);
+.tokis-dialog-close:hover {
+  background: var(--tokis-color-surface-hover);
+  color: var(--tokis-text-primary);
 }
-.synu-dialog-close:focus-visible {
-  box-shadow: 0 0 0 2px var(--synu-color-focus-ring);
+.tokis-dialog-close:focus-visible {
+  box-shadow: 0 0 0 2px var(--tokis-color-focus-ring);
 }
 
 /* ── Body ───────────────────────────────────────────────────── */
 
-.synu-dialog-body {
-  padding: 0 var(--synu-spacing-6) var(--synu-spacing-5);
-  font-size: var(--synu-font-size-sm);
-  color: var(--synu-text-primary);
-  line-height: var(--synu-line-height-normal);
+.tokis-dialog-body {
+  padding: 0 var(--tokis-spacing-6) var(--tokis-spacing-5);
+  font-size: var(--tokis-font-size-sm);
+  color: var(--tokis-text-primary);
+  line-height: var(--tokis-line-height-normal);
 }
 
 /* ── Footer ─────────────────────────────────────────────────── */
 
-.synu-dialog-footer {
+.tokis-dialog-footer {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  gap: var(--synu-spacing-2);
-  padding: var(--synu-spacing-4) var(--synu-spacing-6) var(--synu-spacing-6);
-  border-top: 1px solid var(--synu-color-border);
+  gap: var(--tokis-spacing-2);
+  padding: var(--tokis-spacing-4) var(--tokis-spacing-6) var(--tokis-spacing-6);
+  border-top: 1px solid var(--tokis-color-border);
 }
 
 /* ── Sizes ──────────────────────────────────────────────────── */
 
-.synu-dialog-content--sm  { max-width: 360px; }
-.synu-dialog-content--lg  { max-width: 720px; }
-.synu-dialog-content--xl  { max-width: 960px; }
-.synu-dialog-content--full {
+.tokis-dialog-content--sm  { max-width: 360px; }
+.tokis-dialog-content--lg  { max-width: 720px; }
+.tokis-dialog-content--xl  { max-width: 960px; }
+.tokis-dialog-content--full {
   max-width: calc(100vw - 48px);
   height: calc(100dvh - 48px);
   max-height: none;
@@ -131,11 +131,11 @@
 
 /* ── Animations ─────────────────────────────────────────────── */
 
-@keyframes synu-backdrop-in {
+@keyframes tokis-backdrop-in {
   from { opacity: 0; }
   to   { opacity: 1; }
 }
-@keyframes synu-dialog-in {
+@keyframes tokis-dialog-in {
   from { opacity: 0; transform: scale(0.95) translateY(12px); }
   to   { opacity: 1; transform: scale(1) translateY(0); }
 }
@@ -143,7 +143,7 @@
 /* ── Reduced motion ─────────────────────────────────────────── */
 
 @media (prefers-reduced-motion: reduce) {
-  .synu-dialog-backdrop { animation: synu-backdrop-in var(--synu-duration-fast) var(--synu-ease-out); }
-  .synu-dialog-content  { animation: none; }
-  .synu-dialog-close    { transition: none; }
+  .tokis-dialog-backdrop { animation: tokis-backdrop-in var(--tokis-duration-fast) var(--tokis-ease-out); }
+  .tokis-dialog-content  { animation: none; }
+  .tokis-dialog-close    { transition: none; }
 }

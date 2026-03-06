@@ -1,8 +1,8 @@
 /* ============================================================
-   Synu — Slider / Range Input
+   Tokis — Slider / Range Input
    ============================================================ */
 
-.synu-slider-root {
+.tokis-slider-root {
   position: relative;
   width: 100%;
   cursor: pointer;
@@ -12,7 +12,7 @@
 
 /* ── Track wrapper (positions both track and thumb) ──────────── */
 
-.synu-slider-track-wrapper {
+.tokis-slider-track-wrapper {
   position: relative;
   width: 100%;
   height: 24px;
@@ -20,7 +20,7 @@
   align-items: center;
 }
 
-.synu-slider-root[data-disabled="true"] {
+.tokis-slider-root[data-disabled="true"] {
   opacity: 0.45;
   cursor: not-allowed;
   pointer-events: none;
@@ -28,88 +28,88 @@
 
 /* ── Track ──────────────────────────────────────────────────── */
 
-.synu-slider-track {
+.tokis-slider-track {
   position: relative;
   width: 100%;
   height: 4px;
-  background: var(--synu-color-neutral-200);
-  border-radius: var(--synu-radius-full);
+  background: var(--tokis-color-neutral-200);
+  border-radius: var(--tokis-radius-full);
   overflow: hidden;
   flex-shrink: 0;
 }
 
-.synu-slider-range {
+.tokis-slider-range {
   position: absolute;
   height: 100%;
-  background: var(--synu-color-primary);
-  border-radius: var(--synu-radius-full);
+  background: var(--tokis-color-primary);
+  border-radius: var(--tokis-radius-full);
 }
 
 /* ── Thumb ──────────────────────────────────────────────────── */
 
-.synu-slider-thumb {
+.tokis-slider-thumb {
   position: absolute;
   top: 50%;
   width: 18px;
   height: 18px;
-  border-radius: var(--synu-radius-full);
-  background: var(--synu-color-surface-raised);
-  border: 2px solid var(--synu-color-primary);
-  box-shadow: var(--synu-shadow-sm);
+  border-radius: var(--tokis-radius-full);
+  background: var(--tokis-color-surface-raised);
+  border: 2px solid var(--tokis-color-primary);
+  box-shadow: var(--tokis-shadow-sm);
   transform: translateX(-50%) translateY(-50%);
   transition:
-    box-shadow var(--synu-duration-fast) var(--synu-ease-out),
-    transform var(--synu-duration-fast) var(--synu-ease-out);
+    box-shadow var(--tokis-duration-fast) var(--tokis-ease-out),
+    transform var(--tokis-duration-fast) var(--tokis-ease-out);
   outline: none;
   cursor: grab;
   will-change: transform;
 }
 
-.synu-slider-thumb:hover {
+.tokis-slider-thumb:hover {
   transform: translateX(-50%) translateY(-50%) scale(1.2);
   box-shadow:
-    var(--synu-shadow-sm),
-    0 0 0 6px var(--synu-color-focus-ring);
+    var(--tokis-shadow-sm),
+    0 0 0 6px var(--tokis-color-focus-ring);
 }
 
-.synu-slider-thumb:active {
+.tokis-slider-thumb:active {
   cursor: grabbing;
   transform: translateX(-50%) translateY(-50%) scale(1.1);
 }
 
-.synu-slider-thumb:focus-visible {
+.tokis-slider-thumb:focus-visible {
   box-shadow:
-    var(--synu-shadow-sm),
-    0 0 0 4px var(--synu-color-focus-ring);
+    var(--tokis-shadow-sm),
+    0 0 0 4px var(--tokis-color-focus-ring);
 }
 
 /* ── Marks ──────────────────────────────────────────────────── */
 
-.synu-slider-marks {
+.tokis-slider-marks {
   display: flex;
   justify-content: space-between;
-  margin-top: var(--synu-spacing-2);
+  margin-top: var(--tokis-spacing-2);
 }
 
-.synu-slider-mark-label {
-  font-size: var(--synu-font-size-xs);
-  color: var(--synu-text-tertiary);
+.tokis-slider-mark-label {
+  font-size: var(--tokis-font-size-xs);
+  color: var(--tokis-text-tertiary);
 }
 
 /* ── Sizes ──────────────────────────────────────────────────── */
 
-.synu-slider-root--sm .synu-slider-track-wrapper { height: 16px; }
-.synu-slider-root--sm .synu-slider-track { height: 2px; }
-.synu-slider-root--sm .synu-slider-thumb { width: 14px; height: 14px; }
+.tokis-slider-root--sm .tokis-slider-track-wrapper { height: 16px; }
+.tokis-slider-root--sm .tokis-slider-track { height: 2px; }
+.tokis-slider-root--sm .tokis-slider-thumb { width: 14px; height: 14px; }
 
-.synu-slider-root--lg .synu-slider-track-wrapper { height: 32px; }
-.synu-slider-root--lg .synu-slider-track { height: 6px; }
-.synu-slider-root--lg .synu-slider-thumb { width: 22px; height: 22px; }
+.tokis-slider-root--lg .tokis-slider-track-wrapper { height: 32px; }
+.tokis-slider-root--lg .tokis-slider-track { height: 6px; }
+.tokis-slider-root--lg .tokis-slider-thumb { width: 22px; height: 22px; }
 
 /* ── Reduced motion ─────────────────────────────────────────── */
 
 @media (prefers-reduced-motion: reduce) {
-  .synu-slider-thumb {
+  .tokis-slider-thumb {
     transition: none;
   }
 }

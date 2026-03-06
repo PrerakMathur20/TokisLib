@@ -101,7 +101,7 @@ export function Dropdown({
         <Portal>
           <div
             ref={menuRef}
-            className={cn('synu-dropdown', `synu-dropdown--${placement}`, className)}
+            className={cn('tokis-dropdown', `tokis-dropdown--${placement}`, className)}
             style={{ position: 'fixed', top: pos.top, left: pos.left, transform: transformMap[placement] }}
           >
             {children}

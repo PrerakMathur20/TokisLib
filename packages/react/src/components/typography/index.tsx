@@ -16,9 +16,9 @@ const variantElementMap: Record<string, React.ElementType> = {
 };
 
 const variantClassMap: Record<string, string> = {
-  h1: 'synu-h1', h2: 'synu-h2', h3: 'synu-h3', h4: 'synu-h4', h5: 'synu-h5', h6: 'synu-h6',
-  body1: 'synu-text', body2: 'synu-text', caption: 'synu-text', label: 'synu-text',
-  code: 'synu-code', overline: 'synu-text',
+  h1: 'tokis-h1', h2: 'tokis-h2', h3: 'tokis-h3', h4: 'tokis-h4', h5: 'tokis-h5', h6: 'tokis-h6',
+  body1: 'tokis-text', body2: 'tokis-text', caption: 'tokis-text', label: 'tokis-text',
+  code: 'tokis-code', overline: 'tokis-text',
 };
 
 export const Typography = forwardRef<HTMLElement, TypographyProps>(({
@@ -38,10 +38,10 @@ export const Typography = forwardRef<HTMLElement, TypographyProps>(({
       ref={ref}
       className={cn(
         variantClassMap[variant],
-        color && color !== 'inherit' && `synu-text--${color}`,
-        truncate && 'synu-text--truncate',
-        weight && `synu-text--weight-${weight}`,
-        align && `synu-text--align-${align}`,
+        color && color !== 'inherit' && `tokis-text--${color}`,
+        truncate && 'tokis-text--truncate',
+        weight && `tokis-text--weight-${weight}`,
+        align && `tokis-text--align-${align}`,
         className
       )}
       {...props}

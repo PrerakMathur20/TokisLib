@@ -23,21 +23,21 @@ export const Breadcrumbs = forwardRef<HTMLElement, BreadcrumbsProps>(({
     : items;
 
   return (
-    <nav ref={ref} aria-label="Breadcrumb" className={cn('synu-breadcrumbs', className)} {...props}>
+    <nav ref={ref} aria-label="Breadcrumb" className={cn('tokis-breadcrumbs', className)} {...props}>
       <ol style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap', listStyle: 'none', margin: 0, padding: 0 }}>
         {visible.map((item, i) => {
           const isLast = i === visible.length - 1;
           const isCurrent = item.current || isLast;
           return (
-            <li key={i} className={cn('synu-breadcrumbs-item', isCurrent && 'synu-breadcrumbs-item--current')} aria-current={isCurrent ? 'page' : undefined}>
+            <li key={i} className={cn('tokis-breadcrumbs-item', isCurrent && 'tokis-breadcrumbs-item--current')} aria-current={isCurrent ? 'page' : undefined}>
               {item.href ? (
-                <a href={item.href} className="synu-breadcrumbs-link">{item.label}</a>
+                <a href={item.href} className="tokis-breadcrumbs-link">{item.label}</a>
               ) : item.onClick ? (
-                <button className="synu-breadcrumbs-link" onClick={item.onClick} style={{ background: 'none', border: 'none', padding: 0, font: 'inherit', cursor: 'pointer' }}>{item.label}</button>
+                <button className="tokis-breadcrumbs-link" onClick={item.onClick} style={{ background: 'none', border: 'none', padding: 0, font: 'inherit', cursor: 'pointer' }}>{item.label}</button>
               ) : (
                 <span>{item.label}</span>
               )}
-              {!isLast && <span className="synu-breadcrumbs-separator" aria-hidden="true">{separator}</span>}
+              {!isLast && <span className="tokis-breadcrumbs-separator" aria-hidden="true">{separator}</span>}
             </li>
           );
         })}
@@ -60,7 +60,7 @@ export const Link = forwardRef<HTMLAnchorElement, LinkProps>(({ external = false
     ref={ref}
     target={external ? '_blank' : undefined}
     rel={external ? 'noopener noreferrer' : undefined}
-    className={cn('synu-link', external && 'synu-link--external', className)}
+    className={cn('tokis-link', external && 'tokis-link--external', className)}
     {...props}
   >
     {children}

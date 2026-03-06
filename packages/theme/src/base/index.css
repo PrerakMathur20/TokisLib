@@ -1,16 +1,16 @@
 /* ============================================================
-   Synu — Typography base styles
+   Tokis — Typography base styles
    ============================================================ */
 
-.synu-h1, h1 { font-size: var(--synu-font-size-4xl); font-weight: var(--synu-font-weight-bold); line-height: var(--synu-line-height-tight); letter-spacing: var(--synu-letter-spacing-tight); }
-.synu-h2, h2 { font-size: var(--synu-font-size-3xl); font-weight: var(--synu-font-weight-bold); line-height: var(--synu-line-height-tight); letter-spacing: var(--synu-letter-spacing-tight); }
-.synu-h3, h3 { font-size: var(--synu-font-size-2xl); font-weight: var(--synu-font-weight-semibold); line-height: var(--synu-line-height-tight); }
-.synu-h4, h4 { font-size: var(--synu-font-size-xl); font-weight: var(--synu-font-weight-semibold); line-height: var(--synu-line-height-tight); }
-.synu-h5, h5 { font-size: var(--synu-font-size-lg); font-weight: var(--synu-font-weight-medium); }
-.synu-h6, h6 { font-size: var(--synu-font-size-md); font-weight: var(--synu-font-weight-medium); }
+.tokis-h1, h1 { font-size: var(--tokis-font-size-4xl); font-weight: var(--tokis-font-weight-bold); line-height: var(--tokis-line-height-tight); letter-spacing: var(--tokis-letter-spacing-tight); }
+.tokis-h2, h2 { font-size: var(--tokis-font-size-3xl); font-weight: var(--tokis-font-weight-bold); line-height: var(--tokis-line-height-tight); letter-spacing: var(--tokis-letter-spacing-tight); }
+.tokis-h3, h3 { font-size: var(--tokis-font-size-2xl); font-weight: var(--tokis-font-weight-semibold); line-height: var(--tokis-line-height-tight); }
+.tokis-h4, h4 { font-size: var(--tokis-font-size-xl); font-weight: var(--tokis-font-weight-semibold); line-height: var(--tokis-line-height-tight); }
+.tokis-h5, h5 { font-size: var(--tokis-font-size-lg); font-weight: var(--tokis-font-weight-medium); }
+.tokis-h6, h6 { font-size: var(--tokis-font-size-md); font-weight: var(--tokis-font-weight-medium); }
 
 code, kbd, samp, pre {
-  font-family: var(--synu-font-family-mono);
+  font-family: var(--tokis-font-family-mono);
   font-size: 0.9em;
 }
 

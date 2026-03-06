@@ -13,7 +13,7 @@ import { border } from '../semantic/border.js';
 
 export function generateCssVariables(scope = ':root'): string {
   const vars: string[] = [];
-  const prefix = '--synu-';
+  const prefix = '--tokis-';
 
   const add = (name: string, value: string | number) => {
     vars.push(`  ${prefix}${name}: ${String(value)};`);

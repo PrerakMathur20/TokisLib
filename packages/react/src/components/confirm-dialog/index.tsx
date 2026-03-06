@@ -34,12 +34,12 @@ export function ConfirmDialog({
       title={title}
       description={description}
       size="sm"
-      className={cn('synu-confirm-dialog', className)}
+      className={cn('tokis-confirm-dialog', className)}
       footer={
-        <div className="synu-confirm-dialog__actions">
+        <div className="tokis-confirm-dialog__actions">
           <button
             type="button"
-            className="synu-confirm-dialog__cancel"
+            className="tokis-confirm-dialog__cancel"
             onClick={onClose}
             disabled={loading}
           >
@@ -47,13 +47,13 @@ export function ConfirmDialog({
           </button>
           <button
             type="button"
-            className={cn('synu-confirm-dialog__confirm', destructive && 'synu-confirm-dialog__confirm--destructive')}
+            className={cn('tokis-confirm-dialog__confirm', destructive && 'tokis-confirm-dialog__confirm--destructive')}
             onClick={onConfirm}
             disabled={loading}
             aria-busy={loading}
           >
             {loading ? (
-              <span className="synu-confirm-dialog__spinner" aria-hidden="true" />
+              <span className="tokis-confirm-dialog__spinner" aria-hidden="true" />
             ) : null}
             {confirmLabel}
           </button>

@@ -55,7 +55,7 @@ export const TextField = forwardRef<HTMLInputElement, TextFieldProps>((
   const passwordToggle = isPassword && !endAdornment ? (
     <button
       type="button"
-      className="synu-input-password-toggle"
+      className="tokis-input-password-toggle"
       onClick={() => setShowPassword((v) => !v)}
       aria-label={showPassword ? 'Hide password' : 'Show password'}
       tabIndex={-1}
@@ -65,15 +65,15 @@ export const TextField = forwardRef<HTMLInputElement, TextFieldProps>((
   ) : null;
 
   return (
-    <div className={cn('synu-field', className)}>
+    <div className={cn('tokis-field', className)}>
       {label && (
-        <label htmlFor={inputId} className={cn('synu-label', required && 'synu-label--required')}>
+        <label htmlFor={inputId} className={cn('tokis-label', required && 'tokis-label--required')}>
           {label}
         </label>
       )}
-      <div className="synu-input-wrapper">
+      <div className="tokis-input-wrapper">
         {startAdornment && (
-          <span className="synu-input-adornment synu-input-adornment--start">{startAdornment}</span>
+          <span className="tokis-input-adornment tokis-input-adornment--start">{startAdornment}</span>
         )}
         <input
           ref={ref}
@@ -84,20 +84,20 @@ export const TextField = forwardRef<HTMLInputElement, TextFieldProps>((
           aria-invalid={error || undefined}
           aria-describedby={helperId}
           className={cn(
-            'synu-input',
-            inputSize !== 'md' && `synu-input--${inputSize}`,
-            !!startAdornment && 'synu-input--with-start',
-            !!(endAdornment || passwordToggle) && 'synu-input--with-end',
+            'tokis-input',
+            inputSize !== 'md' && `tokis-input--${inputSize}`,
+            !!startAdornment && 'tokis-input--with-start',
+            !!(endAdornment || passwordToggle) && 'tokis-input--with-end',
           )}
           {...props}
         />
         {passwordToggle}
         {endAdornment && (
-          <span className="synu-input-adornment synu-input-adornment--end">{endAdornment}</span>
+          <span className="tokis-input-adornment tokis-input-adornment--end">{endAdornment}</span>
         )}
       </div>
       {helperText && (
-        <span id={helperId} className={cn('synu-helper-text', error && 'synu-helper-text--error')}>
+        <span id={helperId} className={cn('tokis-helper-text', error && 'tokis-helper-text--error')}>
           {helperText}
         </span>
       )}
@@ -122,9 +122,9 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>((
   const textareaId = id ?? `textarea-${autoId}`;
   const helperId = helperText ? `${textareaId}-helper` : undefined;
   return (
-    <div className={cn('synu-field', className)}>
+    <div className={cn('tokis-field', className)}>
       {label && (
-        <label htmlFor={textareaId} className={cn('synu-label', required && 'synu-label--required')}>
+        <label htmlFor={textareaId} className={cn('tokis-label', required && 'tokis-label--required')}>
           {label}
         </label>
       )}
@@ -134,11 +134,11 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>((
         required={required}
         aria-invalid={error || undefined}
         aria-describedby={helperId}
-        className="synu-textarea"
+        className="tokis-textarea"
         {...props}
       />
       {helperText && (
-        <span id={helperId} className={cn('synu-helper-text', error && 'synu-helper-text--error')}>
+        <span id={helperId} className={cn('tokis-helper-text', error && 'tokis-helper-text--error')}>
           {helperText}
         </span>
       )}

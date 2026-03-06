@@ -89,7 +89,7 @@ export function HoverCard({
       {visible && (
         <Portal>
           <div
-            className={cn('synu-hover-card', `synu-hover-card--${placement}`, className)}
+            className={cn('tokis-hover-card', `tokis-hover-card--${placement}`, className)}
             style={{
               position: 'fixed',
               top: pos.top,

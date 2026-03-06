@@ -57,12 +57,12 @@ export function Pagination({
 
   return (
     <nav
-      className={cn('synu-pagination', className)}
+      className={cn('tokis-pagination', className)}
       aria-label="Pagination navigation"
       role="navigation"
     >
       <button
-        className={cn('synu-pagination__item', 'synu-pagination__prev', page === 1 && 'synu-pagination__item--disabled')}
+        className={cn('tokis-pagination__item', 'tokis-pagination__prev', page === 1 && 'tokis-pagination__item--disabled')}
         onClick={handlePrev}
         disabled={page === 1}
         aria-label="Go to previous page"
@@ -76,7 +76,7 @@ export function Pagination({
       {items.map((item, index) => {
         if (item === 'ellipsis-start' || item === 'ellipsis-end') {
           return (
-            <span key={item} className="synu-pagination__ellipsis" aria-hidden="true">
+            <span key={item} className="tokis-pagination__ellipsis" aria-hidden="true">
               &hellip;
             </span>
           );
@@ -86,7 +86,7 @@ export function Pagination({
         return (
           <button
             key={`${item}-${index}`}
-            className={cn('synu-pagination__item', isActive && 'synu-pagination__item--active')}
+            className={cn('tokis-pagination__item', isActive && 'tokis-pagination__item--active')}
             onClick={() => onChange(item)}
             aria-label={`Go to page ${item}`}
             aria-current={isActive ? 'page' : undefined}
@@ -98,7 +98,7 @@ export function Pagination({
       })}
 
       <button
-        className={cn('synu-pagination__item', 'synu-pagination__next', page === totalPages && 'synu-pagination__item--disabled')}
+        className={cn('tokis-pagination__item', 'tokis-pagination__next', page === totalPages && 'tokis-pagination__item--disabled')}
         onClick={handleNext}
         disabled={page === totalPages}
         aria-label="Go to next page"

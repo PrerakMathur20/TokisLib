@@ -1,101 +1,101 @@
 /* ============================================================
-   Synu — Drawer (Side Sheet)
+   Tokis — Drawer (Side Sheet)
    ============================================================ */
 
 /* ── Backdrop ───────────────────────────────────────────────── */
 
-.synu-drawer-backdrop {
+.tokis-drawer-backdrop {
   position: fixed;
   inset: 0;
   background: rgb(0 0 0 / 0.45);
   backdrop-filter: blur(2px);
   -webkit-backdrop-filter: blur(2px);
-  z-index: var(--synu-z-modal);
-  animation: synu-backdrop-in var(--synu-duration-normal) var(--synu-ease-out);
+  z-index: var(--tokis-z-modal);
+  animation: tokis-backdrop-in var(--tokis-duration-normal) var(--tokis-ease-out);
 }
 
 /* ── Content ────────────────────────────────────────────────── */
 
-.synu-drawer-content {
+.tokis-drawer-content {
   position: fixed;
-  background: var(--synu-color-surface-overlay);
-  z-index: var(--synu-z-modal);
+  background: var(--tokis-color-surface-overlay);
+  z-index: var(--tokis-z-modal);
   display: flex;
   flex-direction: column;
   outline: none;
   overflow: hidden;
-  box-shadow: var(--synu-shadow-2xl);
+  box-shadow: var(--tokis-shadow-2xl);
 }
 
-.synu-drawer-content--right {
+.tokis-drawer-content--right {
   top: 0;
   right: 0;
   bottom: 0;
   width: 400px;
   max-width: 90vw;
-  border-left: 1px solid var(--synu-color-border);
-  animation: synu-drawer-in-right var(--synu-duration-slow) var(--synu-ease-out);
+  border-left: 1px solid var(--tokis-color-border);
+  animation: tokis-drawer-in-right var(--tokis-duration-slow) var(--tokis-ease-out);
 }
-.synu-drawer-content--left {
+.tokis-drawer-content--left {
   top: 0;
   left: 0;
   bottom: 0;
   width: 400px;
   max-width: 90vw;
-  border-right: 1px solid var(--synu-color-border);
-  animation: synu-drawer-in-left var(--synu-duration-slow) var(--synu-ease-out);
+  border-right: 1px solid var(--tokis-color-border);
+  animation: tokis-drawer-in-left var(--tokis-duration-slow) var(--tokis-ease-out);
 }
-.synu-drawer-content--bottom {
+.tokis-drawer-content--bottom {
   left: 0;
   right: 0;
   bottom: 0;
   max-height: 90dvh;
-  border-top: 1px solid var(--synu-color-border);
-  border-radius: var(--synu-radius-xl) var(--synu-radius-xl) 0 0;
-  animation: synu-drawer-in-bottom var(--synu-duration-slow) var(--synu-ease-out);
+  border-top: 1px solid var(--tokis-color-border);
+  border-radius: var(--tokis-radius-xl) var(--tokis-radius-xl) 0 0;
+  animation: tokis-drawer-in-bottom var(--tokis-duration-slow) var(--tokis-ease-out);
 }
-.synu-drawer-content--top {
+.tokis-drawer-content--top {
   left: 0;
   right: 0;
   top: 0;
   max-height: 90dvh;
-  border-bottom: 1px solid var(--synu-color-border);
-  border-radius: 0 0 var(--synu-radius-xl) var(--synu-radius-xl);
-  animation: synu-drawer-in-top var(--synu-duration-slow) var(--synu-ease-out);
+  border-bottom: 1px solid var(--tokis-color-border);
+  border-radius: 0 0 var(--tokis-radius-xl) var(--tokis-radius-xl);
+  animation: tokis-drawer-in-top var(--tokis-duration-slow) var(--tokis-ease-out);
 }
 
 /* ── Header ─────────────────────────────────────────────────── */
 
-.synu-drawer-header {
+.tokis-drawer-header {
   display: grid;
   grid-template-columns: 1fr auto;
   grid-template-rows: auto auto;
   align-items: start;
-  padding: var(--synu-spacing-5) var(--synu-spacing-6);
-  border-bottom: 1px solid var(--synu-color-border);
+  padding: var(--tokis-spacing-5) var(--tokis-spacing-6);
+  border-bottom: 1px solid var(--tokis-color-border);
   flex-shrink: 0;
-  gap: var(--synu-spacing-1) var(--synu-spacing-4);
+  gap: var(--tokis-spacing-1) var(--tokis-spacing-4);
 }
 
-.synu-drawer-title {
+.tokis-drawer-title {
   grid-column: 1;
-  font-size: var(--synu-font-size-lg);
-  font-weight: var(--synu-font-weight-semibold);
-  color: var(--synu-text-primary);
-  letter-spacing: var(--synu-letter-spacing-tight);
-  line-height: var(--synu-line-height-tight);
+  font-size: var(--tokis-font-size-lg);
+  font-weight: var(--tokis-font-weight-semibold);
+  color: var(--tokis-text-primary);
+  letter-spacing: var(--tokis-letter-spacing-tight);
+  line-height: var(--tokis-line-height-tight);
   margin: 0;
 }
 
-.synu-drawer-description {
+.tokis-drawer-description {
   grid-column: 1;
-  font-size: var(--synu-font-size-sm);
-  color: var(--synu-text-secondary);
+  font-size: var(--tokis-font-size-sm);
+  color: var(--tokis-text-secondary);
   margin: 0;
-  line-height: var(--synu-line-height-relaxed);
+  line-height: var(--tokis-line-height-relaxed);
 }
 
-.synu-drawer-close {
+.tokis-drawer-close {
   grid-column: 2;
   grid-row: 1;
   display: flex;
@@ -103,65 +103,65 @@
   justify-content: center;
   width: 32px;
   height: 32px;
-  border-radius: var(--synu-radius-md);
+  border-radius: var(--tokis-radius-md);
   cursor: pointer;
-  color: var(--synu-text-tertiary);
+  color: var(--tokis-text-tertiary);
   background: none;
   border: none;
   outline: none;
   flex-shrink: 0;
   transition:
-    background var(--synu-duration-fast) var(--synu-ease-out),
-    color var(--synu-duration-fast) var(--synu-ease-out);
+    background var(--tokis-duration-fast) var(--tokis-ease-out),
+    color var(--tokis-duration-fast) var(--tokis-ease-out);
   -webkit-tap-highlight-color: transparent;
 }
-.synu-drawer-close:hover {
-  background: var(--synu-color-surface-hover);
-  color: var(--synu-text-primary);
+.tokis-drawer-close:hover {
+  background: var(--tokis-color-surface-hover);
+  color: var(--tokis-text-primary);
 }
-.synu-drawer-close:focus-visible {
-  box-shadow: 0 0 0 2px var(--synu-color-focus-ring);
+.tokis-drawer-close:focus-visible {
+  box-shadow: 0 0 0 2px var(--tokis-color-focus-ring);
 }
 
 /* ── Body ───────────────────────────────────────────────────── */
 
-.synu-drawer-body {
+.tokis-drawer-body {
   flex: 1;
   overflow-y: auto;
   overflow-x: hidden;
-  padding: var(--synu-spacing-6);
+  padding: var(--tokis-spacing-6);
   scrollbar-width: thin;
-  scrollbar-color: var(--synu-color-border) transparent;
+  scrollbar-color: var(--tokis-color-border) transparent;
 }
-.synu-drawer-body::-webkit-scrollbar { width: 6px; }
-.synu-drawer-body::-webkit-scrollbar-track { background: transparent; }
-.synu-drawer-body::-webkit-scrollbar-thumb {
-  background: var(--synu-color-border);
-  border-radius: var(--synu-radius-full);
+.tokis-drawer-body::-webkit-scrollbar { width: 6px; }
+.tokis-drawer-body::-webkit-scrollbar-track { background: transparent; }
+.tokis-drawer-body::-webkit-scrollbar-thumb {
+  background: var(--tokis-color-border);
+  border-radius: var(--tokis-radius-full);
 }
 
 /* ── Footer ─────────────────────────────────────────────────── */
 
-.synu-drawer-footer {
+.tokis-drawer-footer {
   flex-shrink: 0;
-  padding: var(--synu-spacing-4) var(--synu-spacing-6);
-  border-top: 1px solid var(--synu-color-border);
+  padding: var(--tokis-spacing-4) var(--tokis-spacing-6);
+  border-top: 1px solid var(--tokis-color-border);
   display: flex;
-  gap: var(--synu-spacing-2);
+  gap: var(--tokis-spacing-2);
   justify-content: flex-end;
 }
 
 /* ── Animations ─────────────────────────────────────────────── */
 
-@keyframes synu-drawer-in-right  { from { transform: translateX(100%); } to { transform: translateX(0); } }
-@keyframes synu-drawer-in-left   { from { transform: translateX(-100%); } to { transform: translateX(0); } }
-@keyframes synu-drawer-in-bottom { from { transform: translateY(100%); } to { transform: translateY(0); } }
-@keyframes synu-drawer-in-top    { from { transform: translateY(-100%); } to { transform: translateY(0); } }
+@keyframes tokis-drawer-in-right  { from { transform: translateX(100%); } to { transform: translateX(0); } }
+@keyframes tokis-drawer-in-left   { from { transform: translateX(-100%); } to { transform: translateX(0); } }
+@keyframes tokis-drawer-in-bottom { from { transform: translateY(100%); } to { transform: translateY(0); } }
+@keyframes tokis-drawer-in-top    { from { transform: translateY(-100%); } to { transform: translateY(0); } }
 
 /* ── Reduced motion ─────────────────────────────────────────── */
 
 @media (prefers-reduced-motion: reduce) {
-  .synu-drawer-backdrop { animation: none; }
-  .synu-drawer-content  { animation: none; }
-  .synu-drawer-close    { transition: none; }
+  .tokis-drawer-backdrop { animation: none; }
+  .tokis-drawer-content  { animation: none; }
+  .tokis-drawer-close    { transition: none; }
 }

@@ -10,7 +10,7 @@ export interface ChartDataPoint {
 }
 
 const DEFAULT_COLORS = [
-  'var(--synu-color-primary)',
+  'var(--tokis-color-primary)',
   '#7c3aed',
   '#059669',
   '#d97706',
@@ -68,7 +68,7 @@ export function BarChart({
 
   if (!horizontal) {
     return (
-      <div ref={containerRef} className={cn('synu-chart synu-chart--bar', className)}>
+      <div ref={containerRef} className={cn('tokis-chart tokis-chart--bar', className)}>
         <svg
           width={w} height={h} aria-label="Bar chart"
           onMouseMove={(e) => {
@@ -84,8 +84,8 @@ export function BarChart({
             {/* Y axis ticks */}
             {[0, 0.25, 0.5, 0.75, 1].map((t) => (
               <g key={t} transform={`translate(0,${chartH * (1 - t)})`}>
-                <line x1={-4} x2={chartW} stroke="var(--synu-color-border)" strokeWidth="1" />
-                <text x={-8} y={4} fontSize="10" fill="var(--synu-text-tertiary)" textAnchor="end">
+                <line x1={-4} x2={chartW} stroke="var(--tokis-color-border)" strokeWidth="1" />
+                <text x={-8} y={4} fontSize="10" fill="var(--tokis-text-tertiary)" textAnchor="end">
                   {Math.round(maxVal * t)}
                 </text>
               </g>
@@ -105,7 +105,7 @@ export function BarChart({
                     opacity={hoveredBar !== null && hoveredBar !== i ? 0.5 : 1}
                     style={{ transition: animated ? 'y 0.6s ease, height 0.6s ease' : undefined }}
                   />
-                  <text x={x + barWidth / 2} y={chartH + 18} fontSize="10" fill="var(--synu-text-secondary)" textAnchor="middle">
+                  <text x={x + barWidth / 2} y={chartH + 18} fontSize="10" fill="var(--tokis-text-secondary)" textAnchor="middle">
                     {d.label}
                   </text>
                 </g>
@@ -136,7 +136,7 @@ export function BarChart({
   const barH = (chartH / data.length) * 0.6;
   const barGapH = (chartH / data.length) * 0.4;
   return (
-    <div ref={containerRef} className={cn('synu-chart synu-chart--bar', className)}>
+    <div ref={containerRef} className={cn('tokis-chart tokis-chart--bar', className)}>
       <svg width={w} height={h} aria-label="Bar chart horizontal">
         <g transform={`translate(${padding.left},${padding.top})`}>
           {data.map((d, i) => {
@@ -145,7 +145,7 @@ export function BarChart({
             const color = d.color ?? barColor ?? DEFAULT_COLORS[i % DEFAULT_COLORS.length];
             return (
               <g key={i}>
-                <text x={-8} y={y + barH / 2 + 4} fontSize="10" fill="var(--synu-text-secondary)" textAnchor="end">
+                <text x={-8} y={y + barH / 2 + 4} fontSize="10" fill="var(--tokis-text-secondary)" textAnchor="end">
                   {d.label}
                 </text>
                 <rect
@@ -230,7 +230,7 @@ export function LineChart({
   });
 
   return (
-    <div ref={containerRef} className={cn('synu-chart synu-chart--line', className)}>
+    <div ref={containerRef} className={cn('tokis-chart tokis-chart--line', className)}>
       <svg
         width={w} height={h} aria-label="Line chart"
         onMouseMove={(e) => {
@@ -246,15 +246,15 @@ export function LineChart({
           {/* Grid */}
           {[0, 0.25, 0.5, 0.75, 1].map((t) => (
             <g key={t} transform={`translate(0,${chartH * (1 - t)})`}>
-              <line x1={0} x2={chartW} stroke="var(--synu-color-border)" strokeWidth="1" />
-              <text x={-8} y={4} fontSize="10" fill="var(--synu-text-tertiary)" textAnchor="end">
+              <line x1={0} x2={chartW} stroke="var(--tokis-color-border)" strokeWidth="1" />
+              <text x={-8} y={4} fontSize="10" fill="var(--tokis-text-tertiary)" textAnchor="end">
                 {Math.round(minVal + range * t)}
               </text>
             </g>
           ))}
           {/* X labels */}
           {labels.map((lbl, i) => (
-            <text key={i} x={toPoint(0, i).x} y={chartH + 18} fontSize="10" fill="var(--synu-text-secondary)" textAnchor="middle">
+            <text key={i} x={toPoint(0, i).x} y={chartH + 18} fontSize="10" fill="var(--tokis-text-secondary)" textAnchor="middle">
               {lbl}
             </text>
           ))}
@@ -287,7 +287,7 @@ export function LineChart({
             const isMulti = vals.length > 1;
             return (
               <g style={{ pointerEvents: 'none' }}>
-                <line x1={x} x2={x} y1={0} y2={chartH} stroke="var(--synu-color-border)" strokeWidth="1" strokeDasharray="3,3" />
+                <line x1={x} x2={x} y1={0} y2={chartH} stroke="var(--tokis-color-border)" strokeWidth="1" strokeDasharray="3,3" />
                 {vals.map(({ val, color }, vi) => {
                   if (val === undefined) return null;
                   const py = toPoint(val, hoveredCol).y;
@@ -333,10 +333,10 @@ export function LineChart({
         </g>
       </svg>
       {datasets.length > 1 && (
-        <div className="synu-chart__legend">
+        <div className="tokis-chart__legend">
           {datasets.map((d, i) => (
-            <span key={i} className="synu-chart__legend-item">
-              <span className="synu-chart__legend-dot" style={{ background: d.color ?? DEFAULT_COLORS[i % DEFAULT_COLORS.length] }} />
+            <span key={i} className="tokis-chart__legend-item">
+              <span className="tokis-chart__legend-dot" style={{ background: d.color ?? DEFAULT_COLORS[i % DEFAULT_COLORS.length] }} />
               {d.label}
             </span>
           ))}
@@ -407,7 +407,7 @@ export function PieChart({
   });
 
   return (
-    <div className={cn('synu-chart synu-chart--pie', className)}>
+    <div className={cn('tokis-chart tokis-chart--pie', className)}>
       <svg width={size} height={size} aria-label="Pie chart">
         {slices.map((s, i) => (
           <path
@@ -421,10 +421,10 @@ export function PieChart({
         ))}
       </svg>
       {showLegend && (
-        <div className="synu-chart__legend">
+        <div className="tokis-chart__legend">
           {slices.map((s, i) => (
-            <span key={i} className="synu-chart__legend-item">
-              <span className="synu-chart__legend-dot" style={{ background: s.color }} />
+            <span key={i} className="tokis-chart__legend-item">
+              <span className="tokis-chart__legend-dot" style={{ background: s.color }} />
               {s.label}
             </span>
           ))}
@@ -454,10 +454,10 @@ export function Sparkline({
   type = 'line',
   width = 80,
   height = 24,
-  color = 'var(--synu-color-primary)',
+  color = 'var(--tokis-color-primary)',
   className,
 }: SparklineProps): JSX.Element {
-  if (data.length < 2) return <span className={cn('synu-sparkline', className)} />;
+  if (data.length < 2) return <span className={cn('tokis-sparkline', className)} />;
 
   const maxVal = Math.max(...data, 1);
   const minVal = Math.min(...data);
@@ -470,7 +470,7 @@ export function Sparkline({
   if (type === 'bar') {
     const bw = Math.max(1, (width / data.length) * 0.7);
     return (
-      <svg width={width} height={height} className={cn('synu-sparkline', className)} aria-hidden="true">
+      <svg width={width} height={height} className={cn('tokis-sparkline', className)} aria-hidden="true">
         {data.map((v, i) => {
           const bh = ((v - minVal) / range) * height;
           return <rect key={i} x={i * (width / data.length)} y={height - bh} width={bw} height={bh} fill={color} rx={1} />;
@@ -484,7 +484,7 @@ export function Sparkline({
   const areaD = `${lineD} L${points[points.length - 1].x},${height} L${points[0].x},${height} Z`;
 
   return (
-    <svg width={width} height={height} className={cn('synu-sparkline', className)} aria-hidden="true">
+    <svg width={width} height={height} className={cn('tokis-sparkline', className)} aria-hidden="true">
       {type === 'area' && <path d={areaD} fill={color} opacity={0.2} />}
       <path d={lineD} fill="none" stroke={color} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
     </svg>

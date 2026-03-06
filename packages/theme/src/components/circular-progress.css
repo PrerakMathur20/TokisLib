@@ -1,62 +1,62 @@
 /* ── CircularProgress ────────────────────────────────────── */
 
-.synu-circular-progress {
+.tokis-circular-progress {
   position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
 }
 
-.synu-circular-progress__track {
-  stroke: var(--synu-color-border);
+.tokis-circular-progress__track {
+  stroke: var(--tokis-color-border);
 }
 
-.synu-circular-progress__fill {
-  stroke: var(--synu-color-primary);
-  transition: stroke-dashoffset 0.5s var(--synu-ease-out);
+.tokis-circular-progress__fill {
+  stroke: var(--tokis-color-primary);
+  transition: stroke-dashoffset 0.5s var(--tokis-ease-out);
 }
 
 /* Variants */
-.synu-circular-progress--success .synu-circular-progress__fill { stroke: var(--synu-color-success); }
-.synu-circular-progress--warning .synu-circular-progress__fill { stroke: var(--synu-color-warning); }
-.synu-circular-progress--error   .synu-circular-progress__fill { stroke: var(--synu-color-error); }
+.tokis-circular-progress--success .tokis-circular-progress__fill { stroke: var(--tokis-color-success); }
+.tokis-circular-progress--warning .tokis-circular-progress__fill { stroke: var(--tokis-color-warning); }
+.tokis-circular-progress--error   .tokis-circular-progress__fill { stroke: var(--tokis-color-error); }
 
 /* Indeterminate spin */
-.synu-circular-progress--indeterminate svg {
-  animation: synu-cprogress-spin 1.4s linear infinite;
+.tokis-circular-progress--indeterminate svg {
+  animation: tokis-cprogress-spin 1.4s linear infinite;
 }
 
-.synu-circular-progress--indeterminate .synu-circular-progress__fill {
+.tokis-circular-progress--indeterminate .tokis-circular-progress__fill {
   transition: none;
-  animation: synu-cprogress-dash 1.4s ease-in-out infinite;
+  animation: tokis-cprogress-dash 1.4s ease-in-out infinite;
 }
 
-@keyframes synu-cprogress-spin {
+@keyframes tokis-cprogress-spin {
   from { transform: rotate(-90deg); }
   to   { transform: rotate(270deg); }
 }
 
-@keyframes synu-cprogress-dash {
-  0%   { stroke-dashoffset: var(--synu-cprogress-circumference, 220); }
-  50%  { stroke-dashoffset: calc(var(--synu-cprogress-circumference, 220) * 0.25); }
-  100% { stroke-dashoffset: var(--synu-cprogress-circumference, 220); }
+@keyframes tokis-cprogress-dash {
+  0%   { stroke-dashoffset: var(--tokis-cprogress-circumference, 220); }
+  50%  { stroke-dashoffset: calc(var(--tokis-cprogress-circumference, 220) * 0.25); }
+  100% { stroke-dashoffset: var(--tokis-cprogress-circumference, 220); }
 }
 
 /* Label (center) */
-.synu-circular-progress__label {
+.tokis-circular-progress__label {
   position: absolute;
   inset: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: var(--synu-font-size-xs);
-  font-weight: var(--synu-font-weight-semibold);
-  color: var(--synu-text-primary);
+  font-size: var(--tokis-font-size-xs);
+  font-weight: var(--tokis-font-weight-semibold);
+  color: var(--tokis-text-primary);
   pointer-events: none;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .synu-circular-progress--indeterminate svg { animation: none; }
-  .synu-circular-progress--indeterminate .synu-circular-progress__fill { animation: none; }
-  .synu-circular-progress__fill { transition: none; }
+  .tokis-circular-progress--indeterminate svg { animation: none; }
+  .tokis-circular-progress--indeterminate .tokis-circular-progress__fill { animation: none; }
+  .tokis-circular-progress__fill { transition: none; }
 }

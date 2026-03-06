@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const base = '/Users/p0m08f9/Prerak/Dev/Synu';
+const base = '/Users/p0m08f9/Prerak/Dev/Tokis';
 
 const dirs = [
   'packages/theme/src/base',

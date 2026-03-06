@@ -1,47 +1,47 @@
 /* ============================================================
-   Synu — Button
+   Tokis — Button
    ============================================================ */
 
-.synu-btn {
+.tokis-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: var(--synu-spacing-2);
-  padding: 0 var(--synu-spacing-4);
+  gap: var(--tokis-spacing-2);
+  padding: 0 var(--tokis-spacing-4);
   height: 40px;
-  font-size: var(--synu-font-size-sm);
-  font-weight: var(--synu-font-weight-medium);
+  font-size: var(--tokis-font-size-sm);
+  font-weight: var(--tokis-font-weight-medium);
   font-family: inherit;
   line-height: 1;
-  border-radius: var(--synu-radius-md);
+  border-radius: var(--tokis-radius-md);
   border: 1px solid transparent;
   cursor: pointer;
   user-select: none;
   white-space: nowrap;
   text-decoration: none;
   transition:
-    background-color var(--synu-duration-fast) var(--synu-ease-out),
-    border-color var(--synu-duration-fast) var(--synu-ease-out),
-    color var(--synu-duration-fast) var(--synu-ease-out),
-    box-shadow var(--synu-duration-fast) var(--synu-ease-out),
-    transform var(--synu-duration-fast) var(--synu-ease-out),
-    opacity var(--synu-duration-fast) var(--synu-ease-out);
+    background-color var(--tokis-duration-fast) var(--tokis-ease-out),
+    border-color var(--tokis-duration-fast) var(--tokis-ease-out),
+    color var(--tokis-duration-fast) var(--tokis-ease-out),
+    box-shadow var(--tokis-duration-fast) var(--tokis-ease-out),
+    transform var(--tokis-duration-fast) var(--tokis-ease-out),
+    opacity var(--tokis-duration-fast) var(--tokis-ease-out);
   position: relative;
   overflow: hidden;
   outline: none;
   -webkit-tap-highlight-color: transparent;
 }
 
-.synu-btn:focus-visible {
-  box-shadow: 0 0 0 3px var(--synu-color-focus-ring);
+.tokis-btn:focus-visible {
+  box-shadow: 0 0 0 3px var(--tokis-color-focus-ring);
 }
 
-.synu-btn:active:not([disabled]):not([aria-disabled="true"]) {
+.tokis-btn:active:not([disabled]):not([aria-disabled="true"]) {
   transform: translateY(1px);
 }
 
-.synu-btn[disabled],
-.synu-btn[aria-disabled="true"] {
+.tokis-btn[disabled],
+.tokis-btn[aria-disabled="true"] {
   opacity: 0.45;
   cursor: not-allowed;
   pointer-events: none;
@@ -49,64 +49,64 @@
 
 /* ── Variants ──────────────────────────────────────────────── */
 
-.synu-btn--primary {
-  background: var(--synu-color-primary);
-  color: var(--synu-text-on-primary);
-  border-color: var(--synu-color-primary);
+.tokis-btn--primary {
+  background: var(--tokis-color-primary);
+  color: var(--tokis-text-on-primary);
+  border-color: var(--tokis-color-primary);
 }
-.synu-btn--primary:hover:not([disabled]):not([aria-disabled="true"]) {
-  background: var(--synu-color-primary-hover);
-  border-color: var(--synu-color-primary-hover);
+.tokis-btn--primary:hover:not([disabled]):not([aria-disabled="true"]) {
+  background: var(--tokis-color-primary-hover);
+  border-color: var(--tokis-color-primary-hover);
 }
-.synu-btn--primary:focus-visible {
-  box-shadow: 0 0 0 3px var(--synu-color-focus-ring);
-}
-
-.synu-btn--secondary {
-  background: var(--synu-color-surface-raised);
-  color: var(--synu-text-primary);
-  border-color: var(--synu-color-border);
-  box-shadow: var(--synu-shadow-xs);
-}
-.synu-btn--secondary:hover:not([disabled]):not([aria-disabled="true"]) {
-  background: var(--synu-color-surface-hover);
-  border-color: var(--synu-color-border-strong);
+.tokis-btn--primary:focus-visible {
+  box-shadow: 0 0 0 3px var(--tokis-color-focus-ring);
 }
 
-.synu-btn--ghost {
+.tokis-btn--secondary {
+  background: var(--tokis-color-surface-raised);
+  color: var(--tokis-text-primary);
+  border-color: var(--tokis-color-border);
+  box-shadow: var(--tokis-shadow-xs);
+}
+.tokis-btn--secondary:hover:not([disabled]):not([aria-disabled="true"]) {
+  background: var(--tokis-color-surface-hover);
+  border-color: var(--tokis-color-border-strong);
+}
+
+.tokis-btn--ghost {
   background: transparent;
-  color: var(--synu-text-primary);
+  color: var(--tokis-text-primary);
   border-color: transparent;
 }
-.synu-btn--ghost:hover:not([disabled]):not([aria-disabled="true"]) {
-  background: var(--synu-color-surface-hover);
+.tokis-btn--ghost:hover:not([disabled]):not([aria-disabled="true"]) {
+  background: var(--tokis-color-surface-hover);
 }
 
-.synu-btn--destructive {
-  background: var(--synu-color-error);
-  color: var(--synu-text-inverse);
-  border-color: var(--synu-color-error);
+.tokis-btn--destructive {
+  background: var(--tokis-color-error);
+  color: var(--tokis-text-inverse);
+  border-color: var(--tokis-color-error);
 }
-.synu-btn--destructive:hover:not([disabled]):not([aria-disabled="true"]) {
-  background: color-mix(in srgb, var(--synu-color-error) 85%, black);
-  border-color: color-mix(in srgb, var(--synu-color-error) 85%, black);
+.tokis-btn--destructive:hover:not([disabled]):not([aria-disabled="true"]) {
+  background: color-mix(in srgb, var(--tokis-color-error) 85%, black);
+  border-color: color-mix(in srgb, var(--tokis-color-error) 85%, black);
 }
-.synu-btn--destructive:focus-visible {
-  box-shadow: 0 0 0 3px var(--synu-color-focus-ring-error);
+.tokis-btn--destructive:focus-visible {
+  box-shadow: 0 0 0 3px var(--tokis-color-focus-ring-error);
 }
 
-.synu-btn--outline {
+.tokis-btn--outline {
   background: transparent;
-  color: var(--synu-color-primary);
-  border-color: var(--synu-color-primary);
+  color: var(--tokis-color-primary);
+  border-color: var(--tokis-color-primary);
 }
-.synu-btn--outline:hover:not([disabled]):not([aria-disabled="true"]) {
-  background: var(--synu-color-primary-subtle);
+.tokis-btn--outline:hover:not([disabled]):not([aria-disabled="true"]) {
+  background: var(--tokis-color-primary-subtle);
 }
 
-.synu-btn--link {
+.tokis-btn--link {
   background: transparent;
-  color: var(--synu-text-link);
+  color: var(--tokis-text-link);
   border-color: transparent;
   height: auto;
   padding: 0;
@@ -114,100 +114,100 @@
   text-decoration-color: transparent;
   text-underline-offset: 3px;
 }
-.synu-btn--link:hover:not([disabled]):not([aria-disabled="true"]) {
+.tokis-btn--link:hover:not([disabled]):not([aria-disabled="true"]) {
   text-decoration-color: currentColor;
 }
-.synu-btn--link:focus-visible {
+.tokis-btn--link:focus-visible {
   box-shadow: none;
   text-decoration-color: currentColor;
-  outline: 2px solid var(--synu-color-primary);
+  outline: 2px solid var(--tokis-color-primary);
   outline-offset: 2px;
-  border-radius: var(--synu-radius-xs);
+  border-radius: var(--tokis-radius-xs);
 }
 
 /* ── Sizes ─────────────────────────────────────────────────── */
 
-.synu-btn--sm {
+.tokis-btn--sm {
   height: 32px;
-  padding: 0 var(--synu-spacing-3);
-  font-size: var(--synu-font-size-xs);
-  border-radius: var(--synu-radius-sm);
-  gap: var(--synu-spacing-1);
+  padding: 0 var(--tokis-spacing-3);
+  font-size: var(--tokis-font-size-xs);
+  border-radius: var(--tokis-radius-sm);
+  gap: var(--tokis-spacing-1);
 }
-.synu-btn--lg {
+.tokis-btn--lg {
   height: 48px;
-  padding: 0 var(--synu-spacing-6);
-  font-size: var(--synu-font-size-md);
-  border-radius: var(--synu-radius-lg);
+  padding: 0 var(--tokis-spacing-6);
+  font-size: var(--tokis-font-size-md);
+  border-radius: var(--tokis-radius-lg);
 }
-.synu-btn--xl {
+.tokis-btn--xl {
   height: 56px;
-  padding: 0 var(--synu-spacing-8);
-  font-size: var(--synu-font-size-lg);
-  border-radius: var(--synu-radius-lg);
+  padding: 0 var(--tokis-spacing-8);
+  font-size: var(--tokis-font-size-lg);
+  border-radius: var(--tokis-radius-lg);
 }
 
-.synu-btn--icon-only {
+.tokis-btn--icon-only {
   width: 40px;
   padding: 0;
 }
-.synu-btn--icon-only.synu-btn--sm { width: 32px; }
-.synu-btn--icon-only.synu-btn--lg { width: 48px; }
-.synu-btn--icon-only.synu-btn--xl { width: 56px; }
+.tokis-btn--icon-only.tokis-btn--sm { width: 32px; }
+.tokis-btn--icon-only.tokis-btn--lg { width: 48px; }
+.tokis-btn--icon-only.tokis-btn--xl { width: 56px; }
 
-.synu-btn--full { width: 100%; }
-.synu-btn--loading { pointer-events: none; }
+.tokis-btn--full { width: 100%; }
+.tokis-btn--loading { pointer-events: none; }
 
-.synu-btn--loading::after {
+.tokis-btn--loading::after {
   content: '';
   position: absolute;
   inset: 0;
   border-radius: inherit;
   background: linear-gradient(90deg, transparent, rgba(255,255,255,0.12), transparent);
-  animation: synu-btn-shimmer 1.2s ease-in-out infinite;
+  animation: tokis-btn-shimmer 1.2s ease-in-out infinite;
 }
 
-@keyframes synu-btn-shimmer {
+@keyframes tokis-btn-shimmer {
   from { transform: translateX(-100%); }
   to   { transform: translateX(200%); }
 }
 
 /* ── Parts ─────────────────────────────────────────────────── */
 
-.synu-btn__icon {
+.tokis-btn__icon {
   flex-shrink: 0;
   display: inline-flex;
   align-items: center;
   justify-content: center;
 }
-.synu-btn__label { /* inherits from parent */ }
+.tokis-btn__label { /* inherits from parent */ }
 
 /* ── Button Group ───────────────────────────────────────────── */
 
-.synu-btn-group {
+.tokis-btn-group {
   display: inline-flex;
 }
-.synu-btn-group .synu-btn {
+.tokis-btn-group .tokis-btn {
   border-radius: 0;
 }
-.synu-btn-group .synu-btn:first-child {
-  border-radius: var(--synu-radius-md) 0 0 var(--synu-radius-md);
+.tokis-btn-group .tokis-btn:first-child {
+  border-radius: var(--tokis-radius-md) 0 0 var(--tokis-radius-md);
 }
-.synu-btn-group .synu-btn:last-child {
-  border-radius: 0 var(--synu-radius-md) var(--synu-radius-md) 0;
+.tokis-btn-group .tokis-btn:last-child {
+  border-radius: 0 var(--tokis-radius-md) var(--tokis-radius-md) 0;
 }
-.synu-btn-group .synu-btn--secondary + .synu-btn--secondary {
+.tokis-btn-group .tokis-btn--secondary + .tokis-btn--secondary {
   border-left-color: transparent;
 }
 
 /* ── Reduced motion ─────────────────────────────────────────── */
 
 @media (prefers-reduced-motion: reduce) {
-  .synu-btn {
+  .tokis-btn {
     transition: none;
   }
-  .synu-btn:active:not([disabled]):not([aria-disabled="true"]) {
+  .tokis-btn:active:not([disabled]):not([aria-disabled="true"]) {
     transform: none;
   }
-  .synu-btn--loading::after { animation: none; }
+  .tokis-btn--loading::after { animation: none; }
 }

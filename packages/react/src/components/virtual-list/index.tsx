@@ -38,7 +38,7 @@ export function VirtualizedList<T>({
   return (
     <div
       ref={containerRef}
-      className={cn('synu-virtual-list', className)}
+      className={cn('tokis-virtual-list', className)}
       style={{ height, overflow: 'auto' }}
       onScroll={handleScroll}
     >

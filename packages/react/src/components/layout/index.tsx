@@ -3,7 +3,7 @@ import { cn } from '../../utils/cn.js';
 
 type GapValue = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 8 | 10 | 12 | 16;
 
-const gapVar = (g: GapValue) => `var(--synu-spacing-${g})`;
+const gapVar = (g: GapValue) => `var(--tokis-spacing-${g})`;
 
 // ─── Stack ────────────────────────────────────────────────
 export interface StackProps extends React.HTMLAttributes<HTMLDivElement> {
@@ -20,7 +20,7 @@ export const Stack = forwardRef<HTMLDivElement, StackProps>(({
 }, ref) => (
   <Component
     ref={ref}
-    className={cn('synu-stack', direction === 'column' ? 'synu-stack--v' : 'synu-stack--h', wrap && 'synu-stack--wrap', className)}
+    className={cn('tokis-stack', direction === 'column' ? 'tokis-stack--v' : 'tokis-stack--h', wrap && 'tokis-stack--wrap', className)}
     style={{ gap: gapVar(gap), alignItems: align, justifyContent: justify, ...style }}
     {...props}
   >
@@ -43,7 +43,7 @@ export const Grid = forwardRef<HTMLDivElement, GridProps>(({
 }, ref) => (
   <Component
     ref={ref}
-    className={cn('synu-grid', className)}
+    className={cn('tokis-grid', className)}
     style={{
       gridTemplateColumns: (typeof columns === 'number') ? `repeat(${columns}, minmax(0, 1fr))` : (columns as string),
       gap: gapVar(gap),
@@ -65,7 +65,7 @@ export interface ContainerProps extends React.HTMLAttributes<HTMLDivElement> {
 }
 
 export const Container = forwardRef<HTMLDivElement, ContainerProps>(({ fluid = false, as: Component = 'div', className, ...props }, ref) => (
-  <Component ref={ref} className={cn('synu-container', fluid && 'synu-container--fluid', className)} {...props} />
+  <Component ref={ref} className={cn('tokis-container', fluid && 'tokis-container--fluid', className)} {...props} />
 ));
 Container.displayName = 'Container';
 
@@ -88,7 +88,7 @@ export const Box = forwardRef<HTMLElement, BoxProps>(({
 }, ref) => (
   <Component
     ref={ref}
-    className={cn('synu-box', className)}
+    className={cn('tokis-box', className)}
     style={{
       display,
       flex,

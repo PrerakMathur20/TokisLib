@@ -1,29 +1,29 @@
 /* ── HoverCard ───────────────────────────────────────────── */
 
-.synu-hover-card {
-  z-index: var(--synu-z-popover);
-  background: var(--synu-color-surface-overlay);
-  border: 1px solid var(--synu-color-border);
-  border-radius: var(--synu-radius-xl);
-  box-shadow: var(--synu-shadow-xl);
-  padding: var(--synu-spacing-4);
+.tokis-hover-card {
+  z-index: var(--tokis-z-popover);
+  background: var(--tokis-color-surface-overlay);
+  border: 1px solid var(--tokis-color-border);
+  border-radius: var(--tokis-radius-xl);
+  box-shadow: var(--tokis-shadow-xl);
+  padding: var(--tokis-spacing-4);
   min-width: 220px;
   max-width: 360px;
-  animation: synu-hover-card-in var(--synu-duration-fast) var(--synu-ease-out);
+  animation: tokis-hover-card-in var(--tokis-duration-fast) var(--tokis-ease-out);
 }
 
-@keyframes synu-hover-card-in {
+@keyframes tokis-hover-card-in {
   /* Use standalone 'translate' so it composes with the positioning
      'transform' on the element instead of overriding it */
   from { opacity: 0; translate: 0 4px; }
   to   { opacity: 1; translate: 0 0; }
 }
 
-.synu-hover-card--top { transform-origin: bottom center; }
-.synu-hover-card--bottom { transform-origin: top center; }
-.synu-hover-card--left  { transform-origin: right center; }
-.synu-hover-card--right { transform-origin: left center; }
+.tokis-hover-card--top { transform-origin: bottom center; }
+.tokis-hover-card--bottom { transform-origin: top center; }
+.tokis-hover-card--left  { transform-origin: right center; }
+.tokis-hover-card--right { transform-origin: left center; }
 
 @media (prefers-reduced-motion: reduce) {
-  .synu-hover-card { animation: none; }
+  .tokis-hover-card { animation: none; }
 }

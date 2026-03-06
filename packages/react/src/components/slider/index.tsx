@@ -56,16 +56,16 @@ export const Slider = forwardRef<HTMLDivElement, SliderProps>(({
     : [];
 
   return (
-    <div className={cn('synu-slider-root', className)} data-disabled={disabled || undefined} {...props} ref={ref}>
+    <div className={cn('tokis-slider-root', className)} data-disabled={disabled || undefined} {...props} ref={ref}>
       {label && (
         <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '8px' }}>
-          <span className="synu-label">{label}</span>
-          {showValue && <span className="synu-text--secondary" style={{ fontSize: 'var(--synu-font-size-sm)' }}>{current}</span>}
+          <span className="tokis-label">{label}</span>
+          {showValue && <span className="tokis-text--secondary" style={{ fontSize: 'var(--tokis-font-size-sm)' }}>{current}</span>}
         </div>
       )}
-      <div className="synu-slider-track-wrapper">
-        <div ref={trackRef} className="synu-slider-track" onClick={handleTrackClick}>
-          <div className="synu-slider-range" style={{ width: `${pct}%` }} />
+      <div className="tokis-slider-track-wrapper">
+        <div ref={trackRef} className="tokis-slider-track" onClick={handleTrackClick}>
+          <div className="tokis-slider-range" style={{ width: `${pct}%` }} />
         </div>
         <div
           role="slider"
@@ -75,7 +75,7 @@ export const Slider = forwardRef<HTMLDivElement, SliderProps>(({
           aria-valuenow={current}
           aria-label={label}
           aria-disabled={disabled}
-          className="synu-slider-thumb"
+          className="tokis-slider-thumb"
           style={{ left: `${pct}%` }}
           onKeyDown={handleKeyDown}
           onMouseDown={(e) => {
@@ -92,9 +92,9 @@ export const Slider = forwardRef<HTMLDivElement, SliderProps>(({
         />
       </div>
       {markList.length > 0 && (
-        <div className="synu-slider-marks">
+        <div className="tokis-slider-marks">
           {markList.map((m) => (
-            <span key={m.value} className="synu-slider-mark-label">{m.label ?? m.value}</span>
+            <span key={m.value} className="tokis-slider-mark-label">{m.label ?? m.value}</span>
           ))}
         </div>
       )}

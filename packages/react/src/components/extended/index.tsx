@@ -24,7 +24,7 @@ export function Autocomplete({ options, value, onChange, label, placeholder = 'S
   const filtered = useMemo(() => options.filter((o) => o.label.toLowerCase().includes(query.toLowerCase())), [options, query]);
 
   return (
-    <div className="synu-autocomplete">
+    <div className="tokis-autocomplete">
       <TextField
         label={label}
         value={query}
@@ -38,12 +38,12 @@ export function Autocomplete({ options, value, onChange, label, placeholder = 'S
         {...props}
       />
       {open && filtered.length > 0 && (
-        <div className="synu-autocomplete-list" role="listbox">
+        <div className="tokis-autocomplete-list" role="listbox">
           {filtered.map((option) => (
             <button
               key={option.value}
               type="button"
-              className="synu-autocomplete-item"
+              className="tokis-autocomplete-item"
               onClick={() => {
                 setQuery(option.label);
                 onChange?.(option.value);
@@ -64,7 +64,7 @@ export interface ButtonGroupProps extends React.HTMLAttributes<HTMLDivElement> {
 }
 
 export function ButtonGroup({ orientation = 'horizontal', className, ...props }: ButtonGroupProps) {
-  return <div className={cn('synu-button-group', orientation === 'vertical' && 'synu-button-group--vertical', className)} {...props} />;
+  return <div className={cn('tokis-button-group', orientation === 'vertical' && 'tokis-button-group--vertical', className)} {...props} />;
 }
 
 export interface FloatingActionButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
@@ -73,7 +73,7 @@ export interface FloatingActionButtonProps extends React.ButtonHTMLAttributes<HT
 
 export function FloatingActionButton({ children, label = 'Action', className, ...props }: FloatingActionButtonProps) {
   return (
-    <ButtonRoot className={cn('synu-fab', className)} iconOnly aria-label={label} {...props}>
+    <ButtonRoot className={cn('tokis-fab', className)} iconOnly aria-label={label} {...props}>
       {children}
     </ButtonRoot>
   );
@@ -97,7 +97,7 @@ export function NumberField({ label, value = 0, onChange, step = 1, min, max, ..
   };
 
   return (
-    <div className="synu-number-field">
+    <div className="tokis-number-field">
       <TextField
         {...props}
         type="number"
@@ -105,7 +105,7 @@ export function NumberField({ label, value = 0, onChange, step = 1, min, max, ..
         value={value}
         onChange={(e) => onChange?.(Number(e.target.value))}
       />
-      <div className="synu-number-field-actions">
+      <div className="tokis-number-field-actions">
         <ButtonRoot size="sm" variant="outline" onClick={() => update(value - parsedStep)}>-</ButtonRoot>
         <ButtonRoot size="sm" variant="outline" onClick={() => update(value + parsedStep)}>+</ButtonRoot>
       </div>
@@ -130,7 +130,7 @@ export function Rating({ value = 0, max = 5, readOnly = false, onChange, size = 
 
   return (
     <div
-      className={cn('synu-rating', readOnly && 'synu-rating--readonly')}
+      className={cn('tokis-rating', readOnly && 'tokis-rating--readonly')}
       role="radiogroup"
       aria-label={label}
       data-readonly={readOnly || undefined}
@@ -147,9 +147,9 @@ export function Rating({ value = 0, max = 5, readOnly = false, onChange, size = 
             aria-label={`${current} star${current !== 1 ? 's' : ''}`}
             disabled={readOnly}
             className={cn(
-              'synu-rating-star',
-              filled && 'synu-rating-star--active',
-              hovered !== null && filled && 'synu-rating-star--hover',
+              'tokis-rating-star',
+              filled && 'tokis-rating-star--active',
+              hovered !== null && filled && 'tokis-rating-star--hover',
             )}
             style={{ fontSize: sizeMap[size] }}
             onClick={() => onChange?.(current)}
@@ -209,11 +209,11 @@ export function TransferList({ left, right, onChange, leftTitle = 'Available', r
   };
 
   const renderPane = (title: string, items: TransferItem[], checked: string[], setChecked: (ids: string[]) => void) => (
-    <Card className="synu-transfer-pane">
+    <Card className="tokis-transfer-pane">
       <CardHeader>{title}</CardHeader>
       <CardBody>
         {items.map((item) => (
-          <label key={item.id} className="synu-transfer-item">
+          <label key={item.id} className="tokis-transfer-item">
             <input
               type="checkbox"
               checked={checked.includes(item.id)}
@@ -227,9 +227,9 @@ export function TransferList({ left, right, onChange, leftTitle = 'Available', r
   );
 
   return (
-    <div className="synu-transfer-list">
+    <div className="tokis-transfer-list">
       {renderPane(leftTitle, left, leftChecked, setLeftChecked)}
-      <div className="synu-transfer-actions">
+      <div className="tokis-transfer-actions">
         <ButtonRoot size="sm" onClick={moveToRight}>{'>'}</ButtonRoot>
         <ButtonRoot size="sm" onClick={moveToLeft}>{'<'}</ButtonRoot>
       </div>
@@ -240,11 +240,11 @@ export function TransferList({ left, right, onChange, leftTitle = 'Available', r
 
 // ToggleButton and ToggleGroup are in components/toggle/index.tsx
 
-export interface SynuIconProps extends React.HTMLAttributes<HTMLSpanElement> {
+export interface TokisIconProps extends React.HTMLAttributes<HTMLSpanElement> {
   name: 'search' | 'close' | 'menu' | 'check' | 'star' | 'arrow-right';
 }
 
-const iconMap: Record<SynuIconProps['name'], string> = {
+const iconMap: Record<TokisIconProps['name'], string> = {
   search: '⌕',
   close: '×',
   menu: '☰',
@@ -253,8 +253,8 @@ const iconMap: Record<SynuIconProps['name'], string> = {
   'arrow-right': '→',
 };
 
-export function Icon({ name, className, ...props }: SynuIconProps) {
-  return <span className={cn('synu-icon', className)} aria-hidden="true" {...props}>{iconMap[name]}</span>;
+export function Icon({ name, className, ...props }: TokisIconProps) {
+  return <span className={cn('tokis-icon', className)} aria-hidden="true" {...props}>{iconMap[name]}</span>;
 }
 
 export interface MaterialIconProps extends React.HTMLAttributes<HTMLSpanElement> {
@@ -262,7 +262,7 @@ export interface MaterialIconProps extends React.HTMLAttributes<HTMLSpanElement>
 }
 
 export function MaterialIcon({ icon, className, ...props }: MaterialIconProps) {
-  return <span className={cn('synu-material-icon', className)} {...props}>{icon}</span>;
+  return <span className={cn('tokis-material-icon', className)} {...props}>{icon}</span>;
 }
 
 export interface BackdropProps extends React.HTMLAttributes<HTMLDivElement> {
@@ -273,7 +273,7 @@ export interface BackdropProps extends React.HTMLAttributes<HTMLDivElement> {
 export function Backdrop({ open, onClick, className, children, ...props }: BackdropProps) {
   if (!open) return null;
   return (
-    <div className={cn('synu-backdrop', className)} onClick={onClick} {...props}>
+    <div className={cn('tokis-backdrop', className)} onClick={onClick} {...props}>
       {children}
     </div>
   );
@@ -286,7 +286,7 @@ export interface PaperProps extends React.HTMLAttributes<HTMLDivElement> {
 }
 
 export function Paper({ elevation = 1, className, ...props }: PaperProps) {
-  return <div className={cn('synu-paper', `synu-paper--${elevation}`, className)} {...props} />;
+  return <div className={cn('tokis-paper', `tokis-paper--${elevation}`, className)} {...props} />;
 }
 
 // BottomNavigation is in components/bottom-nav/index.tsx
@@ -306,14 +306,14 @@ export interface SpeedDialProps {
 export function SpeedDial({ label = 'Open actions', actions }: SpeedDialProps) {
   const [open, setOpen] = useState(false);
   return (
-    <div className="synu-speed-dial">
+    <div className="tokis-speed-dial">
       {open && (
-        <div className="synu-speed-dial-actions">
+        <div className="tokis-speed-dial-actions">
           {actions.map((action) => (
             <button
               key={action.id}
               type="button"
-              className="synu-speed-dial-action"
+              className="tokis-speed-dial-action"
               onClick={() => {
                 action.onClick?.();
                 setOpen(false);
@@ -337,11 +337,11 @@ export interface ImageListProps extends React.HTMLAttributes<HTMLDivElement> {
 }
 
 export function ImageList({ cols = 3, className, style, ...props }: ImageListProps) {
-  return <div className={cn('synu-image-list', className)} style={{ gridTemplateColumns: `repeat(${cols}, minmax(0, 1fr))`, ...style }} {...props} />;
+  return <div className={cn('tokis-image-list', className)} style={{ gridTemplateColumns: `repeat(${cols}, minmax(0, 1fr))`, ...style }} {...props} />;
 }
 
 export function ImageListItem(props: React.HTMLAttributes<HTMLDivElement>) {
-  return <div className="synu-image-list-item" {...props} />;
+  return <div className="tokis-image-list-item" {...props} />;
 }
 
 export interface ClickAwayListenerProps {
@@ -410,9 +410,9 @@ export function OtpInput({ length = 6, value = '', onChange, disabled = false, e
   };
 
   return (
-    <div className="synu-otp-root">
-      {label && <label className="synu-label" style={{ marginBottom: 'var(--synu-spacing-2)', display: 'block' }}>{label}</label>}
-      <div className="synu-otp-inputs" aria-label={label ?? 'OTP Input'}>
+    <div className="tokis-otp-root">
+      {label && <label className="tokis-label" style={{ marginBottom: 'var(--tokis-spacing-2)', display: 'block' }}>{label}</label>}
+      <div className="tokis-otp-inputs" aria-label={label ?? 'OTP Input'}>
         {digits.map((digit, index) => (
           <input
             key={index}
@@ -423,7 +423,7 @@ export function OtpInput({ length = 6, value = '', onChange, disabled = false, e
             maxLength={1}
             value={digit.trim()}
             disabled={disabled}
-            className={cn('synu-otp-cell', error && 'synu-otp-cell--error', digit.trim() && 'synu-otp-cell--filled')}
+            className={cn('tokis-otp-cell', error && 'tokis-otp-cell--error', digit.trim() && 'tokis-otp-cell--filled')}
             aria-label={`Digit ${index + 1} of ${length}`}
             onChange={(e) => handleChange(index, e.target.value)}
             onKeyDown={(e) => handleKeyDown(index, e)}
@@ -479,7 +479,7 @@ export function FileDropZone({
 
   return (
     <div
-      className={cn('synu-dropzone', dragging && 'synu-dropzone--dragging', disabled && 'synu-dropzone--disabled', error && 'synu-dropzone--error')}
+      className={cn('tokis-dropzone', dragging && 'tokis-dropzone--dragging', disabled && 'tokis-dropzone--disabled', error && 'tokis-dropzone--error')}
       role="button"
       tabIndex={disabled ? -1 : 0}
       aria-disabled={disabled}
@@ -501,19 +501,19 @@ export function FileDropZone({
         style={{ display: 'none' }}
         onChange={(e) => process(e.target.files)}
       />
-      <div className="synu-dropzone__icon" aria-hidden="true">
+      <div className="tokis-dropzone__icon" aria-hidden="true">
         <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
           <path d="M6 22v3a1 1 0 0 0 1 1h18a1 1 0 0 0 1-1v-3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
           <path d="M16 6v14M10 12l6-6 6 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
       </div>
-      <div className="synu-dropzone__label">{label}</div>
-      {hint && !files.length && <div className="synu-dropzone__hint">{hint}</div>}
-      {error && <div className="synu-dropzone__error">{error}</div>}
+      <div className="tokis-dropzone__label">{label}</div>
+      {hint && !files.length && <div className="tokis-dropzone__hint">{hint}</div>}
+      {error && <div className="tokis-dropzone__error">{error}</div>}
       {files.length > 0 && !error && (
-        <div className="synu-dropzone__files">
+        <div className="tokis-dropzone__files">
           {files.map((f) => (
-            <span key={f.name} className="synu-dropzone__file">{f.name}</span>
+            <span key={f.name} className="tokis-dropzone__file">{f.name}</span>
           ))}
         </div>
       )}
@@ -529,7 +529,7 @@ export function CssBaseline() {
 
 export function InitColorSchemeScript() {
   const script = `(() => {
-    const stored = localStorage.getItem('synu-theme');
+    const stored = localStorage.getItem('tokis-theme');
     const mode = stored || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
     document.documentElement.setAttribute('data-theme', mode);
   })();`;
@@ -547,8 +547,8 @@ export function Modal({ open, onClose, children }: ModalProps) {
   if (!open) return null;
   return (
     <Portal>
-      <div className="synu-modal-root" role="presentation" onClick={onClose}>
-        <div className="synu-modal-content" role="dialog" aria-modal="true" onClick={(e) => e.stopPropagation()}>
+      <div className="tokis-modal-root" role="presentation" onClick={onClose}>
+        <div className="tokis-modal-content" role="dialog" aria-modal="true" onClick={(e) => e.stopPropagation()}>
           {children}
         </div>
       </div>
@@ -591,7 +591,7 @@ export function Popper({ anchorEl, open, children, placement = 'bottom-start' }:
 
   return (
     <Portal>
-      <div className="synu-popper" style={{ top: pos.top, left: pos.left }}>
+      <div className="tokis-popper" style={{ top: pos.top, left: pos.left }}>
         {children}
       </div>
     </Portal>
@@ -622,7 +622,7 @@ export function TextareaAutosize({ minRows = 3, maxRows = 8, onChange, ...props 
   return (
     <textarea
       ref={ref}
-      className="synu-textarea synu-textarea-autosize"
+      className="tokis-textarea tokis-textarea-autosize"
       onChange={(event) => {
         resize();
         onChange?.(event);
@@ -638,7 +638,7 @@ export interface FadeProps {
 }
 
 export function Fade({ in: visible, children }: FadeProps) {
-  return <div className={cn('synu-fade', visible && 'synu-fade--in')}>{children}</div>;
+  return <div className={cn('tokis-fade', visible && 'tokis-fade--in')}>{children}</div>;
 }
 
 export function useMediaQuery(query: string) {
@@ -720,11 +720,11 @@ export interface ChartsProps {
 export function Charts({ data, labels = [] }: ChartsProps) {
   const max = Math.max(...data, 1);
   return (
-    <div className="synu-chart" role="img" aria-label="Bar chart">
+    <div className="tokis-chart" role="img" aria-label="Bar chart">
       {data.map((value, index) => (
-        <div key={index} className="synu-chart-bar-wrap">
-          <div className="synu-chart-bar" style={{ height: `${(value / max) * 100}%` }} title={`${labels[index] ?? index}: ${value}`} />
-          <span className="synu-chart-label">{labels[index] ?? index + 1}</span>
+        <div key={index} className="tokis-chart-bar-wrap">
+          <div className="tokis-chart-bar" style={{ height: `${(value / max) * 100}%` }} title={`${labels[index] ?? index}: ${value}`} />
+          <span className="tokis-chart-label">{labels[index] ?? index + 1}</span>
         </div>
       ))}
     </div>

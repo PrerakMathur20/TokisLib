@@ -42,7 +42,7 @@ export function Accordion({ items, type = 'single', defaultValue, value, onChang
   };
 
   return (
-    <div className={cn('synu-accordion-root', variant === 'flush' && 'synu-accordion-root--flush', className)}>
+    <div className={cn('tokis-accordion-root', variant === 'flush' && 'tokis-accordion-root--flush', className)}>
       {items.map((item) => (
         <AccordionItemComponent key={item.value} item={item} isOpen={openValues.includes(item.value)} onToggle={toggle} />
       ))}
@@ -55,7 +55,7 @@ function AccordionItemComponent({ item, isOpen, onToggle }: { item: AccordionIte
   const panelId = useId();
 
   return (
-    <div className="synu-accordion-item">
+    <div className="tokis-accordion-item">
       <button
         id={triggerId}
         type="button"
@@ -63,11 +63,11 @@ function AccordionItemComponent({ item, isOpen, onToggle }: { item: AccordionIte
         aria-controls={panelId}
         aria-disabled={item.disabled || undefined}
         disabled={item.disabled}
-        className="synu-accordion-trigger"
+        className="tokis-accordion-trigger"
         onClick={() => { if (!item.disabled) onToggle(item.value); }}
       >
         <span style={{ flex: 1, textAlign: 'left' }}>{item.trigger}</span>
-        <svg className="synu-accordion-trigger__icon" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+        <svg className="tokis-accordion-trigger__icon" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
           <path d="M4 6l4 4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
         </svg>
       </button>
@@ -76,11 +76,11 @@ function AccordionItemComponent({ item, isOpen, onToggle }: { item: AccordionIte
         id={panelId}
         role="region"
         aria-labelledby={triggerId}
-        className="synu-accordion-content"
+        className="tokis-accordion-content"
         data-open={isOpen ? 'true' : 'false'}
         aria-hidden={!isOpen}
       >
-        <div className="synu-accordion-content-inner">{item.content}</div>
+        <div className="tokis-accordion-content-inner">{item.content}</div>
       </div>
     </div>
   );

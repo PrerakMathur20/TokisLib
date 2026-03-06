@@ -37,17 +37,17 @@ export function InfiniteScroll({
   }, [hasMore, loading, onLoadMore, threshold]);
 
   return (
-    <div className={cn('synu-infinite-scroll', className)}>
+    <div className={cn('tokis-infinite-scroll', className)}>
       {children}
       {loading && (
-        <div className="synu-infinite-scroll__loading">
-          {loadingComponent ?? <span className="synu-infinite-scroll__spinner" aria-label="Loading more…" />}
+        <div className="tokis-infinite-scroll__loading">
+          {loadingComponent ?? <span className="tokis-infinite-scroll__spinner" aria-label="Loading more…" />}
         </div>
       )}
       {!hasMore && !loading && endMessage && (
-        <div className="synu-infinite-scroll__end">{endMessage}</div>
+        <div className="tokis-infinite-scroll__end">{endMessage}</div>
       )}
-      <div ref={sentinelRef} className="synu-infinite-scroll__sentinel" aria-hidden="true" />
+      <div ref={sentinelRef} className="tokis-infinite-scroll__sentinel" aria-hidden="true" />
     </div>
   );
 }

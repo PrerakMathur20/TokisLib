@@ -11,14 +11,14 @@ export const Table = forwardRef<HTMLTableElement, TableProps>(({ striped = false
   const table = (
     <table
       ref={ref}
-      className={cn('synu-table', striped && 'synu-table--striped', !container && className)}
+      className={cn('tokis-table', striped && 'tokis-table--striped', !container && className)}
       {...props}
     >
       {children}
     </table>
   );
   if (!container) return table;
-  return <div className={cn('synu-table-container', className)}>{table}</div>;
+  return <div className={cn('tokis-table-container', className)}>{table}</div>;
 });
 Table.displayName = 'Table';
 
@@ -49,7 +49,7 @@ export const TableHeaderCell = forwardRef<HTMLTableCellElement, TableHeaderCellP
       ref={ref}
       scope="col"
       aria-sort={sorted ? sorted === 'asc' ? 'ascending' : 'descending' : sortable ? 'none' : undefined}
-      className={cn(sortable && 'synu-table th--sortable', className)}
+      className={cn(sortable && 'tokis-table th--sortable', className)}
       onClick={sortable ? onSort : undefined}
       onKeyDown={sortable ? (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); onSort?.(); } } : undefined}
       tabIndex={sortable ? 0 : undefined}

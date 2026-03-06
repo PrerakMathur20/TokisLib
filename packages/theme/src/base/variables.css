@@ -1,206 +1,206 @@
 /* ============================================================
-   Synu — Design Token CSS Variables
+   Tokis — Design Token CSS Variables
    Light theme default + dark theme via [data-theme="dark"]
    ============================================================ */
 
 :root {
   /* Primitive Colors */
-  --synu-color-primary: #0066ff;
-  --synu-color-primary-hover: #0052cc;
-  --synu-color-primary-active: #003d99;
-  --synu-color-primary-subtle: #e6f0ff;
-  --synu-color-secondary: #7c3aed;
-  --synu-color-secondary-hover: #6d28d9;
-  --synu-color-secondary-subtle: #ede9fe;
-  --synu-color-background: #ffffff;
-  --synu-color-surface: #f8f9fa;
-  --synu-color-surface-raised: #ffffff;
-  --synu-color-surface-overlay: #ffffff;
-  --synu-color-border: #e2e8f0;
-  --synu-color-border-strong: #cbd5e1;
-  --synu-color-error: #dc2626;
-  --synu-color-error-subtle: #fef2f2;
-  --synu-color-warning: #d97706;
-  --synu-color-warning-subtle: #fffbeb;
-  --synu-color-success: #16a34a;
-  --synu-color-success-subtle: #f0fdf4;
-  --synu-color-info: #0284c7;
-  --synu-color-info-subtle: #f0f9ff;
+  --tokis-color-primary: #0066ff;
+  --tokis-color-primary-hover: #0052cc;
+  --tokis-color-primary-active: #003d99;
+  --tokis-color-primary-subtle: #e6f0ff;
+  --tokis-color-secondary: #7c3aed;
+  --tokis-color-secondary-hover: #6d28d9;
+  --tokis-color-secondary-subtle: #ede9fe;
+  --tokis-color-background: #ffffff;
+  --tokis-color-surface: #f8f9fa;
+  --tokis-color-surface-raised: #ffffff;
+  --tokis-color-surface-overlay: #ffffff;
+  --tokis-color-border: #e2e8f0;
+  --tokis-color-border-strong: #cbd5e1;
+  --tokis-color-error: #dc2626;
+  --tokis-color-error-subtle: #fef2f2;
+  --tokis-color-warning: #d97706;
+  --tokis-color-warning-subtle: #fffbeb;
+  --tokis-color-success: #16a34a;
+  --tokis-color-success-subtle: #f0fdf4;
+  --tokis-color-info: #0284c7;
+  --tokis-color-info-subtle: #f0f9ff;
 
   /* Neutral scale */
-  --synu-color-neutral-50:  #f8fafc;
-  --synu-color-neutral-100: #f1f5f9;
-  --synu-color-neutral-200: #e2e8f0;
-  --synu-color-neutral-300: #cbd5e1;
-  --synu-color-neutral-400: #94a3b8;
-  --synu-color-neutral-500: #64748b;
-  --synu-color-neutral-600: #475569;
-  --synu-color-neutral-700: #334155;
-  --synu-color-neutral-800: #1e293b;
-  --synu-color-neutral-900: #0f172a;
+  --tokis-color-neutral-50:  #f8fafc;
+  --tokis-color-neutral-100: #f1f5f9;
+  --tokis-color-neutral-200: #e2e8f0;
+  --tokis-color-neutral-300: #cbd5e1;
+  --tokis-color-neutral-400: #94a3b8;
+  --tokis-color-neutral-500: #64748b;
+  --tokis-color-neutral-600: #475569;
+  --tokis-color-neutral-700: #334155;
+  --tokis-color-neutral-800: #1e293b;
+  --tokis-color-neutral-900: #0f172a;
 
   /* Text */
-  --synu-text-primary:   #0f172a;
-  --synu-text-secondary: #475569;
-  --synu-text-tertiary:  #94a3b8;
-  --synu-text-disabled:  #cbd5e1;
-  --synu-text-inverse:   #ffffff;
-  --synu-text-on-primary: #ffffff;
-  --synu-text-link:      #0066ff;
-  --synu-text-error:     #dc2626;
-  --synu-text-success:   #16a34a;
-  --synu-text-warning:   #d97706;
+  --tokis-text-primary:   #0f172a;
+  --tokis-text-secondary: #475569;
+  --tokis-text-tertiary:  #94a3b8;
+  --tokis-text-disabled:  #cbd5e1;
+  --tokis-text-inverse:   #ffffff;
+  --tokis-text-on-primary: #ffffff;
+  --tokis-text-link:      #0066ff;
+  --tokis-text-error:     #dc2626;
+  --tokis-text-success:   #16a34a;
+  --tokis-text-warning:   #d97706;
 
   /* Spacing */
-  --synu-spacing-0:   0px;
-  --synu-spacing-1:   4px;
-  --synu-spacing-2:   8px;
-  --synu-spacing-3:   12px;
-  --synu-spacing-4:   16px;
-  --synu-spacing-5:   20px;
-  --synu-spacing-6:   24px;
-  --synu-spacing-8:   32px;
-  --synu-spacing-10:  40px;
-  --synu-spacing-12:  48px;
-  --synu-spacing-16:  64px;
-  --synu-spacing-20:  80px;
-  --synu-spacing-24:  96px;
+  --tokis-spacing-0:   0px;
+  --tokis-spacing-1:   4px;
+  --tokis-spacing-2:   8px;
+  --tokis-spacing-3:   12px;
+  --tokis-spacing-4:   16px;
+  --tokis-spacing-5:   20px;
+  --tokis-spacing-6:   24px;
+  --tokis-spacing-8:   32px;
+  --tokis-spacing-10:  40px;
+  --tokis-spacing-12:  48px;
+  --tokis-spacing-16:  64px;
+  --tokis-spacing-20:  80px;
+  --tokis-spacing-24:  96px;
 
   /* Typography */
-  --synu-font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', Helvetica, Arial, sans-serif;
-  --synu-font-family-mono: 'SF Mono', 'Fira Code', 'Cascadia Code', Consolas, monospace;
-  --synu-font-size-xs:   0.75rem;
-  --synu-font-size-sm:   0.875rem;
-  --synu-font-size-md:   1rem;
-  --synu-font-size-lg:   1.125rem;
-  --synu-font-size-xl:   1.25rem;
-  --synu-font-size-2xl:  1.5rem;
-  --synu-font-size-3xl:  1.875rem;
-  --synu-font-size-4xl:  2.25rem;
-  --synu-font-weight-regular: 400;
-  --synu-font-weight-medium:  500;
-  --synu-font-weight-semibold: 600;
-  --synu-font-weight-bold: 700;
-  --synu-line-height-tight:  1.25;
-  --synu-line-height-normal: 1.5;
-  --synu-line-height-relaxed: 1.75;
-  --synu-letter-spacing-tight: -0.025em;
-  --synu-letter-spacing-normal: 0em;
-  --synu-letter-spacing-wide:  0.025em;
+  --tokis-font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', Helvetica, Arial, sans-serif;
+  --tokis-font-family-mono: 'SF Mono', 'Fira Code', 'Cascadia Code', Consolas, monospace;
+  --tokis-font-size-xs:   0.75rem;
+  --tokis-font-size-sm:   0.875rem;
+  --tokis-font-size-md:   1rem;
+  --tokis-font-size-lg:   1.125rem;
+  --tokis-font-size-xl:   1.25rem;
+  --tokis-font-size-2xl:  1.5rem;
+  --tokis-font-size-3xl:  1.875rem;
+  --tokis-font-size-4xl:  2.25rem;
+  --tokis-font-weight-regular: 400;
+  --tokis-font-weight-medium:  500;
+  --tokis-font-weight-semibold: 600;
+  --tokis-font-weight-bold: 700;
+  --tokis-line-height-tight:  1.25;
+  --tokis-line-height-normal: 1.5;
+  --tokis-line-height-relaxed: 1.75;
+  --tokis-letter-spacing-tight: -0.025em;
+  --tokis-letter-spacing-normal: 0em;
+  --tokis-letter-spacing-wide:  0.025em;
 
   /* Border Radius */
-  --synu-radius-none: 0px;
-  --synu-radius-xs:   2px;
-  --synu-radius-sm:   4px;
-  --synu-radius-md:   6px;
-  --synu-radius-lg:   8px;
-  --synu-radius-xl:   12px;
-  --synu-radius-2xl:  16px;
-  --synu-radius-full: 9999px;
+  --tokis-radius-none: 0px;
+  --tokis-radius-xs:   2px;
+  --tokis-radius-sm:   4px;
+  --tokis-radius-md:   6px;
+  --tokis-radius-lg:   8px;
+  --tokis-radius-xl:   12px;
+  --tokis-radius-2xl:  16px;
+  --tokis-radius-full: 9999px;
 
   /* Shadows */
-  --synu-shadow-xs:  0 1px 2px 0 rgb(0 0 0 / 0.05);
-  --synu-shadow-sm:  0 1px 3px 0 rgb(0 0 0 / 0.10), 0 1px 2px -1px rgb(0 0 0 / 0.10);
-  --synu-shadow-md:  0 4px 6px -1px rgb(0 0 0 / 0.10), 0 2px 4px -2px rgb(0 0 0 / 0.10);
-  --synu-shadow-lg:  0 10px 15px -3px rgb(0 0 0 / 0.10), 0 4px 6px -4px rgb(0 0 0 / 0.10);
-  --synu-shadow-xl:  0 20px 25px -5px rgb(0 0 0 / 0.10), 0 8px 10px -6px rgb(0 0 0 / 0.10);
-  --synu-shadow-2xl: 0 25px 50px -12px rgb(0 0 0 / 0.25);
-  --synu-shadow-inner: inset 0 2px 4px 0 rgb(0 0 0 / 0.05);
+  --tokis-shadow-xs:  0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --tokis-shadow-sm:  0 1px 3px 0 rgb(0 0 0 / 0.10), 0 1px 2px -1px rgb(0 0 0 / 0.10);
+  --tokis-shadow-md:  0 4px 6px -1px rgb(0 0 0 / 0.10), 0 2px 4px -2px rgb(0 0 0 / 0.10);
+  --tokis-shadow-lg:  0 10px 15px -3px rgb(0 0 0 / 0.10), 0 4px 6px -4px rgb(0 0 0 / 0.10);
+  --tokis-shadow-xl:  0 20px 25px -5px rgb(0 0 0 / 0.10), 0 8px 10px -6px rgb(0 0 0 / 0.10);
+  --tokis-shadow-2xl: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+  --tokis-shadow-inner: inset 0 2px 4px 0 rgb(0 0 0 / 0.05);
 
   /* Focus */
-  --synu-color-focus-ring: rgb(0 102 255 / 0.15);
-  --synu-color-focus-ring-error: rgb(220 38 38 / 0.15);
+  --tokis-color-focus-ring: rgb(0 102 255 / 0.15);
+  --tokis-color-focus-ring-error: rgb(220 38 38 / 0.15);
 
   /* Surface interaction states */
-  --synu-color-surface-hover:  var(--synu-color-neutral-100);
-  --synu-color-surface-active: var(--synu-color-neutral-200);
+  --tokis-color-surface-hover:  var(--tokis-color-neutral-100);
+  --tokis-color-surface-active: var(--tokis-color-neutral-200);
 
   /* Motion */
-  --synu-duration-fast:    100ms;
-  --synu-duration-normal:  200ms;
-  --synu-duration-slow:    300ms;
-  --synu-duration-slower:  500ms;
-  --synu-ease-in:          cubic-bezier(0.4, 0, 1, 1);
-  --synu-ease-out:         cubic-bezier(0, 0, 0.2, 1);
-  --synu-ease-in-out:      cubic-bezier(0.4, 0, 0.2, 1);
-  --synu-ease-spring:      cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  --tokis-duration-fast:    100ms;
+  --tokis-duration-normal:  200ms;
+  --tokis-duration-slow:    300ms;
+  --tokis-duration-slower:  500ms;
+  --tokis-ease-in:          cubic-bezier(0.4, 0, 1, 1);
+  --tokis-ease-out:         cubic-bezier(0, 0, 0.2, 1);
+  --tokis-ease-in-out:      cubic-bezier(0.4, 0, 0.2, 1);
+  --tokis-ease-spring:      cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
   /* Z-index */
-  --synu-z-base:     0;
-  --synu-z-raised:   1;
-  --synu-z-dropdown: 1000;
-  --synu-z-sticky:   1100;
-  --synu-z-overlay:  1200;
-  --synu-z-modal:    1300;
-  --synu-z-popover:  1400;
-  --synu-z-tooltip:  1500;
-  --synu-z-toast:    1600;
+  --tokis-z-base:     0;
+  --tokis-z-raised:   1;
+  --tokis-z-dropdown: 1000;
+  --tokis-z-sticky:   1100;
+  --tokis-z-overlay:  1200;
+  --tokis-z-modal:    1300;
+  --tokis-z-popover:  1400;
+  --tokis-z-tooltip:  1500;
+  --tokis-z-toast:    1600;
 
   /* Breakpoints (for reference in JS, not used in CSS directly) */
-  --synu-breakpoint-sm:  640px;
-  --synu-breakpoint-md:  768px;
-  --synu-breakpoint-lg:  1024px;
-  --synu-breakpoint-xl:  1280px;
-  --synu-breakpoint-2xl: 1536px;
+  --tokis-breakpoint-sm:  640px;
+  --tokis-breakpoint-md:  768px;
+  --tokis-breakpoint-lg:  1024px;
+  --tokis-breakpoint-xl:  1280px;
+  --tokis-breakpoint-2xl: 1536px;
 }
 
 /* ── Dark Theme ──────────────────────────────────────────── */
 [data-theme="dark"] {
-  --synu-color-primary: #3b82f6;
-  --synu-color-primary-hover: #60a5fa;
-  --synu-color-primary-active: #93c5fd;
-  --synu-color-primary-subtle: #1e3a5f;
-  --synu-color-secondary: #a78bfa;
-  --synu-color-secondary-hover: #c4b5fd;
-  --synu-color-secondary-subtle: #2e1065;
-  --synu-color-background: #0f172a;
-  --synu-color-surface: #1e293b;
-  --synu-color-surface-raised: #293548;
-  --synu-color-surface-overlay: #1e293b;
-  --synu-color-border: #334155;
-  --synu-color-border-strong: #475569;
-  --synu-color-error: #f87171;
-  --synu-color-error-subtle: #450a0a;
-  --synu-color-warning: #fbbf24;
-  --synu-color-warning-subtle: #451a03;
-  --synu-color-success: #4ade80;
-  --synu-color-success-subtle: #052e16;
-  --synu-color-info: #38bdf8;
-  --synu-color-info-subtle: #082f49;
+  --tokis-color-primary: #3b82f6;
+  --tokis-color-primary-hover: #60a5fa;
+  --tokis-color-primary-active: #93c5fd;
+  --tokis-color-primary-subtle: #1e3a5f;
+  --tokis-color-secondary: #a78bfa;
+  --tokis-color-secondary-hover: #c4b5fd;
+  --tokis-color-secondary-subtle: #2e1065;
+  --tokis-color-background: #0f172a;
+  --tokis-color-surface: #1e293b;
+  --tokis-color-surface-raised: #293548;
+  --tokis-color-surface-overlay: #1e293b;
+  --tokis-color-border: #334155;
+  --tokis-color-border-strong: #475569;
+  --tokis-color-error: #f87171;
+  --tokis-color-error-subtle: #450a0a;
+  --tokis-color-warning: #fbbf24;
+  --tokis-color-warning-subtle: #451a03;
+  --tokis-color-success: #4ade80;
+  --tokis-color-success-subtle: #052e16;
+  --tokis-color-info: #38bdf8;
+  --tokis-color-info-subtle: #082f49;
 
-  --synu-color-neutral-50:  #0f172a;
-  --synu-color-neutral-100: #1e293b;
-  --synu-color-neutral-200: #334155;
-  --synu-color-neutral-300: #475569;
-  --synu-color-neutral-400: #64748b;
-  --synu-color-neutral-500: #94a3b8;
-  --synu-color-neutral-600: #cbd5e1;
-  --synu-color-neutral-700: #e2e8f0;
-  --synu-color-neutral-800: #f1f5f9;
-  --synu-color-neutral-900: #f8fafc;
+  --tokis-color-neutral-50:  #0f172a;
+  --tokis-color-neutral-100: #1e293b;
+  --tokis-color-neutral-200: #334155;
+  --tokis-color-neutral-300: #475569;
+  --tokis-color-neutral-400: #64748b;
+  --tokis-color-neutral-500: #94a3b8;
+  --tokis-color-neutral-600: #cbd5e1;
+  --tokis-color-neutral-700: #e2e8f0;
+  --tokis-color-neutral-800: #f1f5f9;
+  --tokis-color-neutral-900: #f8fafc;
 
-  --synu-text-primary:   #f1f5f9;
-  --synu-text-secondary: #94a3b8;
-  --synu-text-tertiary:  #64748b;
-  --synu-text-disabled:  #475569;
-  --synu-text-inverse:   #0f172a;
-  --synu-text-on-primary: #ffffff;
-  --synu-text-link:      #60a5fa;
-  --synu-text-error:     #f87171;
-  --synu-text-success:   #4ade80;
-  --synu-text-warning:   #fbbf24;
+  --tokis-text-primary:   #f1f5f9;
+  --tokis-text-secondary: #94a3b8;
+  --tokis-text-tertiary:  #64748b;
+  --tokis-text-disabled:  #475569;
+  --tokis-text-inverse:   #0f172a;
+  --tokis-text-on-primary: #ffffff;
+  --tokis-text-link:      #60a5fa;
+  --tokis-text-error:     #f87171;
+  --tokis-text-success:   #4ade80;
+  --tokis-text-warning:   #fbbf24;
 
-  --synu-shadow-xs:  0 1px 2px 0 rgb(0 0 0 / 0.3);
-  --synu-shadow-sm:  0 1px 3px 0 rgb(0 0 0 / 0.4), 0 1px 2px -1px rgb(0 0 0 / 0.4);
-  --synu-shadow-md:  0 4px 6px -1px rgb(0 0 0 / 0.4), 0 2px 4px -2px rgb(0 0 0 / 0.4);
-  --synu-shadow-lg:  0 10px 15px -3px rgb(0 0 0 / 0.4), 0 4px 6px -4px rgb(0 0 0 / 0.4);
-  --synu-shadow-xl:  0 20px 25px -5px rgb(0 0 0 / 0.4), 0 8px 10px -6px rgb(0 0 0 / 0.4);
+  --tokis-shadow-xs:  0 1px 2px 0 rgb(0 0 0 / 0.3);
+  --tokis-shadow-sm:  0 1px 3px 0 rgb(0 0 0 / 0.4), 0 1px 2px -1px rgb(0 0 0 / 0.4);
+  --tokis-shadow-md:  0 4px 6px -1px rgb(0 0 0 / 0.4), 0 2px 4px -2px rgb(0 0 0 / 0.4);
+  --tokis-shadow-lg:  0 10px 15px -3px rgb(0 0 0 / 0.4), 0 4px 6px -4px rgb(0 0 0 / 0.4);
+  --tokis-shadow-xl:  0 20px 25px -5px rgb(0 0 0 / 0.4), 0 8px 10px -6px rgb(0 0 0 / 0.4);
 
-  --synu-color-focus-ring: rgb(59 130 246 / 0.2);
-  --synu-color-focus-ring-error: rgb(248 113 113 / 0.2);
+  --tokis-color-focus-ring: rgb(59 130 246 / 0.2);
+  --tokis-color-focus-ring-error: rgb(248 113 113 / 0.2);
 
   /* Dark mode surface-hover needs to be noticeably different from surface-overlay */
-  --synu-color-surface-hover:  var(--synu-color-neutral-200);  /* #334155 vs overlay #1e293b */
-  --synu-color-surface-active: var(--synu-color-neutral-300);  /* #475569 */
+  --tokis-color-surface-hover:  var(--tokis-color-neutral-200);  /* #334155 vs overlay #1e293b */
+  --tokis-color-surface-active: var(--tokis-color-neutral-300);  /* #475569 */
 }
 

@@ -1,19 +1,19 @@
 /* ── VirtualizedList ─────────────────────────────────────── */
 
-.synu-virtual-list {
+.tokis-virtual-list {
   scrollbar-width: thin;
-  scrollbar-color: var(--synu-color-border) transparent;
+  scrollbar-color: var(--tokis-color-border) transparent;
 }
 
-.synu-virtual-list::-webkit-scrollbar {
+.tokis-virtual-list::-webkit-scrollbar {
   width: 6px;
 }
 
-.synu-virtual-list::-webkit-scrollbar-track {
+.tokis-virtual-list::-webkit-scrollbar-track {
   background: transparent;
 }
 
-.synu-virtual-list::-webkit-scrollbar-thumb {
-  background: var(--synu-color-border);
-  border-radius: var(--synu-radius-full);
+.tokis-virtual-list::-webkit-scrollbar-thumb {
+  background: var(--tokis-color-border);
+  border-radius: var(--tokis-radius-full);
 }

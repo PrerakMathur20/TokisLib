@@ -22,15 +22,15 @@ export interface SnackbarContainerProps {
 
 export function SnackbarContainer({ position = 'bottom-right', items, onDismiss }: SnackbarContainerProps) {
   const posClassMap: Record<SnackbarPosition, string> = {
-    'bottom-right': '', 'bottom-left': 'synu-snackbar-container--bottom-left',
-    'bottom-center': 'synu-snackbar-container--bottom-center',
-    'top-right': 'synu-snackbar-container--top-right',
-    'top-center': 'synu-snackbar-container--top-center',
+    'bottom-right': '', 'bottom-left': 'tokis-snackbar-container--bottom-left',
+    'bottom-center': 'tokis-snackbar-container--bottom-center',
+    'top-right': 'tokis-snackbar-container--top-right',
+    'top-center': 'tokis-snackbar-container--top-center',
   };
 
   return (
     <Portal>
-      <div className={cn('synu-snackbar-container', posClassMap[position])} aria-live="polite" aria-atomic="false">
+      <div className={cn('tokis-snackbar-container', posClassMap[position])} aria-live="polite" aria-atomic="false">
         {items.map((item) => (
           <SnackbarToast key={item.id} item={item} onDismiss={onDismiss} />
         ))}
@@ -50,18 +50,18 @@ function SnackbarToast({ item, onDismiss }: { item: SnackbarItem; onDismiss: (id
   return (
     <div
       role="status"
-      className={cn('synu-snackbar', item.variant && item.variant !== 'default' && `synu-snackbar--${item.variant}`)}
+      className={cn('tokis-snackbar', item.variant && item.variant !== 'default' && `tokis-snackbar--${item.variant}`)}
     >
-      <div className="synu-snackbar__body">
-        {item.title && <div className="synu-snackbar__title">{item.title}</div>}
+      <div className="tokis-snackbar__body">
+        {item.title && <div className="tokis-snackbar__title">{item.title}</div>}
         <div>{item.message}</div>
         {item.action && (
-          <button className="synu-snackbar__action" onClick={() => { item.action!.onClick(); onDismiss(item.id); }}>
+          <button className="tokis-snackbar__action" onClick={() => { item.action!.onClick(); onDismiss(item.id); }}>
             {item.action.label}
           </button>
         )}
       </div>
-      <button className="synu-snackbar__close" onClick={() => onDismiss(item.id)} aria-label="Dismiss">
+      <button className="tokis-snackbar__close" onClick={() => onDismiss(item.id)} aria-label="Dismiss">
         <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
           <path d="M2 2l10 10M12 2L2 12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
         </svg>

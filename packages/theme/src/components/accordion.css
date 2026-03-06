@@ -1,64 +1,64 @@
 /* ============================================================
-   Synu — Accordion
+   Tokis — Accordion
    ============================================================ */
 
-.synu-accordion-root {
+.tokis-accordion-root {
   width: 100%;
-  border: 1px solid var(--synu-color-border);
-  border-radius: var(--synu-radius-lg);
+  border: 1px solid var(--tokis-color-border);
+  border-radius: var(--tokis-radius-lg);
   overflow: hidden;
 }
-.synu-accordion-root--flush {
+.tokis-accordion-root--flush {
   border: none;
   border-radius: 0;
 }
 
 /* ── Item ───────────────────────────────────────────────────── */
 
-.synu-accordion-item {
-  border-bottom: 1px solid var(--synu-color-border);
+.tokis-accordion-item {
+  border-bottom: 1px solid var(--tokis-color-border);
 }
-.synu-accordion-item:last-child {
+.tokis-accordion-item:last-child {
   border-bottom: none;
 }
 
 /* ── Trigger ────────────────────────────────────────────────── */
 
-.synu-accordion-trigger {
+.tokis-accordion-trigger {
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  padding: var(--synu-spacing-4) var(--synu-spacing-5);
-  font-size: var(--synu-font-size-sm);
-  font-weight: var(--synu-font-weight-medium);
+  padding: var(--tokis-spacing-4) var(--tokis-spacing-5);
+  font-size: var(--tokis-font-size-sm);
+  font-weight: var(--tokis-font-weight-medium);
   font-family: inherit;
-  color: var(--synu-text-primary);
+  color: var(--tokis-text-primary);
   background: none;
   border: none;
   text-align: left;
   cursor: pointer;
-  transition: background var(--synu-duration-fast) var(--synu-ease-out);
+  transition: background var(--tokis-duration-fast) var(--tokis-ease-out);
   outline: none;
-  gap: var(--synu-spacing-3);
+  gap: var(--tokis-spacing-3);
   -webkit-tap-highlight-color: transparent;
 }
 
-.synu-accordion-trigger:hover {
-  background: var(--synu-color-surface-hover);
+.tokis-accordion-trigger:hover {
+  background: var(--tokis-color-surface-hover);
 }
 
-.synu-accordion-trigger:focus-visible {
-  outline: 2px solid var(--synu-color-primary);
+.tokis-accordion-trigger:focus-visible {
+  outline: 2px solid var(--tokis-color-primary);
   outline-offset: -2px;
 }
 
-.synu-accordion-trigger[aria-expanded="true"] {
-  color: var(--synu-color-primary);
+.tokis-accordion-trigger[aria-expanded="true"] {
+  color: var(--tokis-color-primary);
 }
 
-.synu-accordion-trigger[aria-disabled="true"],
-.synu-accordion-trigger:disabled {
+.tokis-accordion-trigger[aria-disabled="true"],
+.tokis-accordion-trigger:disabled {
   opacity: 0.45;
   cursor: not-allowed;
   pointer-events: none;
@@ -66,51 +66,51 @@
 
 /* ── Trigger icon ───────────────────────────────────────────── */
 
-.synu-accordion-trigger__icon {
+.tokis-accordion-trigger__icon {
   flex-shrink: 0;
-  color: var(--synu-text-tertiary);
-  transition: transform var(--synu-duration-normal) var(--synu-ease-in-out);
+  color: var(--tokis-text-tertiary);
+  transition: transform var(--tokis-duration-normal) var(--tokis-ease-in-out);
   will-change: transform;
 }
-.synu-accordion-trigger[aria-expanded="true"] .synu-accordion-trigger__icon {
+.tokis-accordion-trigger[aria-expanded="true"] .tokis-accordion-trigger__icon {
   transform: rotate(180deg);
-  color: var(--synu-color-primary);
+  color: var(--tokis-color-primary);
 }
 
 /* ── Content — CSS grid height animation ────────────────────── */
 /* Uses grid-template-rows trick for smooth height animation    */
 /* without needing to know the height in JS                     */
 
-.synu-accordion-content {
+.tokis-accordion-content {
   display: grid;
   grid-template-rows: 0fr;
   transition:
-    grid-template-rows var(--synu-duration-normal) var(--synu-ease-in-out),
-    opacity var(--synu-duration-normal) var(--synu-ease-out);
+    grid-template-rows var(--tokis-duration-normal) var(--tokis-ease-in-out),
+    opacity var(--tokis-duration-normal) var(--tokis-ease-out);
   opacity: 0;
   overflow: hidden;
 }
 
-.synu-accordion-content[data-open="true"] {
+.tokis-accordion-content[data-open="true"] {
   grid-template-rows: 1fr;
   opacity: 1;
 }
 
-.synu-accordion-content-inner {
+.tokis-accordion-content-inner {
   overflow: hidden;
-  font-size: var(--synu-font-size-sm);
-  color: var(--synu-text-secondary);
-  line-height: var(--synu-line-height-relaxed);
-  padding: 0 var(--synu-spacing-5) var(--synu-spacing-3);
+  font-size: var(--tokis-font-size-sm);
+  color: var(--tokis-text-secondary);
+  line-height: var(--tokis-line-height-relaxed);
+  padding: 0 var(--tokis-spacing-5) var(--tokis-spacing-3);
 }
 
 /* ── Flush variant ──────────────────────────────────────────── */
 
-.synu-accordion-root--flush .synu-accordion-trigger {
+.tokis-accordion-root--flush .tokis-accordion-trigger {
   padding-left: 0;
   padding-right: 0;
 }
-.synu-accordion-root--flush .synu-accordion-content-inner {
+.tokis-accordion-root--flush .tokis-accordion-content-inner {
   padding-left: 0;
   padding-right: 0;
 }
@@ -118,7 +118,7 @@
 /* ── Reduced motion ─────────────────────────────────────────── */
 
 @media (prefers-reduced-motion: reduce) {
-  .synu-accordion-trigger { transition: none; }
-  .synu-accordion-trigger__icon { transition: none; }
-  .synu-accordion-content { transition: none; }
+  .tokis-accordion-trigger { transition: none; }
+  .tokis-accordion-trigger__icon { transition: none; }
+  .tokis-accordion-content { transition: none; }
 }
