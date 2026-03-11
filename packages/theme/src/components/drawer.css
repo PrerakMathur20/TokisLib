@@ -28,39 +28,37 @@
 }
 
 .tokis-drawer-content--right {
-  top: 0;
-  right: 0;
-  bottom: 0;
+  inset-block: 0;
+  inset-inline-end: 0;
   width: 400px;
   max-width: 90vw;
-  border-left: 1px solid var(--tokis-color-border);
+  border-inline-start: 1px solid var(--tokis-color-border);
   animation: tokis-drawer-in-right var(--tokis-duration-slow) var(--tokis-ease-out);
 }
 .tokis-drawer-content--left {
-  top: 0;
-  left: 0;
-  bottom: 0;
+  inset-block: 0;
+  inset-inline-start: 0;
   width: 400px;
   max-width: 90vw;
-  border-right: 1px solid var(--tokis-color-border);
+  border-inline-end: 1px solid var(--tokis-color-border);
   animation: tokis-drawer-in-left var(--tokis-duration-slow) var(--tokis-ease-out);
 }
 .tokis-drawer-content--bottom {
-  left: 0;
-  right: 0;
+  inset-inline: 0;
   bottom: 0;
   max-height: 90dvh;
   border-top: 1px solid var(--tokis-color-border);
-  border-radius: var(--tokis-radius-xl) var(--tokis-radius-xl) 0 0;
+  border-start-start-radius: var(--tokis-radius-xl);
+  border-start-end-radius: var(--tokis-radius-xl);
   animation: tokis-drawer-in-bottom var(--tokis-duration-slow) var(--tokis-ease-out);
 }
 .tokis-drawer-content--top {
-  left: 0;
-  right: 0;
+  inset-inline: 0;
   top: 0;
   max-height: 90dvh;
   border-bottom: 1px solid var(--tokis-color-border);
-  border-radius: 0 0 var(--tokis-radius-xl) var(--tokis-radius-xl);
+  border-end-start-radius: var(--tokis-radius-xl);
+  border-end-end-radius: var(--tokis-radius-xl);
   animation: tokis-drawer-in-top var(--tokis-duration-slow) var(--tokis-ease-out);
 }
 

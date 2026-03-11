@@ -191,13 +191,19 @@
   border-radius: 0;
 }
 .tokis-btn-group .tokis-btn:first-child {
-  border-radius: var(--tokis-radius-md) 0 0 var(--tokis-radius-md);
+  border-start-start-radius: var(--tokis-radius-md);
+  border-end-start-radius: var(--tokis-radius-md);
+  border-start-end-radius: 0;
+  border-end-end-radius: 0;
 }
 .tokis-btn-group .tokis-btn:last-child {
-  border-radius: 0 var(--tokis-radius-md) var(--tokis-radius-md) 0;
+  border-start-start-radius: 0;
+  border-end-start-radius: 0;
+  border-start-end-radius: var(--tokis-radius-md);
+  border-end-end-radius: var(--tokis-radius-md);
 }
 .tokis-btn-group .tokis-btn--secondary + .tokis-btn--secondary {
-  border-left-color: transparent;
+  border-inline-start-color: transparent;
 }
 
 /* ── Reduced motion ─────────────────────────────────────────── */

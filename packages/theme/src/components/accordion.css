@@ -36,7 +36,7 @@
   color: var(--tokis-text-primary);
   background: none;
   border: none;
-  text-align: left;
+  text-align: start;
   cursor: pointer;
   transition: background var(--tokis-duration-fast) var(--tokis-ease-out);
   outline: none;
@@ -107,12 +107,12 @@
 /* ── Flush variant ──────────────────────────────────────────── */
 
 .tokis-accordion-root--flush .tokis-accordion-trigger {
-  padding-left: 0;
-  padding-right: 0;
+  padding-inline-start: 0;
+  padding-inline-end: 0;
 }
 .tokis-accordion-root--flush .tokis-accordion-content-inner {
-  padding-left: 0;
-  padding-right: 0;
+  padding-inline-start: 0;
+  padding-inline-end: 0;
 }
 
 /* ── Reduced motion ─────────────────────────────────────────── */

@@ -1,14 +1,14 @@
-# /tokens
+# @tokis/tokens
 
 Design token engine for the Tokis design system — color primitives, semantic scales, spacing, typography, shadows, motion, and CSS variable generation.
 
 ## Installation
 
 ```bash
-npm install /tokens
+npm install @tokis/tokens
 ```
 
-> Or install everything at once: `npm install tokis`
+> Or install everything at once: `npm install @tokis/tokis`
 
 ## Usage
 
@@ -25,7 +25,7 @@ import {
   lightTheme,
   darkTheme,
   generateCSSVars,
-} from '/tokens';
+} from '@tokis/tokens';
 
 // Generate CSS custom properties from a theme
 const css = generateCSSVars(lightTheme);
@@ -34,7 +34,7 @@ const css = generateCSSVars(lightTheme);
 ### CSS
 
 ```css
-@import '/tokens/css';
+@import '@tokis/tokens/css';
 ```
 
 ## What's Included

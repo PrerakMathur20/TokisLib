@@ -101,7 +101,7 @@
   background: transparent;
   border: none;
   cursor: pointer;
-  text-align: left;
+  text-align: start;
   font-family: var(--tokis-font-family);
   transition: background var(--tokis-duration-fast) var(--tokis-ease-out);
 }

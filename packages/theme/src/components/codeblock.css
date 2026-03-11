@@ -108,9 +108,9 @@
   color: var(--tokis-text-tertiary);
   font-size: var(--tokis-font-size-sm);
   line-height: 1.6;
-  border-right: 1px solid var(--tokis-color-border);
+  border-inline-end: 1px solid var(--tokis-color-border);
   min-width: 2.5rem;
-  text-align: right;
+  text-align: end;
   user-select: none;
   flex-shrink: 0;
 }
@@ -121,7 +121,7 @@
 }
 
 [data-theme='dark'] .tokis-codeblock__lines {
-  border-right-color: #30363d;
+  border-inline-end-color: #30363d;
   color: #6e7681;
 }
 

@@ -1,35 +1,86 @@
 {
-  "name": "tokis-monorepo",
+  "name": "tokis-ui-monorepo",
   "private": true,
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Tokis (Tokis Only Knows Its Styles) — Performance-first, token-native UI design system monorepo",
   "workspaces": [
     "packages/tokens",
     "packages/core",
     "packages/theme",
     "packages/react",
+    "packages/icons",
     "packages/tokis"
   ],
   "scripts": {
-    "build": "npm run build --workspace=packages/tokens && npm run build --workspace=packages/core && npm run build --workspace=packages/react",
-    "typecheck": "npm run typecheck --workspace=packages/tokens && npm run typecheck --workspace=packages/core && npm run typecheck --workspace=packages/react",
-    "clean": "rm -rf packages/tokens/dist packages/core/dist packages/react/dist .npm-cache",
-    "pack:dry-run": "npm --cache .npm-cache pack --dry-run --workspace=packages/tokens && npm --cache .npm-cache pack --dry-run --workspace=packages/core && npm --cache .npm-cache pack --dry-run --workspace=packages/theme && npm --cache .npm-cache pack --dry-run --workspace=packages/react && npm --cache .npm-cache pack --dry-run --workspace=packages/tokis",
+    "build": "npm run build --workspace=packages/tokens && npm run build --workspace=packages/core && npm run build --workspace=packages/react && npm run build --workspace=packages/icons",
+    "typecheck": "npm run typecheck --workspace=packages/tokens && npm run typecheck --workspace=packages/core && npm run typecheck --workspace=packages/react && npm run typecheck --workspace=packages/icons",
+    "clean": "rm -rf packages/tokens/dist packages/core/dist packages/react/dist packages/icons/dist .npm-cache coverage",
+    "tokens:generate": "npx tsx scripts/generate-tokens-css.ts",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:ui": "vitest --ui",
+    "coverage": "vitest run --coverage",
+    "pack:dry-run": "npm --cache .npm-cache pack --dry-run --workspace=packages/tokens && npm --cache .npm-cache pack --dry-run --workspace=packages/core && npm --cache .npm-cache pack --dry-run --workspace=packages/theme && npm --cache .npm-cache pack --dry-run --workspace=packages/react && npm --cache .npm-cache pack --dry-run --workspace=packages/icons && npm --cache .npm-cache pack --dry-run --workspace=packages/tokis",
     "release:check": "npm run typecheck && npm run build && npm run pack:dry-run",
     "publish:tokens": "npm publish --workspace=packages/tokens",
     "publish:core": "npm publish --workspace=packages/core",
     "publish:theme": "npm publish --workspace=packages/theme",
     "publish:react": "npm publish --workspace=packages/react",
+    "publish:icons": "npm publish --workspace=packages/icons",
     "publish:tokis": "npm publish --workspace=packages/tokis",
-    "publish:all": "npm run version:set && npm run release:check && npm run publish:tokens && npm run publish:core && npm run publish:theme && npm run publish:react && npm run publish:tokis",
+    "publish:all": "npm run version:set && npm run release:check && npm run publish:tokens && npm run publish:core && npm run publish:theme && npm run publish:react && npm run publish:icons && npm run publish:tokis",
+    "check:size": "size-limit",
     "version:set": "node scripts/set-version.js",
     "version:sync": "node scripts/set-version.js"
   },
   "devDependencies": {
-    "typescript": "^5.9.3"
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.1.0",
+    "@testing-library/user-event": "^14.5.2",
+    "@vitejs/plugin-react": "^4.3.4",
+    "@vitest/coverage-v8": "^2.1.8",
+    "jsdom": "^25.0.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "typescript": "^5.9.3",
+    "size-limit": "^11.1.6",
+    "@size-limit/preset-big-lib": "^11.1.6",
+    "vitest": "^2.1.8"
   },
   "engines": {
     "node": ">=18.0.0",
     "npm": ">=9.0.0"
-  }
+  },
+  "size-limit": [
+    {
+      "name": "@tokis/core (ESM full)",
+      "path": "packages/core/dist/index.js",
+      "limit": "12 kB",
+      "import": "*"
+    },
+    {
+      "name": "@tokis/react (ESM full bundle)",
+      "path": "packages/react/dist/index.js",
+      "limit": "120 kB",
+      "import": "*"
+    },
+    {
+      "name": "@tokis/react — ButtonRoot only",
+      "path": "packages/react/dist/index.js",
+      "limit": "4 kB",
+      "import": "{ ButtonRoot }"
+    },
+    {
+      "name": "@tokis/icons (ESM full)",
+      "path": "packages/icons/dist/index.js",
+      "limit": "20 kB",
+      "import": "*"
+    },
+    {
+      "name": "@tokis/icons — SearchIcon (tree-shake test)",
+      "path": "packages/icons/dist/index.js",
+      "limit": "1 kB",
+      "import": "{ SearchIcon }"
+    }
+  ]
 }

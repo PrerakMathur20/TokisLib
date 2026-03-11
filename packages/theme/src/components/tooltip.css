@@ -55,7 +55,7 @@
   font-weight: var(--tokis-font-weight-semibold);
   color: var(--tokis-text-primary);
   margin-bottom: var(--tokis-spacing-1);
-  padding-right: var(--tokis-spacing-6);
+  padding-inline-end: var(--tokis-spacing-6);
 }
 
 .tokis-popover-description {
@@ -67,7 +67,7 @@
 .tokis-popover-close {
   position: absolute;
   top: var(--tokis-spacing-3);
-  right: var(--tokis-spacing-3);
+  inset-inline-end: var(--tokis-spacing-3);
   display: flex;
   align-items: center;
   justify-content: center;

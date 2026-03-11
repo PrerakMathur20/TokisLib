@@ -1,6 +1,6 @@
 {
   "name": "@tokis/core",
-  "version": "1.0.9",
+  "version": "1.1.0",
   "description": "Framework-agnostic headless primitives for Tokis — state machines, accessibility helpers, and focus management. Zero dependencies.",
   "type": "module",
   "main": "./dist/cjs/index.js",

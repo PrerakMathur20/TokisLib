@@ -31,6 +31,13 @@ build/
 .env
 .env.test
 
+# Test coverage
+coverage/
+.nyc_output/
+
+# Vitest
+vitest.snapshot
+
 # IDE-specific files (example for VS Code)
 .vscode-test
 .eslintcache

@@ -1,6 +1,7 @@
 /**
- * Tokis — Performance-first, token-native UI design system
+ * @tokis/tokis — Performance-first, token-native UI design system
  *
- * Re-exports all types and components from /react.
+ * Re-exports all types and components from @tokis/react and @tokis/icons.
  */
-export * from '/react';
+export * from '@tokis/react';
+export * from '@tokis/icons';

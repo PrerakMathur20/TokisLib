@@ -20,7 +20,7 @@
 
 .tokis-search-field__icon {
   position: absolute;
-  left: var(--tokis-spacing-3);
+  inset-inline-start: var(--tokis-spacing-3);
   color: var(--tokis-text-tertiary);
   display: flex;
   align-items: center;
@@ -29,7 +29,8 @@
 
 .tokis-search-field__input {
   width: 100%;
-  padding: var(--tokis-spacing-2) var(--tokis-spacing-3) var(--tokis-spacing-2) calc(var(--tokis-spacing-3) + 20px);
+  padding: var(--tokis-spacing-2) var(--tokis-spacing-3);
+  padding-inline-start: calc(var(--tokis-spacing-3) + 20px);
   border: 1px solid var(--tokis-color-border);
   border-radius: var(--tokis-radius-lg);
   background: var(--tokis-color-surface);
@@ -55,7 +56,7 @@
 
 .tokis-search-field__spinner {
   position: absolute;
-  right: var(--tokis-spacing-3);
+  inset-inline-end: var(--tokis-spacing-3);
   width: 14px;
   height: 14px;
   border: 2px solid var(--tokis-color-border);
@@ -66,7 +67,7 @@
 
 .tokis-search-field__clear {
   position: absolute;
-  right: var(--tokis-spacing-2);
+  inset-inline-end: var(--tokis-spacing-2);
   display: flex;
   align-items: center;
   justify-content: center;

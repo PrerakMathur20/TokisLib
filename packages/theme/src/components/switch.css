@@ -45,7 +45,7 @@
 .tokis-switch-thumb {
   position: absolute;
   top: 3px;
-  left: 3px;
+  inset-inline-start: 3px;
   width: 18px;
   height: 18px;
   border-radius: var(--tokis-radius-full);
@@ -69,7 +69,7 @@
   width: 12px;
   height: 12px;
   top: 3px;
-  left: 3px;
+  inset-inline-start: 3px;
 }
 .tokis-switch-root--sm .tokis-switch-track[data-checked="true"] .tokis-switch-thumb {
   transform: translateX(14px);
@@ -95,6 +95,15 @@
   color: var(--tokis-text-tertiary);
   margin: 0;
   line-height: 1.4;
+}
+
+/* ── RTL ─────────────────────────────────────────────────────── */
+
+[dir="rtl"] .tokis-switch-track[data-checked="true"] .tokis-switch-thumb {
+  transform: translateX(-20px);
+}
+[dir="rtl"] .tokis-switch-root--sm .tokis-switch-track[data-checked="true"] .tokis-switch-thumb {
+  transform: translateX(-14px);
 }
 
 /* ── Reduced motion ─────────────────────────────────────────── */

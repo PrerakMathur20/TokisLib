@@ -62,7 +62,7 @@
   gap: var(--tokis-spacing-2);
   background: var(--tokis-color-surface);
   border: none;
-  border-right: 1px solid var(--tokis-color-border);
+  border-inline-end: 1px solid var(--tokis-color-border);
   color: var(--tokis-text-secondary);
   font-size: var(--tokis-font-size-sm);
   font-weight: var(--tokis-font-weight-medium);
@@ -71,7 +71,7 @@
   transition: all var(--tokis-duration-fast) var(--tokis-ease-out);
 }
 
-.tokis-toggle-group__item:last-child { border-right: none; }
+.tokis-toggle-group__item:last-child { border-inline-end: none; }
 
 .tokis-toggle-group__item--sm { padding: 4px var(--tokis-spacing-2); font-size: var(--tokis-font-size-xs); }
 .tokis-toggle-group__item--md { padding: var(--tokis-spacing-2) var(--tokis-spacing-3); }

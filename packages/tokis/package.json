@@ -1,7 +1,7 @@
 {
-  "name": "tokis",
-  "version": "1.0.9",
-  "description": "Tokis Only Knows Its Styles — Performance-first, token-native UI design system for React. Install this package to get all Tokis libraries: @tokis/react, @tokis/theme, @tokis/core, and @tokis/tokens.",
+  "name": "@tokis/tokis",
+  "version": "1.1.0",
+  "description": "Tokis Only Knows Its Styles — Performance-first, token-native UI design system for React. Install this package to get all Tokis packages: @tokis/react, @tokis/theme, @tokis/core, and @tokis/tokens.",
   "main": "./index.js",
   "module": "./index.mjs",
   "types": "./index.d.ts",
@@ -26,6 +26,16 @@
       "types": "@tokis/tokens",
       "import": "@tokis/tokens",
       "require": "@tokis/tokens"
+    },
+    "./icons": {
+      "types": "@tokis/icons",
+      "import": "@tokis/icons",
+      "require": "@tokis/icons"
+    },
+    "./icons/lucide": {
+      "types": "@tokis/icons/lucide",
+      "import": "@tokis/icons/lucide",
+      "require": "@tokis/icons/lucide"
     }
   },
   "files": [
@@ -73,10 +83,11 @@
     "url": "https://github.com/PrerakMathur20/TokisLib/issues"
   },
   "dependencies": {
-    "@tokis/react": "^1.0.9",
-    "@tokis/theme": "^1.0.9",
-    "@tokis/core": "^1.0.9",
-    "@tokis/tokens": "^1.0.9"
+    "@tokis/react": "^1.1.0",
+    "@tokis/theme": "^1.1.0",
+    "@tokis/core": "^1.1.0",
+    "@tokis/tokens": "^1.1.0",
+    "@tokis/icons": "^1.1.0"
   },
   "peerDependencies": {
     "react": ">=18.0.0",

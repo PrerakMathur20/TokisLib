@@ -1,25 +1,26 @@
-# Tokis
+# @tokis/tokis
 
 Performance-first, token-native UI design system for React.
 
-This is the **meta-package** — installing `tokis` gives you everything:
+This is the **meta-package** — installing `@tokis/tokis` gives you everything:
 
 | Package | Description |
 |---|---|
-| `/react` | React components, hooks, and theming context |
-| `/theme` | Precompiled CSS — variables, reset, component styles |
-| `/core` | Headless primitives — state machines, a11y, focus management |
-| `/tokens` | Design token definitions — TypeScript + JSON + CSS variables |
+| `@tokis/react` | React components, hooks, and theming context |
+| `@tokis/theme` | Precompiled CSS — variables, reset, component styles |
+| `@tokis/core` | Headless primitives — state machines, a11y, focus management |
+| `@tokis/tokens` | Design token definitions — TypeScript + JSON + CSS variables |
+| `@tokis/icons` | Tree-shakable SVG icons, optional lucide-react bridge |
 
 ## Quick Start
 
 ```bash
-npm install tokis
+npm install @tokis/tokis
 ```
 
 ```tsx
-import '/theme';
-import { ButtonRoot, ButtonLabel, ThemeProvider } from 'tokis';
+import '@tokis/theme';
+import { ButtonRoot, ButtonLabel, ThemeProvider } from '@tokis/tokis';
 
 function App() {
   return (
@@ -34,17 +35,20 @@ function App() {
 
 ## Install Individual Packages
 
-If you only need specific parts of Tokis:
+If you only need specific parts of @tokis/tokis:
 
 ```bash
-# Just the React components
-npm install /react /theme
+# React components with all peer dependencies
+npm install @tokis/react @tokis/theme @tokis/core @tokis/tokens
 
 # Just the headless core (framework-agnostic)
-npm install /core
+npm install @tokis/core
 
 # Just the design tokens
-npm install /tokens
+npm install @tokis/tokens
+
+# Just the theme CSS
+npm install @tokis/theme
 ```
 
 ## Features

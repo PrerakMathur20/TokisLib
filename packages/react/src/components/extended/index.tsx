@@ -1,4 +1,5 @@
-import React, { useEffect, useMemo, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useId, useMemo, useRef, useState } from 'react';
+import { trapFocus } from '@tokis/core';
 import { cn } from '../../utils/cn.js';
 import { TextField } from '../input/index.js';
 import { ButtonRoot } from '../button/index.js';
@@ -240,29 +241,21 @@ export function TransferList({ left, right, onChange, leftTitle = 'Available', r
 
 // ToggleButton and ToggleGroup are in components/toggle/index.tsx
 
-export interface TokisIconProps extends React.HTMLAttributes<HTMLSpanElement> {
+// Icon components have moved to @tokis/icons.
+// These deprecated stubs remain for backwards compatibility.
+
+/** @deprecated Import named icons from `@tokis/icons` instead. */
+export interface EmojiIconProps extends React.HTMLAttributes<HTMLSpanElement> {
   name: 'search' | 'close' | 'menu' | 'check' | 'star' | 'arrow-right';
 }
 
-const iconMap: Record<TokisIconProps['name'], string> = {
-  search: '⌕',
-  close: '×',
-  menu: '☰',
-  check: '✓',
-  star: '★',
-  'arrow-right': '→',
+const _emojiIconMap: Record<EmojiIconProps['name'], string> = {
+  search: '⌕', close: '×', menu: '☰', check: '✓', star: '★', 'arrow-right': '→',
 };
 
-export function Icon({ name, className, ...props }: TokisIconProps) {
-  return <span className={cn('tokis-icon', className)} aria-hidden="true" {...props}>{iconMap[name]}</span>;
-}
-
-export interface MaterialIconProps extends React.HTMLAttributes<HTMLSpanElement> {
-  icon: string;
-}
-
-export function MaterialIcon({ icon, className, ...props }: MaterialIconProps) {
-  return <span className={cn('tokis-material-icon', className)} {...props}>{icon}</span>;
+/** @deprecated Use named SVG icons from `@tokis/icons`. */
+export function Icon({ name, className, ...props }: EmojiIconProps) {
+  return <span className={cn('tokis-icon', className)} aria-hidden="true" {...props}>{_emojiIconMap[name]}</span>;
 }
 
 export interface BackdropProps extends React.HTMLAttributes<HTMLDivElement> {
@@ -541,14 +534,77 @@ export interface ModalProps {
   open: boolean;
   onClose: () => void;
   children: React.ReactNode;
+  /** Accessible title for the modal (wired to aria-labelledby). */
+  title?: string;
+  /** Accessible description (wired to aria-describedby). */
+  description?: string;
+  /** Close when the backdrop is clicked. @default true */
+  closeOnBackdropClick?: boolean;
+  /** Close on Escape key. @default true */
+  closeOnEscape?: boolean;
 }
 
-export function Modal({ open, onClose, children }: ModalProps) {
+export function Modal({
+  open,
+  onClose,
+  children,
+  title,
+  description,
+  closeOnBackdropClick = true,
+  closeOnEscape = true,
+}: ModalProps) {
+  const contentRef = useRef<HTMLDivElement>(null);
+  const previousFocusRef = useRef<HTMLElement | null>(null);
+  const titleId = useId();
+  const descriptionId = useId();
+
+  // Lock scroll on open
+  useEffect(() => {
+    if (!open) return;
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    return () => { document.body.style.overflow = prev; };
+  }, [open]);
+
+  // Trap focus when open
+  useEffect(() => {
+    if (!open || !contentRef.current) return;
+    previousFocusRef.current = document.activeElement as HTMLElement;
+    const release = trapFocus(contentRef.current);
+    return () => {
+      release?.();
+      previousFocusRef.current?.focus();
+    };
+  }, [open]);
+
+  // Close on Escape
+  useEffect(() => {
+    if (!open || !closeOnEscape) return;
+    const handler = (e: KeyboardEvent) => { if (e.key === 'Escape') onClose(); };
+    document.addEventListener('keydown', handler);
+    return () => document.removeEventListener('keydown', handler);
+  }, [open, closeOnEscape, onClose]);
+
   if (!open) return null;
+
   return (
     <Portal>
-      <div className="tokis-modal-root" role="presentation" onClick={onClose}>
-        <div className="tokis-modal-content" role="dialog" aria-modal="true" onClick={(e) => e.stopPropagation()}>
+      <div
+        className="tokis-modal-root"
+        role="presentation"
+        onClick={closeOnBackdropClick ? onClose : undefined}
+      >
+        <div
+          ref={contentRef}
+          className="tokis-modal-content"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby={title ? titleId : undefined}
+          aria-describedby={description ? descriptionId : undefined}
+          onClick={(e) => e.stopPropagation()}
+        >
+          {title && <span id={titleId} className="tokis-modal-title">{title}</span>}
+          {description && <span id={descriptionId} className="tokis-modal-desc">{description}</span>}
           {children}
         </div>
       </div>
@@ -655,62 +711,11 @@ export function useMediaQuery(query: string) {
   return matches;
 }
 
-export interface DataGridColumn {
-  field: string;
-  headerName: string;
-}
+// DataGrid has been moved to components/datagrid/index.tsx
+// Import it from '@tokis/react' directly or from 'packages/react/src/components/datagrid'.
 
-export interface DataGridProps {
-  columns: DataGridColumn[];
-  rows: Array<Record<string, React.ReactNode>>;
-}
-
-export function DataGrid({ columns, rows }: DataGridProps) {
-  return (
-    <Table>
-      <TableHead>
-        <TableRow>
-          {columns.map((column) => (
-            <TableHeaderCell key={column.field}>{column.headerName}</TableHeaderCell>
-          ))}
-        </TableRow>
-      </TableHead>
-      <TableBody>
-        {rows.map((row, rowIndex) => (
-          <TableRow key={rowIndex}>
-            {columns.map((column) => (
-              <TableCell key={column.field}>{row[column.field]}</TableCell>
-            ))}
-          </TableRow>
-        ))}
-      </TableBody>
-    </Table>
-  );
-}
-
-export interface DatePickerProps extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'type'> {
-  label?: string;
-}
-
-export function DatePicker({ label, ...props }: DatePickerProps) {
-  return <TextField type="date" label={label} {...props} />;
-}
-
-export interface TimePickerProps extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'type'> {
-  label?: string;
-}
-
-export function TimePicker({ label, ...props }: TimePickerProps) {
-  return <TextField type="time" label={label} {...props} />;
-}
-
-export interface DateTimePickerProps extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'type'> {
-  label?: string;
-}
-
-export function DateTimePicker({ label, ...props }: DateTimePickerProps) {
-  return <TextField type="datetime-local" label={label} {...props} />;
-}
+// DatePicker, TimePicker, DateTimePicker have moved to components/datepicker/index.tsx
+// Import them from '@tokis/react' directly.
 
 export interface ChartsProps {
   data: number[];

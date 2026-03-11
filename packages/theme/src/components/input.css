@@ -102,8 +102,8 @@
 
 /* ── Adornments ─────────────────────────────────────────────── */
 
-.tokis-input--with-start { padding-left: 38px; }
-.tokis-input--with-end   { padding-right: 38px; }
+.tokis-input--with-start { padding-inline-start: 38px; }
+.tokis-input--with-end   { padding-inline-end: 38px; }
 
 .tokis-input-adornment {
   position: absolute;
@@ -116,14 +116,14 @@
   pointer-events: none;
   flex-shrink: 0;
 }
-.tokis-input-adornment--start { left: 0; }
-.tokis-input-adornment--end   { right: 0; pointer-events: auto; }
+.tokis-input-adornment--start { inset-inline-start: 0; }
+.tokis-input-adornment--end   { inset-inline-end: 0; pointer-events: auto; }
 
 /* ── Password Toggle ────────────────────────────────────────── */
 
 .tokis-input-password-toggle {
   position: absolute;
-  right: 0;
+  inset-inline-end: 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -137,7 +137,10 @@
   transition: color var(--tokis-duration-fast) var(--tokis-ease-out);
   flex-shrink: 0;
   outline: none;
-  border-radius: 0 var(--tokis-radius-md) var(--tokis-radius-md) 0;
+  border-start-start-radius: 0;
+  border-end-start-radius: 0;
+  border-start-end-radius: var(--tokis-radius-md);
+  border-end-end-radius: var(--tokis-radius-md);
 }
 .tokis-input-password-toggle:hover { color: var(--tokis-text-secondary); }
 .tokis-input-password-toggle:focus-visible {

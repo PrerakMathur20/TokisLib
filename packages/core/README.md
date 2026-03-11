@@ -1,14 +1,14 @@
-# /core
+# @tokis/core
 
 Framework-agnostic headless primitives for the Tokis design system — state machines, accessibility helpers, and focus management. Zero dependencies.
 
 ## Installation
 
 ```bash
-npm install /core
+npm install @tokis/core
 ```
 
-> Or install everything at once: `npm install tokis`
+> Or install everything at once: `npm install @tokis/tokis`
 
 ## Usage
 
@@ -18,7 +18,7 @@ import {
   rovingTabIndex,
   generateId,
   createMachine,
-} from '/core';
+} from '@tokis/core';
 ```
 
 ## What's Included
@@ -30,7 +30,7 @@ import {
 
 ## Why Use This?
 
-`/core` contains no React, no DOM assumptions, and no CSS. Use it to build your own component library on top of Tokis's battle-tested accessibility and state management layer — in React, Vue, Svelte, or vanilla JS.
+`@tokis/core` contains no React, no DOM assumptions, and no CSS. Use it to build your own component library on top of Tokis' battle-tested accessibility and state management layer — in React, Vue, Svelte, or vanilla JS.
 
 ## Documentation
 

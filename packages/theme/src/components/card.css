@@ -98,7 +98,7 @@
 }
 .tokis-divider--vertical {
   border-top: none;
-  border-left: 1px solid var(--tokis-color-border);
+  border-inline-start: 1px solid var(--tokis-color-border);
   height: auto;
   align-self: stretch;
 }
@@ -212,7 +212,7 @@
   padding: var(--tokis-spacing-3) var(--tokis-spacing-4);
   font-weight: var(--tokis-font-weight-semibold);
   color: var(--tokis-text-secondary);
-  text-align: left;
+  text-align: start;
   white-space: nowrap;
   font-size: var(--tokis-font-size-xs);
   text-transform: uppercase;

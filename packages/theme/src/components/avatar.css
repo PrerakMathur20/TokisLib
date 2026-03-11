@@ -43,7 +43,7 @@
 .tokis-avatar-status {
   position: absolute;
   bottom: 1px;
-  right: 1px;
+  inset-inline-end: 1px;
   width: 10px;
   height: 10px;
   border-radius: var(--tokis-radius-full);
@@ -61,10 +61,10 @@
 }
 .tokis-avatar-group .tokis-avatar {
   border: 2px solid var(--tokis-color-background);
-  margin-left: -8px;
+  margin-inline-start: -8px;
 }
 .tokis-avatar-group .tokis-avatar:first-child {
-  margin-left: 0;
+  margin-inline-start: 0;
 }
 .tokis-avatar-group .tokis-avatar-overflow {
   background: var(--tokis-color-neutral-200);
@@ -72,7 +72,7 @@
   font-size: var(--tokis-font-size-xs);
   font-weight: var(--tokis-font-weight-semibold);
   border: 2px solid var(--tokis-color-background);
-  margin-left: -8px;
+  margin-inline-start: -8px;
 }
 
 /* ── Badge ──────────────────────────────────────────────────── */
@@ -179,7 +179,7 @@
   cursor: pointer;
   opacity: 0.55;
   transition: opacity var(--tokis-duration-fast) var(--tokis-ease-out), background var(--tokis-duration-fast) var(--tokis-ease-out);
-  margin-right: -4px;
+  margin-inline-end: -4px;
   flex-shrink: 0;
   border: none;
   background: none;

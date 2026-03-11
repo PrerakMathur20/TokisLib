@@ -12,6 +12,7 @@ export * from './components/switch/index.js';
 export * from './components/select/index.js';
 export * from './components/slider/index.js';
 export * from './components/spinner/index.js';
+export * from './components/datepicker/index.js';
 
 // ─── Layout ───────────────────────────────────────────────
 export * from './components/layout/index.js';
@@ -98,6 +99,7 @@ export * from './components/charts/index.js';
 // ─── Data ─────────────────────────────────────────────────
 export * from './components/virtual-list/index.js';
 export * from './components/infinite-scroll/index.js';
+export * from './components/datagrid/index.js';
 
 // ─── Utilities ────────────────────────────────────────────
 export { cn } from './utils/cn.js';

@@ -1,0 +1,314 @@
+/* ── DatePicker ────────────────────────────────────────────────────────────── */
+
+.tokis-datepicker,
+.tokis-timepicker,
+.tokis-datetimepicker {
+  display: inline-flex;
+  flex-direction: column;
+  gap: var(--tokis-spacing-1, 4px);
+  min-width: 180px;
+}
+
+.tokis-datetimepicker {
+  flex-direction: row;
+  align-items: flex-end;
+  gap: var(--tokis-spacing-3, 12px);
+  min-width: 0;
+}
+
+/* ── Trigger button ─────────────────────────────────────────────────────────── */
+
+.tokis-datepicker-input-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.tokis-datepicker-trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--tokis-spacing-2, 8px);
+  width: 100%;
+  padding: var(--tokis-spacing-2, 8px) var(--tokis-spacing-3, 12px);
+  border: 1px solid var(--tokis-color-border, #e2e8f0);
+  border-radius: var(--tokis-radius-md, 8px);
+  background: var(--tokis-color-background, #fff);
+  color: var(--tokis-color-text-primary, #0f172a);
+  font-size: var(--tokis-typography-fontSize-sm, 0.875rem);
+  cursor: pointer;
+  text-align: start;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  outline: none;
+  min-width: 180px;
+}
+
+.tokis-datepicker-trigger:hover:not(:disabled) {
+  border-color: var(--tokis-color-border-strong, #cbd5e1);
+}
+
+.tokis-datepicker-trigger:focus-visible,
+.tokis-datepicker-trigger--open {
+  border-color: var(--tokis-color-primary, #0066ff);
+  box-shadow: 0 0 0 3px var(--tokis-color-focus-ring, rgb(0 102 255 / 0.15));
+}
+
+.tokis-datepicker-trigger:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background: var(--tokis-color-surface, #f8f9fa);
+}
+
+.tokis-datepicker--error .tokis-datepicker-trigger {
+  border-color: var(--tokis-color-error, #dc2626);
+}
+
+.tokis-datepicker-placeholder {
+  color: var(--tokis-color-text-tertiary, #94a3b8);
+}
+
+.tokis-datepicker-icon {
+  font-size: 1rem;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.tokis-datepicker-clear {
+  position: absolute;
+  inset-inline-end: 36px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  border: none;
+  background: none;
+  color: var(--tokis-color-text-tertiary, #94a3b8);
+  cursor: pointer;
+  font-size: 0.75rem;
+  border-radius: 50%;
+  transition: color 0.15s ease, background 0.15s ease;
+}
+
+.tokis-datepicker-clear:hover {
+  color: var(--tokis-color-text-primary, #0f172a);
+  background: var(--tokis-color-surface-hover, #f1f5f9);
+}
+
+/* ── Floating panel ─────────────────────────────────────────────────────────── */
+
+.tokis-datepicker-panel {
+  position: absolute;
+  z-index: var(--tokis-z-index-popover, 1400);
+  background: var(--tokis-color-background, #fff);
+  border: 1px solid var(--tokis-color-border, #e2e8f0);
+  border-radius: var(--tokis-radius-lg, 12px);
+  box-shadow: var(--tokis-shadow-lg, 0 10px 40px rgb(0 0 0 / 0.12));
+  padding: var(--tokis-spacing-4, 16px);
+  min-width: 280px;
+  animation: tokis-panel-in 0.15s ease;
+}
+
+@keyframes tokis-panel-in {
+  from { opacity: 0; transform: translateY(-4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Calendar ───────────────────────────────────────────────────────────────── */
+
+.tokis-calendar {
+  display: flex;
+  flex-direction: column;
+  gap: var(--tokis-spacing-3, 12px);
+  width: 100%;
+}
+
+.tokis-calendar-nav {
+  display: flex;
+  align-items: center;
+  gap: var(--tokis-spacing-1, 4px);
+}
+
+.tokis-calendar-title {
+  flex: 1;
+  text-align: center;
+  font-weight: 600;
+  font-size: var(--tokis-typography-fontSize-sm, 0.875rem);
+  color: var(--tokis-color-text-primary, #0f172a);
+}
+
+.tokis-calendar-nav-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  border: 1px solid transparent;
+  border-radius: var(--tokis-radius-md, 8px);
+  background: none;
+  color: var(--tokis-color-text-secondary, #475569);
+  cursor: pointer;
+  font-size: 0.875rem;
+  transition: background 0.1s ease, color 0.1s ease;
+}
+
+.tokis-calendar-nav-btn:hover {
+  background: var(--tokis-color-surface-hover, #f1f5f9);
+  color: var(--tokis-color-primary, #0066ff);
+}
+
+.tokis-calendar-nav-btn:focus-visible {
+  outline: 2px solid var(--tokis-color-primary, #0066ff);
+  outline-offset: 2px;
+}
+
+/* ── Day grid ───────────────────────────────────────────────────────────────── */
+
+.tokis-calendar-grid {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.tokis-calendar-weekday {
+  padding-block-end: var(--tokis-spacing-2, 8px);
+  text-align: center;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--tokis-color-text-secondary, #475569);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.tokis-calendar-day {
+  text-align: center;
+  padding: 2px;
+  font-size: var(--tokis-typography-fontSize-sm, 0.875rem);
+  color: var(--tokis-color-text-primary, #0f172a);
+  cursor: pointer;
+  border-radius: var(--tokis-radius-md, 8px);
+  width: 36px;
+  height: 36px;
+  line-height: 32px;
+  transition: background 0.1s ease, color 0.1s ease;
+  outline: none;
+  user-select: none;
+}
+
+.tokis-calendar-day:hover:not(.tokis-calendar-day--disabled):not(.tokis-calendar-day--selected) {
+  background: var(--tokis-color-surface-hover, #f1f5f9);
+}
+
+.tokis-calendar-day--outside {
+  color: var(--tokis-color-text-tertiary, #94a3b8);
+}
+
+.tokis-calendar-day--today {
+  font-weight: 700;
+  color: var(--tokis-color-primary, #0066ff);
+}
+
+.tokis-calendar-day--selected {
+  background: var(--tokis-color-primary, #0066ff) !important;
+  color: var(--tokis-color-text-on-primary, #fff) !important;
+  font-weight: 600;
+}
+
+.tokis-calendar-day--disabled {
+  color: var(--tokis-color-text-disabled, #cbd5e1);
+  cursor: not-allowed;
+}
+
+.tokis-calendar-day--focused:focus-visible,
+.tokis-calendar-day:focus-visible {
+  outline: 2px solid var(--tokis-color-primary, #0066ff);
+  outline-offset: 2px;
+}
+
+/* ── Today button ───────────────────────────────────────────────────────────── */
+
+.tokis-calendar-footer {
+  display: flex;
+  justify-content: center;
+  padding-block-start: var(--tokis-spacing-2, 8px);
+  border-block-start: 1px solid var(--tokis-color-border, #e2e8f0);
+}
+
+.tokis-calendar-today-btn {
+  padding: var(--tokis-spacing-1, 4px) var(--tokis-spacing-3, 12px);
+  border: none;
+  border-radius: var(--tokis-radius-md, 8px);
+  background: none;
+  color: var(--tokis-color-primary, #0066ff);
+  font-size: var(--tokis-typography-fontSize-sm, 0.875rem);
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.1s ease;
+}
+
+.tokis-calendar-today-btn:hover {
+  background: var(--tokis-color-primary-subtle, #e6f0ff);
+}
+
+/* ── TimePicker ─────────────────────────────────────────────────────────────── */
+
+.tokis-timepicker-inputs {
+  display: flex;
+  align-items: center;
+  gap: var(--tokis-spacing-1, 4px);
+}
+
+.tokis-timepicker-select {
+  padding: var(--tokis-spacing-2, 8px) var(--tokis-spacing-2, 8px);
+  border: 1px solid var(--tokis-color-border, #e2e8f0);
+  border-radius: var(--tokis-radius-md, 8px);
+  background: var(--tokis-color-background, #fff);
+  color: var(--tokis-color-text-primary, #0f172a);
+  font-size: var(--tokis-typography-fontSize-sm, 0.875rem);
+  cursor: pointer;
+  outline: none;
+  width: 64px;
+  text-align: center;
+  transition: border-color 0.15s ease;
+}
+
+.tokis-timepicker-select:focus {
+  border-color: var(--tokis-color-primary, #0066ff);
+  box-shadow: 0 0 0 3px var(--tokis-color-focus-ring, rgb(0 102 255 / 0.15));
+}
+
+.tokis-timepicker-select:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.tokis-timepicker-ampm {
+  width: 60px;
+}
+
+.tokis-timepicker-sep {
+  font-weight: 700;
+  color: var(--tokis-color-text-secondary, #475569);
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.tokis-timepicker--error .tokis-timepicker-select {
+  border-color: var(--tokis-color-error, #dc2626);
+}
+
+/* ── Dark mode ──────────────────────────────────────────────────────────────── */
+
+[data-theme="dark"] .tokis-datepicker-panel {
+  background: var(--tokis-color-surface, #1a202c);
+  border-color: var(--tokis-color-border, #2d3748);
+}
+
+[data-theme="dark"] .tokis-calendar-day--selected {
+  background: var(--tokis-color-primary, #0066ff) !important;
+  color: #fff !important;
+}

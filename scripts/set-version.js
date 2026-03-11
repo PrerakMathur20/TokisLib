@@ -41,7 +41,7 @@ if (version) {
   const rootPkg = JSON.parse(readFileSync(rootPkgPath, 'utf8'));
   rootPkg.version = version;
   writeFileSync(rootPkgPath, JSON.stringify(rootPkg, null, 2) + '\n', 'utf8');
-  console.log(`  tokis-monorepo (root) → ${version}`);
+  console.log(`  tokis-ui-monorepo (root) → ${version}`);
 } else {
   // Read version from root as the source of truth
   const rootPkg = JSON.parse(readFileSync(rootPkgPath, 'utf8'));

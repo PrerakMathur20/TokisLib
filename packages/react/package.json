@@ -1,6 +1,6 @@
 {
   "name": "@tokis/react",
-  "version": "1.0.9",
+  "version": "1.1.0",
   "description": "React adapter for Tokis — composable, accessible components, hooks, and theming context. Zero runtime CSS.",
   "type": "module",
   "main": "./dist/cjs/index.js",
@@ -60,17 +60,17 @@
   "peerDependencies": {
     "react": ">=18.0.0",
     "react-dom": ">=18.0.0",
-    "@tokis/theme": "^1.0.9"
-  },
-  "dependencies": {
-    "@tokis/core": "^1.0.9",
-    "@tokis/tokens": "^1.0.9"
+    "@tokis/core": "^1.1.0",
+    "@tokis/tokens": "^1.1.0",
+    "@tokis/theme": "^1.1.0"
   },
   "devDependencies": {
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",
     "react": "^18.0.0",
-    "react-dom": "^18.0.0"
+    "react-dom": "^18.0.0",
+    "@tokis/core": "^1.1.0",
+    "@tokis/tokens": "^1.1.0"
   },
   "publishConfig": {
     "access": "public",

@@ -5,7 +5,7 @@
   flex-direction: column;
   width: 72px;
   background: var(--tokis-color-surface);
-  border-right: 1px solid var(--tokis-color-border);
+  border-inline-end: 1px solid var(--tokis-color-border);
   height: 100%;
   align-items: stretch;
 }
@@ -71,7 +71,7 @@
 .tokis-nav-rail__badge {
   position: absolute;
   top: -4px;
-  right: -8px;
+  inset-inline-end: -8px;
   min-width: 16px;
   height: 16px;
   padding: 0 4px;

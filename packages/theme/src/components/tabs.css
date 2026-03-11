@@ -28,7 +28,7 @@
 .tokis-tabs-root--vertical .tokis-tabs-list {
   flex-direction: column;
   border-bottom: none;
-  border-right: 1px solid var(--tokis-color-border);
+  border-inline-end: 1px solid var(--tokis-color-border);
   align-items: flex-start;
   min-width: 160px;
   overflow-x: visible;
@@ -112,15 +112,18 @@
 /* Vertical trigger */
 .tokis-tabs-root--vertical .tokis-tabs-trigger {
   border-bottom: none;
-  border-right: 2px solid transparent;
-  border-radius: var(--tokis-radius-md) 0 0 var(--tokis-radius-md);
+  border-inline-end: 2px solid transparent;
+  border-start-start-radius: var(--tokis-radius-md);
+  border-end-start-radius: var(--tokis-radius-md);
+  border-start-end-radius: 0;
+  border-end-end-radius: 0;
   margin-bottom: 0;
-  margin-right: -1px;
+  margin-inline-end: -1px;
   width: 100%;
   justify-content: flex-start;
 }
 .tokis-tabs-root--vertical .tokis-tabs-trigger[data-active="true"] {
-  border-right-color: var(--tokis-color-primary);
+  border-inline-end-color: var(--tokis-color-primary);
   background: var(--tokis-color-primary-subtle);
   color: var(--tokis-color-primary);
 }
@@ -133,7 +136,7 @@
   animation: tokis-tab-fade-in var(--tokis-duration-fast) var(--tokis-ease-out);
 }
 .tokis-tabs-root--vertical .tokis-tabs-panel {
-  padding: 0 0 0 var(--tokis-spacing-6);
+  padding-inline-start: var(--tokis-spacing-6);
   flex: 1;
   animation: none;
 }

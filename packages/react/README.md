@@ -1,20 +1,20 @@
-# /react
+# @tokis/react
 
 React adapter for the Tokis design system — composable, accessible components, hooks, and theming context.
 
 ## Installation
 
 ```bash
-npm install /react /theme
+npm install @tokis/react @tokis/theme @tokis/core @tokis/tokens
 ```
 
-> Or install everything at once: `npm install tokis`
+> Or install everything at once: `npm install @tokis/tokis`
 
 ## Usage
 
 ```tsx
-import '/theme';
-import { ButtonRoot, ButtonLabel, ThemeProvider } from '/react';
+import '@tokis/theme';
+import { ButtonRoot, ButtonLabel, ThemeProvider } from '@tokis/react';
 
 function App() {
   return (
@@ -39,7 +39,9 @@ function App() {
 
 - `react` >= 18.0.0
 - `react-dom` >= 18.0.0
-- `/theme` ^0.1.0
+- `@tokis/core` ^1.1.0
+- `@tokis/tokens` ^1.1.0
+- `@tokis/theme` ^1.1.0
 
 ## Documentation
 

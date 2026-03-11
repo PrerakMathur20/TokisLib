@@ -30,7 +30,7 @@
   background: none;
   border: none;
   width: 100%;
-  text-align: left;
+  text-align: start;
   min-height: 36px;
   -webkit-tap-highlight-color: transparent;
 }
@@ -69,8 +69,8 @@
 .tokis-menu-item__shortcut {
   font-size: var(--tokis-font-size-xs);
   color: var(--tokis-text-tertiary);
-  margin-left: auto;
-  padding-left: var(--tokis-spacing-4);
+  margin-inline-start: auto;
+  padding-inline-start: var(--tokis-spacing-4);
   font-variant-numeric: tabular-nums;
 }
 .tokis-menu-item__indicator {

@@ -46,7 +46,7 @@ export function Checkbox({
         checked={checked}
         defaultChecked={defaultChecked}
         disabled={disabled}
-        onChange={(e) => onChange?.(e.target.checked)}
+        onChange={(e) => { if (!disabled) onChange?.(e.target.checked); }}
         className="tokis-checkbox-native"
         aria-label={!label ? ariaLabel : undefined}
         aria-describedby={descId}

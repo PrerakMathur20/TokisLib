@@ -1,4 +1,4 @@
-# Tokis
+# @tokis/tokis
 
 [![GitHub](https://img.shields.io/badge/GitHub-PrerakMathur20%2FTokisLib-181717?logo=github)](https://github.com/PrerakMathur20/TokisLib)
 
@@ -16,7 +16,8 @@
 | `@tokis/core` | [![npm](https://img.shields.io/npm/v/@tokis/core)](https://npmjs.com/package/@tokis/core) | Framework-agnostic headless primitives — state machines, a11y, focus management |
 | `@tokis/react` | [![npm](https://img.shields.io/npm/v/@tokis/react)](https://npmjs.com/package/@tokis/react) | React components, hooks, and context providers |
 | `@tokis/theme` | [![npm](https://img.shields.io/npm/v/@tokis/theme)](https://npmjs.com/package/@tokis/theme) | Pre-compiled CSS — base variables, reset, utilities, component styles |
-| `tokis` | [![npm](https://img.shields.io/npm/v/tokis)](https://npmjs.com/package/tokis) | Meta package — one install that re-exports everything |
+| `@tokis/icons` | [![npm](https://img.shields.io/npm/v/@tokis/icons)](https://npmjs.com/package/@tokis/icons) | Tree-shakable SVG icons, optional lucide-react bridge |
+| `@tokis/tokis` | [![npm](https://img.shields.io/npm/v/@tokis/tokis)](https://npmjs.com/package/@tokis/tokis) | Meta package — one install that re-exports everything |
 
 ---
 
@@ -24,10 +25,10 @@
 
 ```bash
 # Everything in one shot
-npm i tokis
+npm i @tokis/tokis
 
 # Or pick only what you need
-npm i @tokis/react @tokis/theme
+npm i @tokis/react @tokis/theme @tokis/core @tokis/tokens
 ```
 
 Then import the theme once in your entry file:
@@ -51,9 +52,9 @@ export default function App() {
 
 ```
 @tokis/tokens ──┐
-                ├──▶ @tokis/react ──▶ tokis
+                ├──▶ @tokis/react ──▶ @tokis/tokis
 @tokis/core   ──┘
-@tokis/theme ──────────────────────▶ tokis
+@tokis/theme ──────────────────────▶ @tokis/tokis
 ```
 
 - **tokens** — Pure TS/CSS. No framework dependencies.
@@ -131,7 +132,7 @@ All packages are versioned in lockstep. The root `package.json` is the single so
 
 ```bash
 # Set a new version everywhere (root + all sub-packages + cross-dep ranges)
-npm run version:set 1.1.0
+npm run version:set 1.2.0
 
 # Or edit root package.json manually, then sync sub-packages
 npm run version:sync

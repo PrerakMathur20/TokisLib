@@ -102,7 +102,7 @@ function TreeItem({
           isSelected && 'tokis-treeview__item--selected',
           node.disabled && 'tokis-treeview__item--disabled'
         )}
-        style={{ paddingLeft: `calc(${(level - 1) * 20}px + var(--tokis-spacing-2))` }}
+        style={{ paddingInlineStart: `calc(${(level - 1) * 20}px + var(--tokis-spacing-2))` }}
         onClick={() => {
           if (node.disabled) return;
           if (hasChildren) onExpand(node.id);
